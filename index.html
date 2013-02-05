@@ -18,8 +18,24 @@
       	margin-left: 29.5%;
       }
 
-      .submission {
-      	margin-left: 10%;
+      .total_hours {
+      	margin-top: 5%;
+      	margin-left: 20%;
+      	font-size: 20px;
+      	text-align: center;
+      	padding-right: 20%;
+      }
+
+      .total_hours_value {
+      	margin-top: 5%;
+      	margin-left: 20%;
+      	font-size: 20px;
+      	text-align: center;
+      	padding-right: 20%;
+      }
+
+      .custom_table {
+
       }
     </style>
     <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
@@ -716,42 +732,40 @@
 				</td>
 				<td name='total_hours_sunday' style='font-size: 20px; padding-left: 4%;'><strong>0</strong></td>
 			</tr>
-		</table>
-	</form>
-	<div style='margin-left: 11%;'>
-		<table style='table-layout: fixed;'>
 			<tr>
-			<td style='vertical-align: top; padding-right: 29px;' height='125px'>
-				<select style='height: 28px; margin-top: 10px;'>
-					<option value='cyrus.fakour@blackbaud.com'>Cyrus Fakour</option>	
-				</select><br>
-					Select your boss.
-			</td>
-			<td style='vertical-align: top; padding-right: 29px;' height='125px'>
-				<input type='text' name='intern_name' style='height: 28px; margin-top: 10px;'><br>
-				First and Last Name
-			</td>
-			<td height='55px' style='padding-right: 30px; padding-left: 30px; word-wrap: break-word; width: 200px;'>
-				<input onclick='scroll()' id="datepick" style='margin-top: -10px; margin-bottom: 8px;'/><br>
-				Enter the date of the FRIDAY of the week for which you are submitting this time sheet
-			</td>
-			<td width='138px'>
-				<div class='submission'>
-					<table>
-						<tr height='25px'> 
-							<th style='vertical-align: top; margin_top: -10px;'>Total Hours:</th>
-						</tr>
-						<tr height='30px'>
-							<td name="weekly_total_hours"style='font-size: 30px; padding-left: 45%;'><strong>0</strong></td>
-						</tr>
-					</table>
-				</div>
-			</td>
-			<td width='100px' style='padding-left: 4.5%;'>
-				<input type='button' class='btn btn-success' value='Submit'>
-			</td>
+
+			</tr>
+				<td>
+
+				</td>
+				<td style='vertical-align: top; padding-right: 29px;' height='125px'>
+					<select style='height: 28px; margin-top: 10px;'>
+						<option value='cyrus.fakour@blackbaud.com'>Cyrus Fakour</option>	
+					</select><br>
+						Select your manager
+				</td>
+				<td style='padding-top: 1.6%; padding-right: 29px;' height='125px'>
+					<input type='text' name='intern_name' style='height: 28px; margin-top: 10px;'><br>
+					First and Last Name
+				</td>
+				<td height='55px' style='padding-right: 30px; padding-top: 1.6%; word-wrap: break-word; width: 200px; font-size: 12px;'>
+					<input onclick='scroll()' id="datepick" style='margin-bottom: 8px;'><br>
+					Enter the date of the FRIDAY of the week for which you are submitting this time sheet
+				</td>
+				<td width='138px'>
+					<div class='total_hours'>
+						<strong>Total Hours</strong> <br>
+					</div>
+					<div class='total_hours_value'>
+						<strong name="total_hours_week">0</strong>
+					</div>
+				</td>
+				<td width='100px' style='padding-top: 20px;'>
+					<input type='button' class='btn btn-success' value='Submit'>
+				</td>
 			</tr>
 		</table>
+	</form>
 	</div>
 
 </body>
