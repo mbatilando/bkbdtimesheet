@@ -267,7 +267,7 @@
 						<option value='11'>7:00 p.m.</option>
 					</select>
 				</td>
-				<td name='total_hours_tuesday' style='font-size: 20px; padding-left: 4%;'><strong><output type="text" id="totTuesday"></output</strong></td>
+				<td name='total_hours_tuesday' style='font-size: 20px; padding-left: 4%;'><strong><output type="text" id="totTuesday"></output></strong></td>
 			</tr>
 			<tr  height='50px'>
 				<td>Wednesday</td>
@@ -359,7 +359,7 @@
 						<option value='11'>7:00 p.m.</option>
 					</select>
 				</td>
-				<td name='total_hours_wednesday' style='font-size: 20px; padding-left: 4%;'><strong><output type="text" id="totWednesday"></output</strong></td>
+				<td name='total_hours_wednesday' style='font-size: 20px; padding-left: 4%;'><strong><output type="text" id="totWednesday"></output></strong></td>
 			</tr>
 			<tr  height='50px'>
 				<td>Thursday</td>
@@ -451,7 +451,7 @@
 						<option value='11'>7:00 p.m.</option>
 					</select>
 				</td>
-				<td name='total_hours_thursday' style='font-size: 20px; padding-left: 4%;'><strong><output type="text" id="totThursday"></output</strong></td>
+				<td name='total_hours_thursday' style='font-size: 20px; padding-left: 4%;'><strong><output type="text" id="totThursday"></output></strong></td>
 			</tr>
 			<tr  height='50px'>
 				<td>Friday</td>
@@ -543,7 +543,7 @@
 						<option value='11'>7:00 p.m.</option>
 					</select>
 				</td>
-				<td name='total_hours_friday' style='font-size: 20px; padding-left: 4%;'><strong><output type="text" id="totFriday"></output</strong></td>
+				<td name='total_hours_friday' style='font-size: 20px; padding-left: 4%;'><strong><output type="text" id="totFriday"></output></strong></td>
 			</tr>
 			<tr  height='50px'>
 				<td>Saturday</td>
@@ -635,7 +635,7 @@
 						<option value='11'>7:00 p.m.</option>
 					</select>
 				</td>
-				<td name='total_hours_saturday' style='font-size: 20px; padding-left: 4%;'><strong><output type="text" id="totSaturday"></output</strong></td>
+				<td name='total_hours_saturday' style='font-size: 20px; padding-left: 4%;'><strong><output type="text" id="totSaturday"></output></strong></td>
 			</tr>
 			<tr  height='50px'>
 				<td>Sunday</td>
@@ -727,7 +727,7 @@
 						<option value='11'>7:00 p.m.</option>
 					</select>
 				</td>
-				<td name='total_hours_sunday' style='font-size: 20px; padding-left: 4%;'><strong><output type="text" id="totSunday"></output</strong></td>
+				<td name='total_hours_sunday' style='font-size: 20px; padding-left: 4%;'><strong><output type="text" id="totSunday"></output></strong></td>
 			</tr>
 			<tr>
 
@@ -750,11 +750,12 @@
 					Enter the date of the FRIDAY of the week for which you are submitting this time sheet
 				</td>
 				<td width='138px'>
+					
 					<div class='total_hours'>
-						<strong>Total Hours</strong> <br>
+						<strong>Total Hours</strong>
 					</div>
 					<div class='total_hours_value'>
-						<strong name="total_hours_week">0</strong>
+						<strong name="total_hours_week"><output type="text" id="totWeek"></output></strong>
 					</div>
 				</td>
 				<td width='100px' style='padding-top: 20px;'>
@@ -779,27 +780,38 @@
 		window.scrollTo(0, document.body.scrollHeight);
 	}
 
-var myHash = new Object();
-  myHash['Monday'];
-  myHash['Tuesday'];
-  myHash['Wednesday'];
-  myHash['Thursday'];
-  myHash['Friday'];
-  myHash['Saturday'];
-  myHash['Sunday'];
+	var myHash = new Object();
+	myHash['Monday'];
+	myHash['Tuesday'];
+	myHash['Wednesday'];
+	myHash['Thursday'];
+	myHash['Friday'];
+	myHash['Saturday'];
+	myHash['Sunday'];
 
-  function calcHour(day) {
-	var timeOut = day.concat("TimeOut");
-	var timeIn = day.concat("TimeIn");
-	var lunchOut = day.concat("LunchOut");
-	var lunchIn = day.concat("LunchIn");
-	myHash[day] = (document.getElementById(timeOut).value - document.getElementById(timeIn).value) - (document.getElementById(lunchOut).value - document.getElementById(lunchIn).value);
+	function calcHour(day) {
+		var timeOut = day.concat("TimeOut");
+		var timeIn = day.concat("TimeIn");
+		var lunchOut = day.concat("LunchOut");
+		var lunchIn = day.concat("LunchIn");
+		myHash[day] = (document.getElementById(timeOut).value - document.getElementById(timeIn).value) - (document.getElementById(lunchOut).value - document.getElementById(lunchIn).value);
+	}
+  
+  function calcTotal() {
+	var total = 0;
+	for (var day in myHash) {
+		if (myHash[day]) {
+			total += myHash[day];
+		}
+	}
+	return total;
   }
   
   function updateHash(day) {
 	var totDay = "tot".concat(day);
 	calcHour(day);
 	document.getElementById(totDay).value=myHash[day];
+	document.getElementById('totWeek').value=calcTotal();
   }
 
 </script>
