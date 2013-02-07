@@ -46,9 +46,9 @@
     <link rel="stylesheet" type="text/css" href="date_picker.css">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
-      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
-                    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
-                                   <link rel="shortcut icon" href="../assets/ico/favicon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="../assets/ico/favicon.png">
   </head>
 
   <body>
@@ -761,60 +761,11 @@
 				<td width='100px' style='padding-top: 20px;'>
 					<input type='submit' class='btn btn-success' value='Submit'>
 				</td>
-			</tr>
 		</table>
 	</form>
-	</div>
-
-</body>
+		<script type="text/javascript" src="datepickr.js"></script>
+		<script type="text/javascript" src="calcTime.js"> </script>
+	</body>
 </html>
 
-<script type="text/javascript" src="datepickr.js"></script>
-<script type="text/javascript">
-	new datepickr('datepick', {
-		'dateFormat': 'm/d/y'
-	});
-
-	function scroll () {
-		console.log("here");
-		window.scrollTo(0, document.body.scrollHeight);
-	}
-
-	var myHash = new Object();
-	myHash['Monday'];
-	myHash['Tuesday'];
-	myHash['Wednesday'];
-	myHash['Thursday'];
-	myHash['Friday'];
-	myHash['Saturday'];
-	myHash['Sunday'];
-
-	function calcHour(day) {
-		var timeOut = day.concat("TimeOut");
-		var timeIn = day.concat("TimeIn");
-		var lunchOut = day.concat("LunchOut");
-		var lunchIn = day.concat("LunchIn");
-		myHash[day] = (document.getElementById(timeOut).value - document.getElementById(timeIn).value) - (document.getElementById(lunchOut).value - document.getElementById(lunchIn).value);
-	}
-  
-  function calcTotal() {
-	var total = 0;
-	for (var day in myHash) {
-		if (myHash[day]) {
-			total += myHash[day];
-		}
-	}
-	return total;
-  }
-  
-  function updateHash(day) {
-	var totDay = "tot".concat(day);
-	calcHour(day);
-	document.getElementById(totDay).value=myHash[day];
-	document.getElementById('totWeek').value=calcTotal();
-  }
-
-</script>
-
-
-
+	
