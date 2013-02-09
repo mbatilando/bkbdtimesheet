@@ -62,7 +62,7 @@
             <span class="icon-bar"></span>
           </a>
           <a class="brand">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspIntern Timesheet<br><br> 
-          	your paycheck <img src='assets/images/arrow.jpeg' height='20px' width='20px'> our workforce</a>
+          	your paycheck <img src='assets/img/arrow.jpeg' height='20px' width='20px'> our workforce</a>
         </div>
       </div>
     </div>
@@ -759,12 +759,25 @@
 					</div>
 				</td>
 				<td width='100px' style='padding-top: 20px;'>
-					<input type='submit' class='btn btn-success' value='Submit'>
+					<input type='submit' class='btn btn-success alert' value='Submit'>
 				</td>
 		</table>
+		
 	</form>
+		
 		<script type="text/javascript" src="assets/js/datepickr.js"></script>
 		<script type="text/javascript" src="assets/js/calcTime.js"> </script>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="assets/js/bootbox.js"></script>
+		<script>
+			$(document).on("click", ".alert", function(e) {
+				bootbox.confirm("Are you sure?", function() {
+					console.log("Alert Callback");
+				});
+			});
+		</script>
+	
 	</body>
 </html>
 

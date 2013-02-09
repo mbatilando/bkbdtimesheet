@@ -21,14 +21,25 @@ new datepickr('datepick', {
 		var timeIn = day.concat("TimeIn");
 		var lunchOut = day.concat("LunchOut");
 		var lunchIn = day.concat("LunchIn");
-		myHash[day] = (document.getElementById(timeOut).value - document.getElementById(timeIn).value) - (document.getElementById(lunchOut).value - document.getElementById(lunchIn).value);
+		if ((document.getElementById(timeOut).value - document.getElementById(timeIn).value) - 
+		(document.getElementById(lunchOut).value - document.getElementById(lunchIn).value) < 0) {
+			myHash[day] = "Error";
+		}
+		else {
+			myHash[day] = (document.getElementById(timeOut).value - document.getElementById(timeIn).value) - 
+		(document.getElementById(lunchOut).value - document.getElementById(lunchIn).value)
+		}
 	}
   
   function calcTotal() {
 	var total = 0;
 	for (var day in myHash) {
-		if (myHash[day]) {
+		if (typeof myHash[day] === "number") {
 			total += myHash[day];
+		}
+		else {
+		 total = "Error";
+		 break;
 		}
 	}
 	return total;
