@@ -71,19 +71,18 @@
   		<div class="span4">sdf</div>
   		<div class="span8">sfd</div>
 	</div>
-
-
-	<form onsubmit='return verify()'>
+	
+	<form id="target">
 		<table class='table span12 table-hover'>
 			<thead>
-			<tr height='50px'>
-				<th><strong>Day</strong></th>
-				<th style='width: 20px'><strong>Time-In</strong></th>
-				<th><strong>Lunch Start</strong></th>
-				<th><strong>Lunch End</strong></th>
-				<th><strong>Time-Out</strong></th>
-				<th><strong>Daily Hours</strong></th>
-			</tr>
+				<tr height='50px'>
+					<th><strong>Day</strong></th>
+					<th style='width: 20px'><strong>Time-In</strong></th>
+					<th><strong>Lunch Start</strong></th>
+					<th><strong>Lunch End</strong></th>
+					<th><strong>Time-Out</strong></th>
+					<th><strong>Daily Hours</strong></th>
+				</tr>
 			</thead>
 			<tr height='50px'>
 				<td>Monday</td>
@@ -730,8 +729,6 @@
 				<td name='total_hours_sunday' style='font-size: 20px; padding-left: 4%;'><strong><output type="text" id="totSunday"></output></strong></td>
 			</tr>
 			<tr>
-
-			</tr>
 				<td>
 
 				</td>
@@ -759,25 +756,32 @@
 					</div>
 				</td>
 				<td width='100px' style='padding-top: 20px;'>
-					<input type='submit' class='btn btn-success alert' value='Submit'>
+					<input id="subbut" type='submit' class='btn btn-success' value='Submit'>
 				</td>
+			</tr>
 		</table>
-		
 	</form>
-		
+	
 		<script type="text/javascript" src="assets/js/datepickr.js"></script>
 		<script type="text/javascript" src="assets/js/calcTime.js"> </script>
 		<script type="text/javascript" src="assets/js/jquery-1.9.1.js"></script>
 		<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="assets/js/bootbox.js"></script>
-		<script>
-			$(document).on("click", ".alert", function(e) {
-				bootbox.confirm("Are you sure?", function() {
-					console.log("Alert Callback");
+		<script type="text/javascript" src="assets/js/bootstrap-modal.js"></script>
+		<script type="text/javascript" src="assets/js/bootstrap-transition.js"></script>
+		<script type="text/javascript">
+			$('form').submit(function() {
+				return false;
+			});
+			$('form').submit(function() {
+				var currentForm = this;
+				bootbox.confirm("Are you sure?", function(result) {
+				if (result) {
+					currentForm.submit();
+					}
 				});
 			});
 		</script>
-	
 	</body>
 </html>
 
