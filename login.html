@@ -6,33 +6,50 @@
 		<link href="assets/css/bootstrap-responsive.css" rel="stylesheet"/>
 	</head>
 	<body>
-		<div class="container" style="width:850px; margin: 0 auto;">
-			<div class="row">
+		<div class="container">
+			<div class="visible-phone">
+					<img src="http://www.case8conference.org/wp-content/uploads/2013/01/Blackbaud.png" width=700px align=left vspace="10px" style="margin-top:50px">
+
+					<div id="login" align="center">
+
+						<input type="text" class="input-large" id="user_email" name="user_email" rel="popover" data-content="Enter your Blackbaud email." placeholder="Email" data-original-title="Email">
+
+						<br><br>
+
+						<input type="password" class="input-large" id="user_password" name="user_password" rel="popover" data-content="What's your password?" placeholder="Password" data-original-title="Password">
+
+						<br><br>
+
+						<button type="submit" class="btn btn-success" style="height:1.5em; font-size: 1em; line-height: 0.5em;" >Log In</button>
+
+					</div>
+			</div>
+
+			<div class="hidden-phone" style="width:850px; margin: 0 auto;">
 				<div class="span8">
-					<form class="form-horizontal" id="registerHere" method='post' action=''>
 					<fieldset>
 
-					<legend>Intern Timesheets</legend>
-
-					<img src="http://www.case8conference.org/wp-content/uploads/2013/01/Blackbaud.png" width=550px align=left vspace="10px">
+					<img src="http://www.case8conference.org/wp-content/uploads/2013/01/Blackbaud.png" width=550px align=left vspace="10px" style="margin-top:50px">
 
 					<br><br>
 
-					<input type="text" class="input-large" id="user_email" name="user_email" rel="popover" data-content="Enter your Blackbaud email." placeholder="Email" data-original-title="Email">
+					<div id="login" align="center">
+						<br>
 
-					<br><br>
+						<input type="text" class="input-large" id="user_email" name="user_email" rel="popover" data-content="Enter your Blackbaud email." placeholder="Email" data-original-title="Email">
 
-					<input type="password" class="input-large" id="user_password" name="user_password" rel="popover" data-content="What's your password?" placeholder="Password" data-original-title="Password">
+						<br><br>
 
-					<br><br>
+						<input type="password" class="input-large" id="user_password" name="user_password" rel="popover" data-content="What's your password?" placeholder="Password" data-original-title="Password">
 
-					<button type="submit" class="btn btn-success" style="height:1.5em; font-size: 1em; line-height: 0.5em;" >Log In</button>
+						<br><br>
+
+						<button type="submit" class="btn btn-success" style="height:1.5em; font-size: 1em; line-height: 0.5em;" >Log In</button>
+
+					</div>
 
 					
 					</fieldset>
-
-
-					</form>
 				</div>
 			</div>
 		</div>
