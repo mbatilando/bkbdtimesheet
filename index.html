@@ -58,28 +58,49 @@
   <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </a>
-          <a class="brand">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspIntern Timesheet<br><br> 
-          	your paycheck <img src='assets/img/arrow.jpeg' height='20px' width='20px'> our workforce</a> 
-
-          	<button class="btn btn-info btn-small" id="userbutton"><i class="icon-white icon-user"></i> Firstname Lastname ▼</button>
+          </button>
+          <a class="brand" href="#">Project name</a>
+          <div class="nav-collapse collapse">
+            <p class="navbar-text pull-right">
+              Logged in as <a href="#" class="navbar-link">Username</a>
+            </p>
+          </div><!--/.nav-collapse -->
         </div>
-
       </div>
-    </div>
+	  </div>
 
-    <div class="row">
-  		<div class="span4">sdf</div>
-  		<div class="span8">sfd</div>
-	</div>
+	<div class="container-fluid">
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Sidebar</li>
+              <li class="active"><a href="#">This is a link</a></li>
+              <li><a href="#">This is a link</a></li>
+              <li><a href="#">This is a link</a></li>
+              <li><a href="#">This is a link</a></li>
+              <li class="nav-header">Sidebar</li>
+              <li><a href="#">This is a link</a></li>
+              <li><a href="#">This is a link</a></li>
+              <li><a href="#">This is a link</a></li>
+              <li><a href="#">This is a link</a></li>
+              <li><a href="#">This is a link</a></li>
+              <li><a href="#">This is a link</a></li>
+              <li class="nav-header">Sidebar</li>
+              <li><a href="#">This is a link</a></li>
+              <li><a href="#">This is a link</a></li>
+              <li><a href="#">This is a link</a></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
 	
+		
 	<form id="target">
-		<table class='table span12 table-hover'>
+		<table class='table span9 table-hover'>
 			<thead>
 				<tr height='50px'>
 					<th><strong>Day</strong></th>
@@ -767,6 +788,7 @@
 			</tr>
 		</table>
 	</form>
+	</div>
 	
 		<script type="text/javascript" src="assets/js/datepickr.js"></script>
 		<script type="text/javascript" src="assets/js/calcTime.js"> </script>
