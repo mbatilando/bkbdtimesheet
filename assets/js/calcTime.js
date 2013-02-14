@@ -21,13 +21,13 @@ new datepickr('datepick', {
 		var timeIn = day.concat("TimeIn");
 		var lunchOut = day.concat("LunchOut");
 		var lunchIn = day.concat("LunchIn");
-		if ((document.getElementById(timeOut).value - document.getElementById(timeIn).value) - 
-		(document.getElementById(lunchOut).value - document.getElementById(lunchIn).value) < 0) {
+		var workTime = document.getElementById(timeOut).value - document.getElementById(timeIn).value;
+		var lunchTime = document.getElementById(lunchOut).value - document.getElementById(lunchIn).value;
+		if (workTime < 0 || lunchTime<0) {
 			myHash[day] = "Error";
 		}
 		else {
-			myHash[day] = (document.getElementById(timeOut).value - document.getElementById(timeIn).value) - 
-		(document.getElementById(lunchOut).value - document.getElementById(lunchIn).value)
+			myHash[day] = workTime - lunchTime;
 		}
 	}
   
