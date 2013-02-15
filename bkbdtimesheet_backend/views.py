@@ -16,4 +16,4 @@ def login(request):
 	return render_to_response('login.html')
 	
 def submit(request):
-	return render_to_response("This works")
+	return HttpResponse("This works")
