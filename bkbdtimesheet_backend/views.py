@@ -51,7 +51,7 @@ def submit(request):
 		writer.writerow(['','','','','', grandTotal])
 		
 	#Send the result via e-mail
-	mail("oscarbachtiar759@gmail.com", "Blitzshadow759", "oscarbachtiar759@gmail.com", "timesheets " + str(requestInput['weekof']), "Total hours: " + grandTotal, "output.csv")
+	mail("oscarbachtiar759@gmail.com", "Blitzshadow759", "oscarbachtiar759@gmail.com", "timesheets " + str(requestInput['weekof']), "Total hours: " + str(grandTotal), "output.csv")
 		
 	return HttpResponse("Submitted, time to pop some tags")
 	
