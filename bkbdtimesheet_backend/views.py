@@ -28,6 +28,8 @@ def submit(request):
 	with open('output.csv', 'wb') as f:
 		grandTotal = 0
 		writer = csv.writer(f)
+		writer.writerow(['Name:', str(requestInput['intern_name'])])
+		writer.writerow(['Week of:', str(requestInput['weekof'])])
 		writer.writerow(['Day', 'TimeIn', 'LunchIn', 'LunchOut', 'TimeOut', 'Total'])
 		for i in range(0, len(days)):
 			day = str(days[i])
