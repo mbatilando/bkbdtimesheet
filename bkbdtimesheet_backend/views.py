@@ -23,4 +23,4 @@ def login(request):
 def submit(request):
 	dict = request.POST
 	print dict
-	return HttpResponse(str(dict))
+	return HttpResponse(str(dict.items()))
