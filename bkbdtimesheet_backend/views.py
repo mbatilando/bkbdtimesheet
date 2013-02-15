@@ -21,4 +21,6 @@ def login(request):
 
 @csrf_exempt	
 def submit(request):
-	return HttpResponse("This works")
+	dict = request.POST
+	print dict
+	return HttpResponse(str(dict))
