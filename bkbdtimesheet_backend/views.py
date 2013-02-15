@@ -4,6 +4,7 @@ from django.http import HttpResponse, Http404
 from django.shortcuts import render_to_response
 from django.core.context_processors import csrf
 from django.views.decorators.csrf import csrf_exempt
+import csv
 
 @csrf_exempt
 def index(request):
@@ -21,5 +22,22 @@ def login(request):
 
 @csrf_exempt	
 def submit(request):
-	dict = request.POST
-	return HttpResponse(str(dict['TuesdayTimeOut']))
+	requestInput = request.POST
+	days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+	
+	with open('output.csv', 'wb') as f:
+		grandTotal = 0
+		writer = csv.writer(f)
+		writer.writerow(['Day', 'TimeIn', 'LunchIn', 'LunchOut', 'TimeOut', 'Total'])
+		for i in range(0, len(days)):
+			day = days[i]
+			timeIn = requestInput[str(days[i])+'TimeIn']
+			lunchIn = requestInput[str(days[i])+'LunchIn']
+			lunchOut = requestInput[str(days[i])+'LunchOut']			
+			timeOut = requestInput[str(days[i])+'TimeOut']
+			timeTotal = timeOut - timeIn - (lunchOut - lunchIn)
+			grandTotal += timeTotal
+			writer.writerow([day, timeIn, lunchIn, lunchOut, timeOut, timeTotal])
+		writer.writerow(['','','','','', grandTotal])
+		
+	return HttpResponse(open('output.csv'))
