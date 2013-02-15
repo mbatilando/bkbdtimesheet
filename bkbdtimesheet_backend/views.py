@@ -30,11 +30,11 @@ def submit(request):
 		writer = csv.writer(f)
 		writer.writerow(['Day', 'TimeIn', 'LunchIn', 'LunchOut', 'TimeOut', 'Total'])
 		for i in range(0, len(days)):
-			day = days[i]
-			timeIn = requestInput[str(days[i])+'TimeIn']
-			lunchIn = requestInput[str(days[i])+'LunchIn']
-			lunchOut = requestInput[str(days[i])+'LunchOut']			
-			timeOut = requestInput[str(days[i])+'TimeOut']
+			day = str(days[i])
+			timeIn = int(requestInput[str(days[i])+'TimeIn'])
+			lunchIn = int(requestInput[str(days[i])+'LunchIn'])
+			lunchOut = int(requestInput[str(days[i])+'LunchOut'])			
+			timeOut = int(requestInput[str(days[i])+'TimeOut'])
 			timeTotal = timeOut - timeIn - (lunchOut - lunchIn)
 			grandTotal += timeTotal
 			writer.writerow([day, timeIn, lunchIn, lunchOut, timeOut, timeTotal])
