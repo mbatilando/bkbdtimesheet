@@ -22,5 +22,4 @@ def login(request):
 @csrf_exempt	
 def submit(request):
 	dict = request.POST
-	print dict
-	return HttpResponse(str(dict.items()))
+	return HttpResponse(str(dict['TuesdayTimeOut']))
