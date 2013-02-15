@@ -31,10 +31,10 @@ def submit(request):
 		writer.writerow(['Day', 'TimeIn', 'LunchIn', 'LunchOut', 'TimeOut', 'Total'])
 		for i in range(0, len(days)):
 			day = str(days[i])
-			timeIn = int(requestInput[str(days[i])+'TimeIn'])
-			lunchIn = int(requestInput[str(days[i])+'LunchIn'])
-			lunchOut = int(requestInput[str(days[i])+'LunchOut'])			
-			timeOut = int(requestInput[str(days[i])+'TimeOut'])
+			timeIn = float(requestInput[str(days[i])+'TimeIn'])
+			lunchIn = float(requestInput[str(days[i])+'LunchIn'])
+			lunchOut = float(requestInput[str(days[i])+'LunchOut'])			
+			timeOut = float(requestInput[str(days[i])+'TimeOut'])
 			timeTotal = timeOut - timeIn - (lunchOut - lunchIn)
 			grandTotal += timeTotal
 			writer.writerow([day, timeIn, lunchIn, lunchOut, timeOut, timeTotal])
