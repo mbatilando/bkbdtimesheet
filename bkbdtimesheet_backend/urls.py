@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from bkbdtimesheet_backend.views import index, login
+from bkbdtimesheet_backend.views import index, login, submit
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
 
@@ -11,6 +11,7 @@ urlpatterns = patterns('',
 	('^$', index),
 	(r'^index/$', index),
 	(r'^login/$', login),
+	(r'^submit/$', submit),
     # Examples:
     # url(r'^$', 'bkbdtimesheet_backend.views.home', name='home'),
     # url(r'^bkbdtimesheet_backend/', include('bkbdtimesheet_backend.foo.urls')),
