@@ -1989,6 +1989,7 @@ table {
   text-align: left;
   vertical-align: top;
   border-top: 1px solid #dddddd;
+  color: 43A942;
 }
 
 .table th {
@@ -6040,4 +6041,10 @@ a.badge:hover {
 
 .affix {
   position: fixed;
+}
+
+/*CUSTOM STUFF*/
+#main {
+ margin:0 auto !important;
+ float:none;
 }
