@@ -687,3 +687,24 @@
 			</tr>
 		</table>
 	</form>
+
+	<script type="text/javascript" src="assets/js/datepickr.js"></script>
+		<script type="text/javascript" src="assets/js/calcTime.js"> </script>
+		<script type="text/javascript" src="assets/js/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="assets/js/bootbox.js"></script>
+		<script type="text/javascript" src="assets/js/bootstrap-modal.js"></script>
+		<script type="text/javascript" src="assets/js/bootstrap-transition.js"></script>
+		<script type="text/javascript">
+			$('form').submit(function() {
+				return false;
+			});
+			$('form').submit(function() {
+				var currentForm = this;
+				bootbox.confirm("Are you sure?", function(result) {
+				if (result) {
+					currentForm.submit();
+					}
+				});
+			});
+		</script>
