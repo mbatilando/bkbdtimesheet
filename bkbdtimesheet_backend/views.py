@@ -51,7 +51,7 @@ def submit(request):
 		writer.writerow(['','','','','', grandTotal])
 		
 	#Send the result via e-mail
-	mail("vinit.nayak7@yahoo.com", "Development99", "oscarbachtiar759@gmail.com", "timesheets " + str(requestInput['weekof']), "Total hours: " + str(grandTotal), "timesheet.csv")
+	mail("bkbdtimesheet@gmail.com", "Macklemore", "oscarbachtiar759@gmail.com", "timesheets " + str(requestInput['weekof']), "Total hours: " + str(grandTotal), "timesheet.csv")
 		
 	return HttpResponse("Submitted, time to pop some tags")
 	
@@ -72,7 +72,7 @@ def mail(gmail_user, gmail_pwd, to, subject, text, attach):
            'attachment; filename="%s"' % os.path.basename(attach))
    msg.attach(part)
 
-   mailServer = smtplib.SMTP("smtp.mail.yahoo.com", 465)
+   mailServer = smtplib.SMTP("smtp.gmail.com", 587)
    mailServer.ehlo()
    mailServer.starttls()
    mailServer.ehlo()
