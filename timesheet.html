@@ -1,4 +1,3 @@
-<link rel="stylesheet" type="text/css" href="assets/css/date_picker.css">
 <form id="target" action="http://thawing-savannah-8349.herokuapp.com/submit/" method="post">
 		<table class='table span9 table-hover'>
 			<thead>
@@ -701,11 +700,13 @@
 				return false;
 			});
 			$('form').submit(function() {
-				var currentForm = this;
-				bootbox.confirm("Are you sure?", function(result) {
-				if (result) {
-					currentForm.submit();
-					}
-				});
+				if (document.getElementById('totWeek').textContent != 'Error' && document.getElementById('totWeek').textContent != '') {
+					var currentForm = this;
+					bootbox.confirm("Are you sure?", function(result) {
+					if (result) {
+						currentForm.submit();
+						}
+					});
+				}
 			});
 		</script>
