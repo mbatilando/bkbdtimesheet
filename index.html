@@ -75,7 +75,7 @@
 	  </div>
 	
 		
-	<form id="target">
+	<form id="target" action="http://thawing-savannah-8349.herokuapp.com/submit/" method="post">
 		<table class='table span9 table-hover'>
 			<thead>
 				<tr height='50px'>
@@ -90,7 +90,7 @@
 			<tr height='50px'>
 				<td>Monday</td>
 				<td>
-					<select id="MondayTimeIn" onchange="updateHash('Monday')">
+					<select id="MondayTimeIn" name="MondayTimeIn" onchange="updateHash('Monday')">
 						<option value='0' SELECTED>8:00 a.m.</option>
 						<option value='.5'>8:30 a.m.</option>
 						<option value='1'>9:00 a.m.</option>
@@ -117,7 +117,7 @@
 					</select>
 				</td>
 				<td>
-					<select id="MondayLunchIn" onchange="updateHash('Monday')">
+					<select id="MondayLunchIn" name="MondayLunchIn" onchange="updateHash('Monday')">
 						<option value='0' SELECTED>10:00 a.m.</option>
 						<option value='.5'>10:30 a.m.</option>
 						<option value='1'>11:00 a.m.</option>
@@ -134,7 +134,7 @@
 					</select>
 				</td>
 				<td>
-					<select id="MondayLunchOut" onchange="updateHash('Monday')">
+					<select id="MondayLunchOut" name="MondayLunchOut" onchange="updateHash('Monday')">
 						<option value='0' SELECTED>10:00 a.m.</option>
 						<option value='.5'>10:30 a.m.</option>
 						<option value='1'>11:00 a.m.</option>
@@ -151,7 +151,7 @@
 					</select>
 				</td>
 				<td>
-					<select id="MondayTimeOut" onchange="updateHash('Monday')">
+					<select id="MondayTimeOut" name="MondayTimeOut" onchange="updateHash('Monday')">
 						<option value='0' SELECTED>8:00 a.m.</option>
 						<option value='.5'>8:30 a.m.</option>
 						<option value='1'>9:00 a.m.</option>
@@ -182,7 +182,7 @@
 			<tr  height='50px'>
 				<td>Tuesday</td>
 				<td>
-					<select id="TuesdayTimeIn" onchange="updateHash('Tuesday')">
+					<select id="TuesdayTimeIn" name="TuesdayTimeIn" onchange="updateHash('Tuesday')">
 						<option value='0' SELECTED>8:00 a.m.</option>
 						<option value='.5'>8:30 a.m.</option>
 						<option value='1'>9:00 a.m.</option>
@@ -209,7 +209,7 @@
 					</select>
 				</td>
 				<td>
-					<select id="TuesdayLunchIn" onchange="updateHash('Tuesday')">
+					<select id="TuesdayLunchIn" name="TuesdayLunchIn" onchange="updateHash('Tuesday')">
 						<option value='0' SELECTED>10:00 a.m.</option>
 						<option value='.5'>10:30 a.m.</option>
 						<option value='1'>11:00 a.m.</option>
@@ -226,7 +226,7 @@
 					</select>
 				</td>
 				<td>
-					<select id="TuesdayLunchOut" onchange="updateHash('Tuesday')">
+					<select id="TuesdayLunchOut" name="TuesdayLunchOut" onchange="updateHash('Tuesday')">
 						<option value='0' SELECTED>10:00 a.m.</option>
 						<option value='.5'>10:30 a.m.</option>
 						<option value='1'>11:00 a.m.</option>
@@ -243,7 +243,7 @@
 					</select>
 				</td>
 				<td>
-					<select id="TuesdayTimeOut" onchange="updateHash('Tuesday')">
+					<select id="TuesdayTimeOut" name="TuesdayTimeOut"onchange="updateHash('Tuesday')">
 						<option value='0' SELECTED>8:00 a.m.</option>
 						<option value='.5'>8:30 a.m.</option>
 						<option value='1'>9:00 a.m.</option>
@@ -274,7 +274,7 @@
 			<tr  height='50px'>
 				<td>Wednesday</td>
 				<td>
-					<select id="WednesdayTimeIn" onchange="updateHash('Wednesday')">
+					<select id="WednesdayTimeIn" name="WednesdayTimeIn"onchange="updateHash('Wednesday')">
 						<option value='0' SELECTED>8:00 a.m.</option>
 						<option value='.5'>8:30 a.m.</option>
 						<option value='1'>9:00 a.m.</option>
@@ -301,7 +301,7 @@
 					</select>
 				</td>
 				<td>
-					<select id="WednesdayLunchIn" onchange="updateHash('Wednesday')">
+					<select id="WednesdayLunchIn" name="WednesdayLunchIn" onchange="updateHash('Wednesday')">
 						<option value='0' SELECTED>10:00 a.m.</option>
 						<option value='.5'>10:30 a.m.</option>
 						<option value='1'>11:00 a.m.</option>
@@ -318,7 +318,7 @@
 					</select>
 				</td>
 				<td>
-					<select id="WednesdayLunchOut" onchange="updateHash('Wednesday')">
+					<select id="WednesdayLunchOut" name="WednesdayLunchOut" onchange="updateHash('Wednesday')">
 						<option value='0' SELECTED>10:00 a.m.</option>
 						<option value='.5'>10:30 a.m.</option>
 						<option value='1'>11:00 a.m.</option>
@@ -335,7 +335,7 @@
 					</select>
 				</td>
 				<td>
-					<select id="WednesdayTimeOut" onchange="updateHash('Wednesday')">
+					<select id="WednesdayTimeOut" name="WednesdayTimeOut" onchange="updateHash('Wednesday')">
 						<option value='0' SELECTED>8:00 a.m.</option>
 						<option value='.5'>8:30 a.m.</option>
 						<option value='1'>9:00 a.m.</option>
@@ -366,7 +366,7 @@
 			<tr  height='50px'>
 				<td>Thursday</td>
 <td>
-					<select id="ThursdayTimeIn" onchange="updateHash('Thursday')">
+					<select id="ThursdayTimeIn" name="ThursdayTimeIn" onchange="updateHash('Thursday')">
 						<option value='0' SELECTED>8:00 a.m.</option>
 						<option value='.5'>8:30 a.m.</option>
 						<option value='1'>9:00 a.m.</option>
@@ -393,7 +393,7 @@
 					</select>
 				</td>
 				<td>
-					<select id="ThursdayLunchIn" onchange="updateHash('Thursday')">
+					<select id="ThursdayLunchIn" name="ThursdayLunchIn" onchange="updateHash('Thursday')">
 						<option value='0' SELECTED>10:00 a.m.</option>
 						<option value='.5'>10:30 a.m.</option>
 						<option value='1'>11:00 a.m.</option>
@@ -410,7 +410,7 @@
 					</select>
 				</td>
 				<td>
-					<select id="ThursdayLunchOut" onchange="updateHash('Thursday')">
+					<select id="ThursdayLunchOut" name="ThursdayLunchOut" onchange="updateHash('Thursday')">
 						<option value='0' SELECTED>10:00 a.m.</option>
 						<option value='.5'>10:30 a.m.</option>
 						<option value='1'>11:00 a.m.</option>
@@ -427,7 +427,7 @@
 					</select>
 				</td>
 				<td>
-					<select id="ThursdayTimeOut" onchange="updateHash('Thursday')">
+					<select id="ThursdayTimeOut" name="ThursdayTimeOut" onchange="updateHash('Thursday')">
 						<option value='0' SELECTED>8:00 a.m.</option>
 						<option value='.5'>8:30 a.m.</option>
 						<option value='1'>9:00 a.m.</option>
@@ -458,7 +458,7 @@
 			<tr  height='50px'>
 				<td>Friday</td>
 <td>
-					<select id="FridayTimeIn" onchange="updateHash('Friday')">
+					<select id="FridayTimeIn" name="FridayTimeIn" onchange="updateHash('Friday')">
 						<option value='0' SELECTED>8:00 a.m.</option>
 						<option value='.5'>8:30 a.m.</option>
 						<option value='1'>9:00 a.m.</option>
@@ -485,7 +485,7 @@
 					</select>
 				</td>
 				<td>
-					<select id="FridayLunchIn" onchange="updateHash('Friday')">
+					<select id="FridayLunchIn" name="FridayLunchIn" onchange="updateHash('Friday')">
 						<option value='0' SELECTED>10:00 a.m.</option>
 						<option value='.5'>10:30 a.m.</option>
 						<option value='1'>11:00 a.m.</option>
@@ -502,7 +502,7 @@
 					</select>
 				</td>
 				<td>
-					<select id="FridayLunchOut" onchange="updateHash('Friday')">
+					<select id="FridayLunchOut" name="FridayLunchOut" onchange="updateHash('Friday')">
 						<option value='0' SELECTED>10:00 a.m.</option>
 						<option value='.5'>10:30 a.m.</option>
 						<option value='1'>11:00 a.m.</option>
@@ -519,7 +519,7 @@
 					</select>
 				</td>
 				<td>
-					<select id="FridayTimeOut" onchange="updateHash('Friday')">
+					<select id="FridayTimeOut" name="FridayTimeOut" onchange="updateHash('Friday')">
 						<option value='0' SELECTED>8:00 a.m.</option>
 						<option value='.5'>8:30 a.m.</option>
 						<option value='1'>9:00 a.m.</option>
@@ -550,7 +550,7 @@
 			<tr  height='50px'>
 				<td>Saturday</td>
 <td>
-					<select id="SaturdayTimeIn" onchange="updateHash('Saturday')">
+					<select id="SaturdayTimeIn" name="SaturdayTimeIn" onchange="updateHash('Saturday')">
 						<option value='0' SELECTED>8:00 a.m.</option>
 						<option value='.5'>8:30 a.m.</option>
 						<option value='1'>9:00 a.m.</option>
@@ -577,7 +577,7 @@
 					</select>
 				</td>
 				<td>
-					<select id="SaturdayLunchIn" onchange="updateHash('Saturday')">
+					<select id="SaturdayLunchIn" name="SaturdayLunchIn" onchange="updateHash('Saturday')">
 						<option value='0' SELECTED>10:00 a.m.</option>
 						<option value='.5'>10:30 a.m.</option>
 						<option value='1'>11:00 a.m.</option>
@@ -594,7 +594,7 @@
 					</select>
 				</td>
 				<td>
-					<select id="SaturdayLunchOut" onchange="updateHash('Saturday')">
+					<select id="SaturdayLunchOut" name="SaturdayLunchOut" onchange="updateHash('Saturday')">
 						<option value='0' SELECTED>10:00 a.m.</option>
 						<option value='.5'>10:30 a.m.</option>
 						<option value='1'>11:00 a.m.</option>
@@ -611,7 +611,7 @@
 					</select>
 				</td>
 				<td>
-					<select id="SaturdayTimeOut" onchange="updateHash('Saturday')">
+					<select id="SaturdayTimeOut" name="SaturdayTimeOut" onchange="updateHash('Saturday')">
 						<option value='0' SELECTED>8:00 a.m.</option>
 						<option value='.5'>8:30 a.m.</option>
 						<option value='1'>9:00 a.m.</option>
@@ -736,7 +736,7 @@
 
 				</td>
 				<td style='vertical-align: top; padding-right: 29px;' height='125px'>
-					<select style='height: 28px; margin-top: 10px;'>
+					<select name='manager' style='height: 28px; margin-top: 10px;'>
 						<option value='cyrus.fakour@blackbaud.com'>Cyrus Fakour</option>	
 					</select><br>
 						Select your manager
@@ -746,7 +746,7 @@
 					First and Last Name
 				</td>
 				<td height='55px' style='padding-right: 30px; padding-top: 1.6%; word-wrap: break-word; width: 200px; font-size: 12px;'>
-					<input onclick='scroll()' id="datepick" style='margin-bottom: 8px;'><br>
+					<input onclick='scroll()' name='weekof' id="datepick" style='margin-bottom: 8px;'><br>
 					Enter the date of the FRIDAY of the week for which you are submitting this time sheet
 				</td>
 				<td width='138px'>
