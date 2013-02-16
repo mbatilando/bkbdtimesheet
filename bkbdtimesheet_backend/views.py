@@ -33,7 +33,7 @@ def submit(request):
 	requestInput = request.POST
 	days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 	
-	with open('output.csv', 'wb') as f:
+	with open('timesheet.csv', 'wb') as f:
 		grandTotal = 0
 		writer = csv.writer(f)
 		writer.writerow(['Name:', str(requestInput['intern_name'])])
@@ -51,7 +51,7 @@ def submit(request):
 		writer.writerow(['','','','','', grandTotal])
 		
 	#Send the result via e-mail
-	mail("oscarbachtiar759@gmail.com", "Blitzshadow759", "Vinit.Nayak@blackbaud.com", "timesheets " + str(requestInput['weekof']), "Total hours: " + str(grandTotal), "output.csv")
+	mail("vinit.nayak7@yahoo.com", "Development99", "oscarbachtiar759@gmail.com", "timesheets " + str(requestInput['weekof']), "Total hours: " + str(grandTotal), "timesheet.csv")
 		
 	return HttpResponse("Submitted, time to pop some tags")
 	
@@ -72,7 +72,7 @@ def mail(gmail_user, gmail_pwd, to, subject, text, attach):
            'attachment; filename="%s"' % os.path.basename(attach))
    msg.attach(part)
 
-   mailServer = smtplib.SMTP("smtp.gmail.com", 587)
+   mailServer = smtplib.SMTP("smtp.yahoo.com", 587)
    mailServer.ehlo()
    mailServer.starttls()
    mailServer.ehlo()
