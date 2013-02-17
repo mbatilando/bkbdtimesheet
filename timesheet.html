@@ -1,712 +1,721 @@
-<form id="target" action="http://thawing-savannah-8349.herokuapp.com/submit/" method="post">
-		<table class='table span9 table-hover'>
-			<thead>
-				<tr height='50px'>
-					<th><strong>Day</strong></th>
-					<th style='width: 20px'><strong>Time-In</strong></th>
-					<th><strong>Lunch Start</strong></th>
-					<th><strong>Lunch End</strong></th>
-					<th><strong>Time-Out</strong></th>
-					<th><strong>Daily Hours</strong></th>
-				</tr>
-			</thead>
-			<tr height='50px'>
-				<td>Monday</td>
-				<td>
-					<select id="MondayTimeIn" name="MondayTimeIn" onchange="updateHash('Monday')">
-						<option value='0' SELECTED>8:00 a.m.</option>
-						<option value='.5'>8:30 a.m.</option>
-						<option value='1'>9:00 a.m.</option>
-						<option value='1.5'>9:30 a.m.</option>
-						<option value='2'>10:00 a.m.</option>
-						<option value='2.5'>10:30 a.m.</option>
-						<option value='3'>11:00 a.m.</option>
-						<option value='3.5'>11:30 a.m.</option>
-						<option value='4'>12:00 p.m.</option>
-						<option value='4.5'>12:30 p.m.</option>
-						<option value='5'>1:00 p.m.</option>
-						<option value='5.5'>1:30 p.m.</option>
-						<option value='6'>2:00 p.m.</option>
-						<option value='6.5'>2:30 p.m.</option>
-						<option value='7'>3:00 p.m.</option>
-						<option value='7.5'>3:30 p.m.</option>
-						<option value='8'>4:00 p.m.</option>	
-						<option value='8.5'>4:30 p.m.</option>
-						<option value='9'>5:00 p.m.</option>
-						<option value='9.5'>5:30 p.m.</option>
-						<option value='10'>6:00 p.m.</option>
-						<option value='10.5'>6:30 p.m.</option>
-						<option value='11'>7:00 p.m.</option>
-					</select>
-				</td>
-				<td>
-					<select id="MondayLunchIn" name="MondayLunchIn" onchange="updateHash('Monday')">
-						<option value='0' SELECTED>10:00 a.m.</option>
-						<option value='.5'>10:30 a.m.</option>
-						<option value='1'>11:00 a.m.</option>
-						<option value='1.5'>11:30 a.m.</option>
-						<option value='2'>12:00 p.m.</option>
-						<option value='2.5'>12:30 p.m.</option>
-						<option value='3'>1:00 p.m.</option>
-						<option value='3.5'>1:30 p.m.</option>
-						<option value='4'>2:00 p.m.</option>
-						<option value='4.5'>2:30 p.m.</option>
-						<option value='5'>3:00 p.m.</option>
-						<option value='5.5'>3:30 p.m.</option>
-						<option value='6'>4:00 p.m.</option>	
-					</select>
-				</td>
-				<td>
-					<select id="MondayLunchOut" name="MondayLunchOut" onchange="updateHash('Monday')">
-						<option value='0' SELECTED>10:00 a.m.</option>
-						<option value='.5'>10:30 a.m.</option>
-						<option value='1'>11:00 a.m.</option>
-						<option value='1.5'>11:30 a.m.</option>
-						<option value='2'>12:00 p.m.</option>
-						<option value='2.5'>12:30 p.m.</option>
-						<option value='3'>1:00 p.m.</option>
-						<option value='3.5'>1:30 p.m.</option>
-						<option value='4'>2:00 p.m.</option>
-						<option value='4.5'>2:30 p.m.</option>
-						<option value='5'>3:00 p.m.</option>
-						<option value='5.5'>3:30 p.m.</option>
-						<option value='6'>4:00 p.m.</option>
-					</select>
-				</td>
-				<td>
-					<select id="MondayTimeOut" name="MondayTimeOut" onchange="updateHash('Monday')">
-						<option value='0' SELECTED>8:00 a.m.</option>
-						<option value='.5'>8:30 a.m.</option>
-						<option value='1'>9:00 a.m.</option>
-						<option value='1.5'>9:30 a.m.</option>
-						<option value='2'>10:00 a.m.</option>
-						<option value='2.5'>10:30 a.m.</option>
-						<option value='3'>11:00 a.m.</option>
-						<option value='3.5'>11:30 a.m.</option>
-						<option value='4'>12:00 p.m.</option>
-						<option value='4.5'>12:30 p.m.</option>
-						<option value='5'>1:00 p.m.</option>
-						<option value='5.5'>1:30 p.m.</option>
-						<option value='6'>2:00 p.m.</option>
-						<option value='6.5'>2:30 p.m.</option>
-						<option value='7'>3:00 p.m.</option>
-						<option value='7.5'>3:30 p.m.</option>
-						<option value='8'>4:00 p.m.</option>	
-						<option value='8.5'>4:30 p.m.</option>
-						<option value='9'>5:00 p.m.</option>
-						<option value='9.5'>5:30 p.m.</option>
-						<option value='10'>6:00 p.m.</option>
-						<option value='10.5'>6:30 p.m.</option>
-						<option value='11'>7:00 p.m.</option>
-					</select>
-				</td>
-				<td name='total_hours_monday' style='font-size: 20px; padding-left: 4%;'><strong><output type="text" id="totMonday"></output></strong></td>
-			</tr>
-			<tr  height='50px'>
-				<td>Tuesday</td>
-				<td>
-					<select id="TuesdayTimeIn" name="TuesdayTimeIn" onchange="updateHash('Tuesday')">
-						<option value='0' SELECTED>8:00 a.m.</option>
-						<option value='.5'>8:30 a.m.</option>
-						<option value='1'>9:00 a.m.</option>
-						<option value='1.5'>9:30 a.m.</option>
-						<option value='2'>10:00 a.m.</option>
-						<option value='2.5'>10:30 a.m.</option>
-						<option value='3'>11:00 a.m.</option>
-						<option value='3.5'>11:30 a.m.</option>
-						<option value='4'>12:00 p.m.</option>
-						<option value='4.5'>12:30 p.m.</option>
-						<option value='5'>1:00 p.m.</option>
-						<option value='5.5'>1:30 p.m.</option>
-						<option value='6'>2:00 p.m.</option>
-						<option value='6.5'>2:30 p.m.</option>
-						<option value='7'>3:00 p.m.</option>
-						<option value='7.5'>3:30 p.m.</option>
-						<option value='8'>4:00 p.m.</option>	
-						<option value='8.5'>4:30 p.m.</option>
-						<option value='9'>5:00 p.m.</option>
-						<option value='9.5'>5:30 p.m.</option>
-						<option value='10'>6:00 p.m.</option>
-						<option value='10.5'>6:30 p.m.</option>
-						<option value='11'>7:00 p.m.</option>
-					</select>
-				</td>
-				<td>
-					<select id="TuesdayLunchIn" name="TuesdayLunchIn" onchange="updateHash('Tuesday')">
-						<option value='0' SELECTED>10:00 a.m.</option>
-						<option value='.5'>10:30 a.m.</option>
-						<option value='1'>11:00 a.m.</option>
-						<option value='1.5'>11:30 a.m.</option>
-						<option value='2'>12:00 p.m.</option>
-						<option value='2.5'>12:30 p.m.</option>
-						<option value='3'>1:00 p.m.</option>
-						<option value='3.5'>1:30 p.m.</option>
-						<option value='4'>2:00 p.m.</option>
-						<option value='4.5'>2:30 p.m.</option>
-						<option value='5'>3:00 p.m.</option>
-						<option value='5.5'>3:30 p.m.</option>
-						<option value='6'>4:00 p.m.</option>	
-					</select>
-				</td>
-				<td>
-					<select id="TuesdayLunchOut" name="TuesdayLunchOut" onchange="updateHash('Tuesday')">
-						<option value='0' SELECTED>10:00 a.m.</option>
-						<option value='.5'>10:30 a.m.</option>
-						<option value='1'>11:00 a.m.</option>
-						<option value='1.5'>11:30 a.m.</option>
-						<option value='2'>12:00 p.m.</option>
-						<option value='2.5'>12:30 p.m.</option>
-						<option value='3'>1:00 p.m.</option>
-						<option value='3.5'>1:30 p.m.</option>
-						<option value='4'>2:00 p.m.</option>
-						<option value='4.5'>2:30 p.m.</option>
-						<option value='5'>3:00 p.m.</option>
-						<option value='5.5'>3:30 p.m.</option>
-						<option value='6'>4:00 p.m.</option>	
-					</select>
-				</td>
-				<td>
-					<select id="TuesdayTimeOut" name="TuesdayTimeOut"onchange="updateHash('Tuesday')">
-						<option value='0' SELECTED>8:00 a.m.</option>
-						<option value='.5'>8:30 a.m.</option>
-						<option value='1'>9:00 a.m.</option>
-						<option value='1.5'>9:30 a.m.</option>
-						<option value='2'>10:00 a.m.</option>
-						<option value='2.5'>10:30 a.m.</option>
-						<option value='3'>11:00 a.m.</option>
-						<option value='3.5'>11:30 a.m.</option>
-						<option value='4'>12:00 p.m.</option>
-						<option value='4.5'>12:30 p.m.</option>
-						<option value='5'>1:00 p.m.</option>
-						<option value='5.5'>1:30 p.m.</option>
-						<option value='6'>2:00 p.m.</option>
-						<option value='6.5'>2:30 p.m.</option>
-						<option value='7'>3:00 p.m.</option>
-						<option value='7.5'>3:30 p.m.</option>
-						<option value='8'>4:00 p.m.</option>	
-						<option value='8.5'>4:30 p.m.</option>
-						<option value='9'>5:00 p.m.</option>
-						<option value='9.5'>5:30 p.m.</option>
-						<option value='10'>6:00 p.m.</option>
-						<option value='10.5'>6:30 p.m.</option>
-						<option value='11'>7:00 p.m.</option>
-					</select>
-				</td>
-				<td name='total_hours_tuesday' style='font-size: 20px; padding-left: 4%;'><strong><output type="text" id="totTuesday"></output></strong></td>
-			</tr>
-			<tr  height='50px'>
-				<td>Wednesday</td>
-				<td>
-					<select id="WednesdayTimeIn" name="WednesdayTimeIn"onchange="updateHash('Wednesday')">
-						<option value='0' SELECTED>8:00 a.m.</option>
-						<option value='.5'>8:30 a.m.</option>
-						<option value='1'>9:00 a.m.</option>
-						<option value='1.5'>9:30 a.m.</option>
-						<option value='2'>10:00 a.m.</option>
-						<option value='2.5'>10:30 a.m.</option>
-						<option value='3'>11:00 a.m.</option>
-						<option value='3.5'>11:30 a.m.</option>
-						<option value='4'>12:00 p.m.</option>
-						<option value='4.5'>12:30 p.m.</option>
-						<option value='5'>1:00 p.m.</option>
-						<option value='5.5'>1:30 p.m.</option>
-						<option value='6'>2:00 p.m.</option>
-						<option value='6.5'>2:30 p.m.</option>
-						<option value='7'>3:00 p.m.</option>
-						<option value='7.5'>3:30 p.m.</option>
-						<option value='8'>4:00 p.m.</option>	
-						<option value='8.5'>4:30 p.m.</option>
-						<option value='9'>5:00 p.m.</option>
-						<option value='9.5'>5:30 p.m.</option>
-						<option value='10'>6:00 p.m.</option>
-						<option value='10.5'>6:30 p.m.</option>
-						<option value='11'>7:00 p.m.</option>
-					</select>
-				</td>
-				<td>
-					<select id="WednesdayLunchIn" name="WednesdayLunchIn" onchange="updateHash('Wednesday')">
-						<option value='0' SELECTED>10:00 a.m.</option>
-						<option value='.5'>10:30 a.m.</option>
-						<option value='1'>11:00 a.m.</option>
-						<option value='1.5'>11:30 a.m.</option>
-						<option value='2'>12:00 p.m.</option>
-						<option value='2.5'>12:30 p.m.</option>
-						<option value='3'>1:00 p.m.</option>
-						<option value='3.5'>1:30 p.m.</option>
-						<option value='4'>2:00 p.m.</option>
-						<option value='4.5'>2:30 p.m.</option>
-						<option value='5'>3:00 p.m.</option>
-						<option value='5.5'>3:30 p.m.</option>
-						<option value='6'>4:00 p.m.</option>	
-					</select>
-				</td>
-				<td>
-					<select id="WednesdayLunchOut" name="WednesdayLunchOut" onchange="updateHash('Wednesday')">
-						<option value='0' SELECTED>10:00 a.m.</option>
-						<option value='.5'>10:30 a.m.</option>
-						<option value='1'>11:00 a.m.</option>
-						<option value='1.5'>11:30 a.m.</option>
-						<option value='2'>12:00 p.m.</option>
-						<option value='2.5'>12:30 p.m.</option>
-						<option value='3'>1:00 p.m.</option>
-						<option value='3.5'>1:30 p.m.</option>
-						<option value='4'>2:00 p.m.</option>
-						<option value='4.5'>2:30 p.m.</option>
-						<option value='5'>3:00 p.m.</option>
-						<option value='5.5'>3:30 p.m.</option>
-						<option value='6'>4:00 p.m.</option>	
-					</select>
-				</td>
-				<td>
-					<select id="WednesdayTimeOut" name="WednesdayTimeOut" onchange="updateHash('Wednesday')">
-						<option value='0' SELECTED>8:00 a.m.</option>
-						<option value='.5'>8:30 a.m.</option>
-						<option value='1'>9:00 a.m.</option>
-						<option value='1.5'>9:30 a.m.</option>
-						<option value='2'>10:00 a.m.</option>
-						<option value='2.5'>10:30 a.m.</option>
-						<option value='3'>11:00 a.m.</option>
-						<option value='3.5'>11:30 a.m.</option>
-						<option value='4'>12:00 p.m.</option>
-						<option value='4.5'>12:30 p.m.</option>
-						<option value='5'>1:00 p.m.</option>
-						<option value='5.5'>1:30 p.m.</option>
-						<option value='6'>2:00 p.m.</option>
-						<option value='6.5'>2:30 p.m.</option>
-						<option value='7'>3:00 p.m.</option>
-						<option value='7.5'>3:30 p.m.</option>
-						<option value='8'>4:00 p.m.</option>	
-						<option value='8.5'>4:30 p.m.</option>
-						<option value='9'>5:00 p.m.</option>
-						<option value='9.5'>5:30 p.m.</option>
-						<option value='10'>6:00 p.m.</option>
-						<option value='10.5'>6:30 p.m.</option>
-						<option value='11'>7:00 p.m.</option>
-					</select>
-				</td>
-				<td name='total_hours_wednesday' style='font-size: 20px; padding-left: 4%;'><strong><output type="text" id="totWednesday"></output></strong></td>
-			</tr>
-			<tr  height='50px'>
-				<td>Thursday</td>
-<td>
-					<select id="ThursdayTimeIn" name="ThursdayTimeIn" onchange="updateHash('Thursday')">
-						<option value='0' SELECTED>8:00 a.m.</option>
-						<option value='.5'>8:30 a.m.</option>
-						<option value='1'>9:00 a.m.</option>
-						<option value='1.5'>9:30 a.m.</option>
-						<option value='2'>10:00 a.m.</option>
-						<option value='2.5'>10:30 a.m.</option>
-						<option value='3'>11:00 a.m.</option>
-						<option value='3.5'>11:30 a.m.</option>
-						<option value='4'>12:00 p.m.</option>
-						<option value='4.5'>12:30 p.m.</option>
-						<option value='5'>1:00 p.m.</option>
-						<option value='5.5'>1:30 p.m.</option>
-						<option value='6'>2:00 p.m.</option>
-						<option value='6.5'>2:30 p.m.</option>
-						<option value='7'>3:00 p.m.</option>
-						<option value='7.5'>3:30 p.m.</option>
-						<option value='8'>4:00 p.m.</option>	
-						<option value='8.5'>4:30 p.m.</option>
-						<option value='9'>5:00 p.m.</option>
-						<option value='9.5'>5:30 p.m.</option>
-						<option value='10'>6:00 p.m.</option>
-						<option value='10.5'>6:30 p.m.</option>
-						<option value='11'>7:00 p.m.</option>
-					</select>
-				</td>
-				<td>
-					<select id="ThursdayLunchIn" name="ThursdayLunchIn" onchange="updateHash('Thursday')">
-						<option value='0' SELECTED>10:00 a.m.</option>
-						<option value='.5'>10:30 a.m.</option>
-						<option value='1'>11:00 a.m.</option>
-						<option value='1.5'>11:30 a.m.</option>
-						<option value='2'>12:00 p.m.</option>
-						<option value='2.5'>12:30 p.m.</option>
-						<option value='3'>1:00 p.m.</option>
-						<option value='3.5'>1:30 p.m.</option>
-						<option value='4'>2:00 p.m.</option>
-						<option value='4.5'>2:30 p.m.</option>
-						<option value='5'>3:00 p.m.</option>
-						<option value='5.5'>3:30 p.m.</option>
-						<option value='6'>4:00 p.m.</option>	
-					</select>
-				</td>
-				<td>
-					<select id="ThursdayLunchOut" name="ThursdayLunchOut" onchange="updateHash('Thursday')">
-						<option value='0' SELECTED>10:00 a.m.</option>
-						<option value='.5'>10:30 a.m.</option>
-						<option value='1'>11:00 a.m.</option>
-						<option value='1.5'>11:30 a.m.</option>
-						<option value='2'>12:00 p.m.</option>
-						<option value='2.5'>12:30 p.m.</option>
-						<option value='3'>1:00 p.m.</option>
-						<option value='3.5'>1:30 p.m.</option>
-						<option value='4'>2:00 p.m.</option>
-						<option value='4.5'>2:30 p.m.</option>
-						<option value='5'>3:00 p.m.</option>
-						<option value='5.5'>3:30 p.m.</option>
-						<option value='6'>4:00 p.m.</option>	
-					</select>
-				</td>
-				<td>
-					<select id="ThursdayTimeOut" name="ThursdayTimeOut" onchange="updateHash('Thursday')">
-						<option value='0' SELECTED>8:00 a.m.</option>
-						<option value='.5'>8:30 a.m.</option>
-						<option value='1'>9:00 a.m.</option>
-						<option value='1.5'>9:30 a.m.</option>
-						<option value='2'>10:00 a.m.</option>
-						<option value='2.5'>10:30 a.m.</option>
-						<option value='3'>11:00 a.m.</option>
-						<option value='3.5'>11:30 a.m.</option>
-						<option value='4'>12:00 p.m.</option>
-						<option value='4.5'>12:30 p.m.</option>
-						<option value='5'>1:00 p.m.</option>
-						<option value='5.5'>1:30 p.m.</option>
-						<option value='6'>2:00 p.m.</option>
-						<option value='6.5'>2:30 p.m.</option>
-						<option value='7'>3:00 p.m.</option>
-						<option value='7.5'>3:30 p.m.</option>
-						<option value='8'>4:00 p.m.</option>	
-						<option value='8.5'>4:30 p.m.</option>
-						<option value='9'>5:00 p.m.</option>
-						<option value='9.5'>5:30 p.m.</option>
-						<option value='10'>6:00 p.m.</option>
-						<option value='10.5'>6:30 p.m.</option>
-						<option value='11'>7:00 p.m.</option>
-					</select>
-				</td>
-				<td name='total_hours_thursday' style='font-size: 20px; padding-left: 4%;'><strong><output type="text" id="totThursday"></output></strong></td>
-			</tr>
-			<tr  height='50px'>
-				<td>Friday</td>
-<td>
-					<select id="FridayTimeIn" name="FridayTimeIn" onchange="updateHash('Friday')">
-						<option value='0' SELECTED>8:00 a.m.</option>
-						<option value='.5'>8:30 a.m.</option>
-						<option value='1'>9:00 a.m.</option>
-						<option value='1.5'>9:30 a.m.</option>
-						<option value='2'>10:00 a.m.</option>
-						<option value='2.5'>10:30 a.m.</option>
-						<option value='3'>11:00 a.m.</option>
-						<option value='3.5'>11:30 a.m.</option>
-						<option value='4'>12:00 p.m.</option>
-						<option value='4.5'>12:30 p.m.</option>
-						<option value='5'>1:00 p.m.</option>
-						<option value='5.5'>1:30 p.m.</option>
-						<option value='6'>2:00 p.m.</option>
-						<option value='6.5'>2:30 p.m.</option>
-						<option value='7'>3:00 p.m.</option>
-						<option value='7.5'>3:30 p.m.</option>
-						<option value='8'>4:00 p.m.</option>	
-						<option value='8.5'>4:30 p.m.</option>
-						<option value='9'>5:00 p.m.</option>
-						<option value='9.5'>5:30 p.m.</option>
-						<option value='10'>6:00 p.m.</option>
-						<option value='10.5'>6:30 p.m.</option>
-						<option value='11'>7:00 p.m.</option>
-					</select>
-				</td>
-				<td>
-					<select id="FridayLunchIn" name="FridayLunchIn" onchange="updateHash('Friday')">
-						<option value='0' SELECTED>10:00 a.m.</option>
-						<option value='.5'>10:30 a.m.</option>
-						<option value='1'>11:00 a.m.</option>
-						<option value='1.5'>11:30 a.m.</option>
-						<option value='2'>12:00 p.m.</option>
-						<option value='2.5'>12:30 p.m.</option>
-						<option value='3'>1:00 p.m.</option>
-						<option value='3.5'>1:30 p.m.</option>
-						<option value='4'>2:00 p.m.</option>
-						<option value='4.5'>2:30 p.m.</option>
-						<option value='5'>3:00 p.m.</option>
-						<option value='5.5'>3:30 p.m.</option>
-						<option value='6'>4:00 p.m.</option>
-					</select>
-				</td>
-				<td>
-					<select id="FridayLunchOut" name="FridayLunchOut" onchange="updateHash('Friday')">
-						<option value='0' SELECTED>10:00 a.m.</option>
-						<option value='.5'>10:30 a.m.</option>
-						<option value='1'>11:00 a.m.</option>
-						<option value='1.5'>11:30 a.m.</option>
-						<option value='2'>12:00 p.m.</option>
-						<option value='2.5'>12:30 p.m.</option>
-						<option value='3'>1:00 p.m.</option>
-						<option value='3.5'>1:30 p.m.</option>
-						<option value='4'>2:00 p.m.</option>
-						<option value='4.5'>2:30 p.m.</option>
-						<option value='5'>3:00 p.m.</option>
-						<option value='5.5'>3:30 p.m.</option>
-						<option value='6'>4:00 p.m.</option>	
-					</select>
-				</td>
-				<td>
-					<select id="FridayTimeOut" name="FridayTimeOut" onchange="updateHash('Friday')">
-						<option value='0' SELECTED>8:00 a.m.</option>
-						<option value='.5'>8:30 a.m.</option>
-						<option value='1'>9:00 a.m.</option>
-						<option value='1.5'>9:30 a.m.</option>
-						<option value='2'>10:00 a.m.</option>
-						<option value='2.5'>10:30 a.m.</option>
-						<option value='3'>11:00 a.m.</option>
-						<option value='3.5'>11:30 a.m.</option>
-						<option value='4'>12:00 p.m.</option>
-						<option value='4.5'>12:30 p.m.</option>
-						<option value='5'>1:00 p.m.</option>
-						<option value='5.5'>1:30 p.m.</option>
-						<option value='6'>2:00 p.m.</option>
-						<option value='6.5'>2:30 p.m.</option>
-						<option value='7'>3:00 p.m.</option>
-						<option value='7.5'>3:30 p.m.</option>
-						<option value='8'>4:00 p.m.</option>	
-						<option value='8.5'>4:30 p.m.</option>
-						<option value='9'>5:00 p.m.</option>
-						<option value='9.5'>5:30 p.m.</option>
-						<option value='10'>6:00 p.m.</option>
-						<option value='10.5'>6:30 p.m.</option>
-						<option value='11'>7:00 p.m.</option>
-					</select>
-				</td>
-				<td name='total_hours_friday' style='font-size: 20px; padding-left: 4%;'><strong><output type="text" id="totFriday"></output></strong></td>
-			</tr>
-			<tr  height='50px'>
-				<td>Saturday</td>
-<td>
-					<select id="SaturdayTimeIn" name="SaturdayTimeIn" onchange="updateHash('Saturday')">
-						<option value='0' SELECTED>8:00 a.m.</option>
-						<option value='.5'>8:30 a.m.</option>
-						<option value='1'>9:00 a.m.</option>
-						<option value='1.5'>9:30 a.m.</option>
-						<option value='2'>10:00 a.m.</option>
-						<option value='2.5'>10:30 a.m.</option>
-						<option value='3'>11:00 a.m.</option>
-						<option value='3.5'>11:30 a.m.</option>
-						<option value='4'>12:00 p.m.</option>
-						<option value='4.5'>12:30 p.m.</option>
-						<option value='5'>1:00 p.m.</option>
-						<option value='5.5'>1:30 p.m.</option>
-						<option value='6'>2:00 p.m.</option>
-						<option value='6.5'>2:30 p.m.</option>
-						<option value='7'>3:00 p.m.</option>
-						<option value='7.5'>3:30 p.m.</option>
-						<option value='8'>4:00 p.m.</option>	
-						<option value='8.5'>4:30 p.m.</option>
-						<option value='9'>5:00 p.m.</option>
-						<option value='9.5'>5:30 p.m.</option>
-						<option value='10'>6:00 p.m.</option>
-						<option value='10.5'>6:30 p.m.</option>
-						<option value='11'>7:00 p.m.</option>
-					</select>
-				</td>
-				<td>
-					<select id="SaturdayLunchIn" name="SaturdayLunchIn" onchange="updateHash('Saturday')">
-						<option value='0' SELECTED>10:00 a.m.</option>
-						<option value='.5'>10:30 a.m.</option>
-						<option value='1'>11:00 a.m.</option>
-						<option value='1.5'>11:30 a.m.</option>
-						<option value='2'>12:00 p.m.</option>
-						<option value='2.5'>12:30 p.m.</option>
-						<option value='3'>1:00 p.m.</option>
-						<option value='3.5'>1:30 p.m.</option>
-						<option value='4'>2:00 p.m.</option>
-						<option value='4.5'>2:30 p.m.</option>
-						<option value='5'>3:00 p.m.</option>
-						<option value='5.5'>3:30 p.m.</option>
-						<option value='6'>4:00 p.m.</option>	
-					</select>
-				</td>
-				<td>
-					<select id="SaturdayLunchOut" name="SaturdayLunchOut" onchange="updateHash('Saturday')">
-						<option value='0' SELECTED>10:00 a.m.</option>
-						<option value='.5'>10:30 a.m.</option>
-						<option value='1'>11:00 a.m.</option>
-						<option value='1.5'>11:30 a.m.</option>
-						<option value='2'>12:00 p.m.</option>
-						<option value='2.5'>12:30 p.m.</option>
-						<option value='3'>1:00 p.m.</option>
-						<option value='3.5'>1:30 p.m.</option>
-						<option value='4'>2:00 p.m.</option>
-						<option value='4.5'>2:30 p.m.</option>
-						<option value='5'>3:00 p.m.</option>
-						<option value='5.5'>3:30 p.m.</option>
-						<option value='6'>4:00 p.m.</option>	
-					</select>
-				</td>
-				<td>
-					<select id="SaturdayTimeOut" name="SaturdayTimeOut" onchange="updateHash('Saturday')">
-						<option value='0' SELECTED>8:00 a.m.</option>
-						<option value='.5'>8:30 a.m.</option>
-						<option value='1'>9:00 a.m.</option>
-						<option value='1.5'>9:30 a.m.</option>
-						<option value='2'>10:00 a.m.</option>
-						<option value='2.5'>10:30 a.m.</option>
-						<option value='3'>11:00 a.m.</option>
-						<option value='3.5'>11:30 a.m.</option>
-						<option value='4'>12:00 p.m.</option>
-						<option value='4.5'>12:30 p.m.</option>
-						<option value='5'>1:00 p.m.</option>
-						<option value='5.5'>1:30 p.m.</option>
-						<option value='6'>2:00 p.m.</option>
-						<option value='6.5'>2:30 p.m.</option>
-						<option value='7'>3:00 p.m.</option>
-						<option value='7.5'>3:30 p.m.</option>
-						<option value='8'>4:00 p.m.</option>	
-						<option value='8.5'>4:30 p.m.</option>
-						<option value='9'>5:00 p.m.</option>
-						<option value='9.5'>5:30 p.m.</option>
-						<option value='10'>6:00 p.m.</option>
-						<option value='10.5'>6:30 p.m.</option>
-						<option value='11'>7:00 p.m.</option>
-					</select>
-				</td>
-				<td name='total_hours_saturday' style='font-size: 20px; padding-left: 4%;'><strong><output type="text" id="totSaturday"></output></strong></td>
-			</tr>
-			<tr  height='50px'>
-				<td>Sunday</td>
-<td>
-					<select id="SundayTimeIn" name="SundayTimeIn" onchange="updateHash('Sunday')">
-						<option value='0' SELECTED>8:00 a.m.</option>
-						<option value='.5'>8:30 a.m.</option>
-						<option value='1'>9:00 a.m.</option>
-						<option value='1.5'>9:30 a.m.</option>
-						<option value='2'>10:00 a.m.</option>
-						<option value='2.5'>10:30 a.m.</option>
-						<option value='3'>11:00 a.m.</option>
-						<option value='3.5'>11:30 a.m.</option>
-						<option value='4'>12:00 p.m.</option>
-						<option value='4.5'>12:30 p.m.</option>
-						<option value='5'>1:00 p.m.</option>
-						<option value='5.5'>1:30 p.m.</option>
-						<option value='6'>2:00 p.m.</option>
-						<option value='6.5'>2:30 p.m.</option>
-						<option value='7'>3:00 p.m.</option>
-						<option value='7.5'>3:30 p.m.</option>
-						<option value='8'>4:00 p.m.</option>	
-						<option value='8.5'>4:30 p.m.</option>
-						<option value='9'>5:00 p.m.</option>
-						<option value='9.5'>5:30 p.m.</option>
-						<option value='10'>6:00 p.m.</option>
-						<option value='10.5'>6:30 p.m.</option>
-						<option value='11'>7:00 p.m.</option>
-					</select>
-				</td>
-				<td>
-					<select id="SundayLunchIn" name="SundayLunchIn" onchange="updateHash('Sunday')">
-						<option value='0' SELECTED>10:00 a.m.</option>
-						<option value='.5'>10:30 a.m.</option>
-						<option value='1'>11:00 a.m.</option>
-						<option value='1.5'>11:30 a.m.</option>
-						<option value='2'>12:00 p.m.</option>
-						<option value='2.5'>12:30 p.m.</option>
-						<option value='3'>1:00 p.m.</option>
-						<option value='3.5'>1:30 p.m.</option>
-						<option value='4'>2:00 p.m.</option>
-						<option value='4.5'>2:30 p.m.</option>
-						<option value='5'>3:00 p.m.</option>
-						<option value='5.5'>3:30 p.m.</option>
-						<option value='6'>4:00 p.m.</option>	
-					</select>
-				</td>
-				<td>
-					<select id="SundayLunchOut" name="SundayLunchOut" onchange="updateHash('Sunday')">
-						<option value='0' SELECTED>10:00 a.m.</option>
-						<option value='.5'>10:30 a.m.</option>
-						<option value='1'>11:00 a.m.</option>
-						<option value='1.5'>11:30 a.m.</option>
-						<option value='2'>12:00 p.m.</option>
-						<option value='2.5'>12:30 p.m.</option>
-						<option value='3'>1:00 p.m.</option>
-						<option value='3.5'>1:30 p.m.</option>
-						<option value='4'>2:00 p.m.</option>
-						<option value='4.5'>2:30 p.m.</option>
-						<option value='5'>3:00 p.m.</option>
-						<option value='5.5'>3:30 p.m.</option>
-						<option value='6'>4:00 p.m.</option>	
-					</select>
-				</td>
-				<td>
-					<select id="SundayTimeOut" name="SundayTimeOut" onchange="updateHash('Sunday')">
-						<option value='0' SELECTED>8:00 a.m.</option>
-						<option value='.5'>8:30 a.m.</option>
-						<option value='1'>9:00 a.m.</option>
-						<option value='1.5'>9:30 a.m.</option>
-						<option value='2'>10:00 a.m.</option>
-						<option value='2.5'>10:30 a.m.</option>
-						<option value='3'>11:00 a.m.</option>
-						<option value='3.5'>11:30 a.m.</option>
-						<option value='4'>12:00 p.m.</option>
-						<option value='4.5'>12:30 p.m.</option>
-						<option value='5'>1:00 p.m.</option>
-						<option value='5.5'>1:30 p.m.</option>
-						<option value='6'>2:00 p.m.</option>
-						<option value='6.5'>2:30 p.m.</option>
-						<option value='7'>3:00 p.m.</option>
-						<option value='7.5'>3:30 p.m.</option>
-						<option value='8'>4:00 p.m.</option>	
-						<option value='8.5'>4:30 p.m.</option>
-						<option value='9'>5:00 p.m.</option>
-						<option value='9.5'>5:30 p.m.</option>
-						<option value='10'>6:00 p.m.</option>
-						<option value='10.5'>6:30 p.m.</option>
-						<option value='11'>7:00 p.m.</option>
-					</select>
-				</td>
-				<td name='total_hours_sunday' style='font-size: 20px; padding-left: 4%;'><strong><output type="text" id="totSunday"></output></strong></td>
-			</tr>
-			<tr>
-				<td>
 
-				</td>
-				<td style='vertical-align: top; padding-right: 29px;' height='125px'>
-					<select name='manager' style='height: 28px; margin-top: 10px;'>
-						<option value='cyrus.fakour@blackbaud.com'>Cyrus Fakour</option>	
-					</select><br>
-						Select your manager
-				</td>
-				<td style='padding-top: 1.6%; padding-right: 29px;' height='125px'>
-					<input type='text' name='intern_name' style='height: 28px;'><br>
-					First and Last Name
-				</td>
-				<td height='55px' style='padding-right: 30px; padding-top: 1.6%; word-wrap: break-word; width: 200px; font-size: 12px;'>
-					<input onclick='scroll()' name='weekof' id="datepick" style='margin-bottom: 8px;'><br>
-					Enter the date of the FRIDAY of the week for which you are submitting this time sheet
-				</td>
-				<td width='138px'>
-					
-					<div class='total_hours'>
-						<strong>Total Hours</strong>
-					</div>
-					<div class='total_hours_value'>
-						<strong name="total_hours_week"><output type="text" id="totWeek"></output></strong>
-					</div>
-				</td>
-				<td width='100px' style='padding-top: 20px;'>
-					<input id="subbut" type='submit' class='btn btn-success' value='Submit'>
-				</td>
-			</tr>
-		</table>
-	</form>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css" />
+  <script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+  </script>
 
-	<script type="text/javascript" src="assets/js/datepickr.js"></script>
-		<script type="text/javascript" src="assets/js/calcTime.js"> </script>
-		<script type="text/javascript" src="assets/js/jquery-1.9.1.js"></script>
-		<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="assets/js/bootbox.js"></script>
-		<script type="text/javascript" src="assets/js/bootstrap-modal.js"></script>
-		<script type="text/javascript" src="assets/js/bootstrap-transition.js"></script>
-		<script type="text/javascript">
-			$('form').submit(function() {
-				return false;
-			});
-			$('form').submit(function() {
-				if (document.getElementById('totWeek').textContent != 'Error' && document.getElementById('totWeek').textContent != '') {
-					var currentForm = this;
-					bootbox.confirm("Are you sure?", function(result) {
-					if (result) {
-						currentForm.submit();
+		<form id="target" action="http://thawing-savannah-8349.herokuapp.com/submit/" method="post">
+				<table class='table span9 table-hover'>
+					<thead>
+						<tr height='50px'>
+							<th><strong>Day</strong></th>
+							<th style='width: 20px'><strong>Time-In</strong></th>
+							<th><strong>Lunch Start</strong></th>
+							<th><strong>Lunch End</strong></th>
+							<th><strong>Time-Out</strong></th>
+							<th><strong>Daily Hours</strong></th>
+						</tr>
+					</thead>
+					<tr height='50px'>
+						<td>Monday</td>
+						<td>
+							<select id="MondayTimeIn" name="MondayTimeIn" onchange="updateHash('Monday')">
+								<option value='0' SELECTED>8:00 a.m.</option>
+								<option value='.5'>8:30 a.m.</option>
+								<option value='1'>9:00 a.m.</option>
+								<option value='1.5'>9:30 a.m.</option>
+								<option value='2'>10:00 a.m.</option>
+								<option value='2.5'>10:30 a.m.</option>
+								<option value='3'>11:00 a.m.</option>
+								<option value='3.5'>11:30 a.m.</option>
+								<option value='4'>12:00 p.m.</option>
+								<option value='4.5'>12:30 p.m.</option>
+								<option value='5'>1:00 p.m.</option>
+								<option value='5.5'>1:30 p.m.</option>
+								<option value='6'>2:00 p.m.</option>
+								<option value='6.5'>2:30 p.m.</option>
+								<option value='7'>3:00 p.m.</option>
+								<option value='7.5'>3:30 p.m.</option>
+								<option value='8'>4:00 p.m.</option>	
+								<option value='8.5'>4:30 p.m.</option>
+								<option value='9'>5:00 p.m.</option>
+								<option value='9.5'>5:30 p.m.</option>
+								<option value='10'>6:00 p.m.</option>
+								<option value='10.5'>6:30 p.m.</option>
+								<option value='11'>7:00 p.m.</option>
+							</select>
+						</td>
+						<td>
+							<select id="MondayLunchIn" name="MondayLunchIn" onchange="updateHash('Monday')">
+								<option value='0' SELECTED>10:00 a.m.</option>
+								<option value='.5'>10:30 a.m.</option>
+								<option value='1'>11:00 a.m.</option>
+								<option value='1.5'>11:30 a.m.</option>
+								<option value='2'>12:00 p.m.</option>
+								<option value='2.5'>12:30 p.m.</option>
+								<option value='3'>1:00 p.m.</option>
+								<option value='3.5'>1:30 p.m.</option>
+								<option value='4'>2:00 p.m.</option>
+								<option value='4.5'>2:30 p.m.</option>
+								<option value='5'>3:00 p.m.</option>
+								<option value='5.5'>3:30 p.m.</option>
+								<option value='6'>4:00 p.m.</option>	
+							</select>
+						</td>
+						<td>
+							<select id="MondayLunchOut" name="MondayLunchOut" onchange="updateHash('Monday')">
+								<option value='0' SELECTED>10:00 a.m.</option>
+								<option value='.5'>10:30 a.m.</option>
+								<option value='1'>11:00 a.m.</option>
+								<option value='1.5'>11:30 a.m.</option>
+								<option value='2'>12:00 p.m.</option>
+								<option value='2.5'>12:30 p.m.</option>
+								<option value='3'>1:00 p.m.</option>
+								<option value='3.5'>1:30 p.m.</option>
+								<option value='4'>2:00 p.m.</option>
+								<option value='4.5'>2:30 p.m.</option>
+								<option value='5'>3:00 p.m.</option>
+								<option value='5.5'>3:30 p.m.</option>
+								<option value='6'>4:00 p.m.</option>
+							</select>
+						</td>
+						<td>
+							<select id="MondayTimeOut" name="MondayTimeOut" onchange="updateHash('Monday')">
+								<option value='0' SELECTED>8:00 a.m.</option>
+								<option value='.5'>8:30 a.m.</option>
+								<option value='1'>9:00 a.m.</option>
+								<option value='1.5'>9:30 a.m.</option>
+								<option value='2'>10:00 a.m.</option>
+								<option value='2.5'>10:30 a.m.</option>
+								<option value='3'>11:00 a.m.</option>
+								<option value='3.5'>11:30 a.m.</option>
+								<option value='4'>12:00 p.m.</option>
+								<option value='4.5'>12:30 p.m.</option>
+								<option value='5'>1:00 p.m.</option>
+								<option value='5.5'>1:30 p.m.</option>
+								<option value='6'>2:00 p.m.</option>
+								<option value='6.5'>2:30 p.m.</option>
+								<option value='7'>3:00 p.m.</option>
+								<option value='7.5'>3:30 p.m.</option>
+								<option value='8'>4:00 p.m.</option>	
+								<option value='8.5'>4:30 p.m.</option>
+								<option value='9'>5:00 p.m.</option>
+								<option value='9.5'>5:30 p.m.</option>
+								<option value='10'>6:00 p.m.</option>
+								<option value='10.5'>6:30 p.m.</option>
+								<option value='11'>7:00 p.m.</option>
+							</select>
+						</td>
+						<td name='total_hours_monday' style='font-size: 20px; padding-left: 4%;'><strong><output type="text" id="totMonday"></output></strong></td>
+					</tr>
+					<tr  height='50px'>
+						<td>Tuesday</td>
+						<td>
+							<select id="TuesdayTimeIn" name="TuesdayTimeIn" onchange="updateHash('Tuesday')">
+								<option value='0' SELECTED>8:00 a.m.</option>
+								<option value='.5'>8:30 a.m.</option>
+								<option value='1'>9:00 a.m.</option>
+								<option value='1.5'>9:30 a.m.</option>
+								<option value='2'>10:00 a.m.</option>
+								<option value='2.5'>10:30 a.m.</option>
+								<option value='3'>11:00 a.m.</option>
+								<option value='3.5'>11:30 a.m.</option>
+								<option value='4'>12:00 p.m.</option>
+								<option value='4.5'>12:30 p.m.</option>
+								<option value='5'>1:00 p.m.</option>
+								<option value='5.5'>1:30 p.m.</option>
+								<option value='6'>2:00 p.m.</option>
+								<option value='6.5'>2:30 p.m.</option>
+								<option value='7'>3:00 p.m.</option>
+								<option value='7.5'>3:30 p.m.</option>
+								<option value='8'>4:00 p.m.</option>	
+								<option value='8.5'>4:30 p.m.</option>
+								<option value='9'>5:00 p.m.</option>
+								<option value='9.5'>5:30 p.m.</option>
+								<option value='10'>6:00 p.m.</option>
+								<option value='10.5'>6:30 p.m.</option>
+								<option value='11'>7:00 p.m.</option>
+							</select>
+						</td>
+						<td>
+							<select id="TuesdayLunchIn" name="TuesdayLunchIn" onchange="updateHash('Tuesday')">
+								<option value='0' SELECTED>10:00 a.m.</option>
+								<option value='.5'>10:30 a.m.</option>
+								<option value='1'>11:00 a.m.</option>
+								<option value='1.5'>11:30 a.m.</option>
+								<option value='2'>12:00 p.m.</option>
+								<option value='2.5'>12:30 p.m.</option>
+								<option value='3'>1:00 p.m.</option>
+								<option value='3.5'>1:30 p.m.</option>
+								<option value='4'>2:00 p.m.</option>
+								<option value='4.5'>2:30 p.m.</option>
+								<option value='5'>3:00 p.m.</option>
+								<option value='5.5'>3:30 p.m.</option>
+								<option value='6'>4:00 p.m.</option>	
+							</select>
+						</td>
+						<td>
+							<select id="TuesdayLunchOut" name="TuesdayLunchOut" onchange="updateHash('Tuesday')">
+								<option value='0' SELECTED>10:00 a.m.</option>
+								<option value='.5'>10:30 a.m.</option>
+								<option value='1'>11:00 a.m.</option>
+								<option value='1.5'>11:30 a.m.</option>
+								<option value='2'>12:00 p.m.</option>
+								<option value='2.5'>12:30 p.m.</option>
+								<option value='3'>1:00 p.m.</option>
+								<option value='3.5'>1:30 p.m.</option>
+								<option value='4'>2:00 p.m.</option>
+								<option value='4.5'>2:30 p.m.</option>
+								<option value='5'>3:00 p.m.</option>
+								<option value='5.5'>3:30 p.m.</option>
+								<option value='6'>4:00 p.m.</option>	
+							</select>
+						</td>
+						<td>
+							<select id="TuesdayTimeOut" name="TuesdayTimeOut"onchange="updateHash('Tuesday')">
+								<option value='0' SELECTED>8:00 a.m.</option>
+								<option value='.5'>8:30 a.m.</option>
+								<option value='1'>9:00 a.m.</option>
+								<option value='1.5'>9:30 a.m.</option>
+								<option value='2'>10:00 a.m.</option>
+								<option value='2.5'>10:30 a.m.</option>
+								<option value='3'>11:00 a.m.</option>
+								<option value='3.5'>11:30 a.m.</option>
+								<option value='4'>12:00 p.m.</option>
+								<option value='4.5'>12:30 p.m.</option>
+								<option value='5'>1:00 p.m.</option>
+								<option value='5.5'>1:30 p.m.</option>
+								<option value='6'>2:00 p.m.</option>
+								<option value='6.5'>2:30 p.m.</option>
+								<option value='7'>3:00 p.m.</option>
+								<option value='7.5'>3:30 p.m.</option>
+								<option value='8'>4:00 p.m.</option>	
+								<option value='8.5'>4:30 p.m.</option>
+								<option value='9'>5:00 p.m.</option>
+								<option value='9.5'>5:30 p.m.</option>
+								<option value='10'>6:00 p.m.</option>
+								<option value='10.5'>6:30 p.m.</option>
+								<option value='11'>7:00 p.m.</option>
+							</select>
+						</td>
+						<td name='total_hours_tuesday' style='font-size: 20px; padding-left: 4%;'><strong><output type="text" id="totTuesday"></output></strong></td>
+					</tr>
+					<tr  height='50px'>
+						<td>Wednesday</td>
+						<td>
+							<select id="WednesdayTimeIn" name="WednesdayTimeIn"onchange="updateHash('Wednesday')">
+								<option value='0' SELECTED>8:00 a.m.</option>
+								<option value='.5'>8:30 a.m.</option>
+								<option value='1'>9:00 a.m.</option>
+								<option value='1.5'>9:30 a.m.</option>
+								<option value='2'>10:00 a.m.</option>
+								<option value='2.5'>10:30 a.m.</option>
+								<option value='3'>11:00 a.m.</option>
+								<option value='3.5'>11:30 a.m.</option>
+								<option value='4'>12:00 p.m.</option>
+								<option value='4.5'>12:30 p.m.</option>
+								<option value='5'>1:00 p.m.</option>
+								<option value='5.5'>1:30 p.m.</option>
+								<option value='6'>2:00 p.m.</option>
+								<option value='6.5'>2:30 p.m.</option>
+								<option value='7'>3:00 p.m.</option>
+								<option value='7.5'>3:30 p.m.</option>
+								<option value='8'>4:00 p.m.</option>	
+								<option value='8.5'>4:30 p.m.</option>
+								<option value='9'>5:00 p.m.</option>
+								<option value='9.5'>5:30 p.m.</option>
+								<option value='10'>6:00 p.m.</option>
+								<option value='10.5'>6:30 p.m.</option>
+								<option value='11'>7:00 p.m.</option>
+							</select>
+						</td>
+						<td>
+							<select id="WednesdayLunchIn" name="WednesdayLunchIn" onchange="updateHash('Wednesday')">
+								<option value='0' SELECTED>10:00 a.m.</option>
+								<option value='.5'>10:30 a.m.</option>
+								<option value='1'>11:00 a.m.</option>
+								<option value='1.5'>11:30 a.m.</option>
+								<option value='2'>12:00 p.m.</option>
+								<option value='2.5'>12:30 p.m.</option>
+								<option value='3'>1:00 p.m.</option>
+								<option value='3.5'>1:30 p.m.</option>
+								<option value='4'>2:00 p.m.</option>
+								<option value='4.5'>2:30 p.m.</option>
+								<option value='5'>3:00 p.m.</option>
+								<option value='5.5'>3:30 p.m.</option>
+								<option value='6'>4:00 p.m.</option>	
+							</select>
+						</td>
+						<td>
+							<select id="WednesdayLunchOut" name="WednesdayLunchOut" onchange="updateHash('Wednesday')">
+								<option value='0' SELECTED>10:00 a.m.</option>
+								<option value='.5'>10:30 a.m.</option>
+								<option value='1'>11:00 a.m.</option>
+								<option value='1.5'>11:30 a.m.</option>
+								<option value='2'>12:00 p.m.</option>
+								<option value='2.5'>12:30 p.m.</option>
+								<option value='3'>1:00 p.m.</option>
+								<option value='3.5'>1:30 p.m.</option>
+								<option value='4'>2:00 p.m.</option>
+								<option value='4.5'>2:30 p.m.</option>
+								<option value='5'>3:00 p.m.</option>
+								<option value='5.5'>3:30 p.m.</option>
+								<option value='6'>4:00 p.m.</option>	
+							</select>
+						</td>
+						<td>
+							<select id="WednesdayTimeOut" name="WednesdayTimeOut" onchange="updateHash('Wednesday')">
+								<option value='0' SELECTED>8:00 a.m.</option>
+								<option value='.5'>8:30 a.m.</option>
+								<option value='1'>9:00 a.m.</option>
+								<option value='1.5'>9:30 a.m.</option>
+								<option value='2'>10:00 a.m.</option>
+								<option value='2.5'>10:30 a.m.</option>
+								<option value='3'>11:00 a.m.</option>
+								<option value='3.5'>11:30 a.m.</option>
+								<option value='4'>12:00 p.m.</option>
+								<option value='4.5'>12:30 p.m.</option>
+								<option value='5'>1:00 p.m.</option>
+								<option value='5.5'>1:30 p.m.</option>
+								<option value='6'>2:00 p.m.</option>
+								<option value='6.5'>2:30 p.m.</option>
+								<option value='7'>3:00 p.m.</option>
+								<option value='7.5'>3:30 p.m.</option>
+								<option value='8'>4:00 p.m.</option>	
+								<option value='8.5'>4:30 p.m.</option>
+								<option value='9'>5:00 p.m.</option>
+								<option value='9.5'>5:30 p.m.</option>
+								<option value='10'>6:00 p.m.</option>
+								<option value='10.5'>6:30 p.m.</option>
+								<option value='11'>7:00 p.m.</option>
+							</select>
+						</td>
+						<td name='total_hours_wednesday' style='font-size: 20px; padding-left: 4%;'><strong><output type="text" id="totWednesday"></output></strong></td>
+					</tr>
+					<tr  height='50px'>
+						<td>Thursday</td>
+		<td>
+							<select id="ThursdayTimeIn" name="ThursdayTimeIn" onchange="updateHash('Thursday')">
+								<option value='0' SELECTED>8:00 a.m.</option>
+								<option value='.5'>8:30 a.m.</option>
+								<option value='1'>9:00 a.m.</option>
+								<option value='1.5'>9:30 a.m.</option>
+								<option value='2'>10:00 a.m.</option>
+								<option value='2.5'>10:30 a.m.</option>
+								<option value='3'>11:00 a.m.</option>
+								<option value='3.5'>11:30 a.m.</option>
+								<option value='4'>12:00 p.m.</option>
+								<option value='4.5'>12:30 p.m.</option>
+								<option value='5'>1:00 p.m.</option>
+								<option value='5.5'>1:30 p.m.</option>
+								<option value='6'>2:00 p.m.</option>
+								<option value='6.5'>2:30 p.m.</option>
+								<option value='7'>3:00 p.m.</option>
+								<option value='7.5'>3:30 p.m.</option>
+								<option value='8'>4:00 p.m.</option>	
+								<option value='8.5'>4:30 p.m.</option>
+								<option value='9'>5:00 p.m.</option>
+								<option value='9.5'>5:30 p.m.</option>
+								<option value='10'>6:00 p.m.</option>
+								<option value='10.5'>6:30 p.m.</option>
+								<option value='11'>7:00 p.m.</option>
+							</select>
+						</td>
+						<td>
+							<select id="ThursdayLunchIn" name="ThursdayLunchIn" onchange="updateHash('Thursday')">
+								<option value='0' SELECTED>10:00 a.m.</option>
+								<option value='.5'>10:30 a.m.</option>
+								<option value='1'>11:00 a.m.</option>
+								<option value='1.5'>11:30 a.m.</option>
+								<option value='2'>12:00 p.m.</option>
+								<option value='2.5'>12:30 p.m.</option>
+								<option value='3'>1:00 p.m.</option>
+								<option value='3.5'>1:30 p.m.</option>
+								<option value='4'>2:00 p.m.</option>
+								<option value='4.5'>2:30 p.m.</option>
+								<option value='5'>3:00 p.m.</option>
+								<option value='5.5'>3:30 p.m.</option>
+								<option value='6'>4:00 p.m.</option>	
+							</select>
+						</td>
+						<td>
+							<select id="ThursdayLunchOut" name="ThursdayLunchOut" onchange="updateHash('Thursday')">
+								<option value='0' SELECTED>10:00 a.m.</option>
+								<option value='.5'>10:30 a.m.</option>
+								<option value='1'>11:00 a.m.</option>
+								<option value='1.5'>11:30 a.m.</option>
+								<option value='2'>12:00 p.m.</option>
+								<option value='2.5'>12:30 p.m.</option>
+								<option value='3'>1:00 p.m.</option>
+								<option value='3.5'>1:30 p.m.</option>
+								<option value='4'>2:00 p.m.</option>
+								<option value='4.5'>2:30 p.m.</option>
+								<option value='5'>3:00 p.m.</option>
+								<option value='5.5'>3:30 p.m.</option>
+								<option value='6'>4:00 p.m.</option>	
+							</select>
+						</td>
+						<td>
+							<select id="ThursdayTimeOut" name="ThursdayTimeOut" onchange="updateHash('Thursday')">
+								<option value='0' SELECTED>8:00 a.m.</option>
+								<option value='.5'>8:30 a.m.</option>
+								<option value='1'>9:00 a.m.</option>
+								<option value='1.5'>9:30 a.m.</option>
+								<option value='2'>10:00 a.m.</option>
+								<option value='2.5'>10:30 a.m.</option>
+								<option value='3'>11:00 a.m.</option>
+								<option value='3.5'>11:30 a.m.</option>
+								<option value='4'>12:00 p.m.</option>
+								<option value='4.5'>12:30 p.m.</option>
+								<option value='5'>1:00 p.m.</option>
+								<option value='5.5'>1:30 p.m.</option>
+								<option value='6'>2:00 p.m.</option>
+								<option value='6.5'>2:30 p.m.</option>
+								<option value='7'>3:00 p.m.</option>
+								<option value='7.5'>3:30 p.m.</option>
+								<option value='8'>4:00 p.m.</option>	
+								<option value='8.5'>4:30 p.m.</option>
+								<option value='9'>5:00 p.m.</option>
+								<option value='9.5'>5:30 p.m.</option>
+								<option value='10'>6:00 p.m.</option>
+								<option value='10.5'>6:30 p.m.</option>
+								<option value='11'>7:00 p.m.</option>
+							</select>
+						</td>
+						<td name='total_hours_thursday' style='font-size: 20px; padding-left: 4%;'><strong><output type="text" id="totThursday"></output></strong></td>
+					</tr>
+					<tr  height='50px'>
+						<td>Friday</td>
+		<td>
+							<select id="FridayTimeIn" name="FridayTimeIn" onchange="updateHash('Friday')">
+								<option value='0' SELECTED>8:00 a.m.</option>
+								<option value='.5'>8:30 a.m.</option>
+								<option value='1'>9:00 a.m.</option>
+								<option value='1.5'>9:30 a.m.</option>
+								<option value='2'>10:00 a.m.</option>
+								<option value='2.5'>10:30 a.m.</option>
+								<option value='3'>11:00 a.m.</option>
+								<option value='3.5'>11:30 a.m.</option>
+								<option value='4'>12:00 p.m.</option>
+								<option value='4.5'>12:30 p.m.</option>
+								<option value='5'>1:00 p.m.</option>
+								<option value='5.5'>1:30 p.m.</option>
+								<option value='6'>2:00 p.m.</option>
+								<option value='6.5'>2:30 p.m.</option>
+								<option value='7'>3:00 p.m.</option>
+								<option value='7.5'>3:30 p.m.</option>
+								<option value='8'>4:00 p.m.</option>	
+								<option value='8.5'>4:30 p.m.</option>
+								<option value='9'>5:00 p.m.</option>
+								<option value='9.5'>5:30 p.m.</option>
+								<option value='10'>6:00 p.m.</option>
+								<option value='10.5'>6:30 p.m.</option>
+								<option value='11'>7:00 p.m.</option>
+							</select>
+						</td>
+						<td>
+							<select id="FridayLunchIn" name="FridayLunchIn" onchange="updateHash('Friday')">
+								<option value='0' SELECTED>10:00 a.m.</option>
+								<option value='.5'>10:30 a.m.</option>
+								<option value='1'>11:00 a.m.</option>
+								<option value='1.5'>11:30 a.m.</option>
+								<option value='2'>12:00 p.m.</option>
+								<option value='2.5'>12:30 p.m.</option>
+								<option value='3'>1:00 p.m.</option>
+								<option value='3.5'>1:30 p.m.</option>
+								<option value='4'>2:00 p.m.</option>
+								<option value='4.5'>2:30 p.m.</option>
+								<option value='5'>3:00 p.m.</option>
+								<option value='5.5'>3:30 p.m.</option>
+								<option value='6'>4:00 p.m.</option>
+							</select>
+						</td>
+						<td>
+							<select id="FridayLunchOut" name="FridayLunchOut" onchange="updateHash('Friday')">
+								<option value='0' SELECTED>10:00 a.m.</option>
+								<option value='.5'>10:30 a.m.</option>
+								<option value='1'>11:00 a.m.</option>
+								<option value='1.5'>11:30 a.m.</option>
+								<option value='2'>12:00 p.m.</option>
+								<option value='2.5'>12:30 p.m.</option>
+								<option value='3'>1:00 p.m.</option>
+								<option value='3.5'>1:30 p.m.</option>
+								<option value='4'>2:00 p.m.</option>
+								<option value='4.5'>2:30 p.m.</option>
+								<option value='5'>3:00 p.m.</option>
+								<option value='5.5'>3:30 p.m.</option>
+								<option value='6'>4:00 p.m.</option>	
+							</select>
+						</td>
+						<td>
+							<select id="FridayTimeOut" name="FridayTimeOut" onchange="updateHash('Friday')">
+								<option value='0' SELECTED>8:00 a.m.</option>
+								<option value='.5'>8:30 a.m.</option>
+								<option value='1'>9:00 a.m.</option>
+								<option value='1.5'>9:30 a.m.</option>
+								<option value='2'>10:00 a.m.</option>
+								<option value='2.5'>10:30 a.m.</option>
+								<option value='3'>11:00 a.m.</option>
+								<option value='3.5'>11:30 a.m.</option>
+								<option value='4'>12:00 p.m.</option>
+								<option value='4.5'>12:30 p.m.</option>
+								<option value='5'>1:00 p.m.</option>
+								<option value='5.5'>1:30 p.m.</option>
+								<option value='6'>2:00 p.m.</option>
+								<option value='6.5'>2:30 p.m.</option>
+								<option value='7'>3:00 p.m.</option>
+								<option value='7.5'>3:30 p.m.</option>
+								<option value='8'>4:00 p.m.</option>	
+								<option value='8.5'>4:30 p.m.</option>
+								<option value='9'>5:00 p.m.</option>
+								<option value='9.5'>5:30 p.m.</option>
+								<option value='10'>6:00 p.m.</option>
+								<option value='10.5'>6:30 p.m.</option>
+								<option value='11'>7:00 p.m.</option>
+							</select>
+						</td>
+						<td name='total_hours_friday' style='font-size: 20px; padding-left: 4%;'><strong><output type="text" id="totFriday"></output></strong></td>
+					</tr>
+					<tr  height='50px'>
+						<td>Saturday</td>
+		<td>
+							<select id="SaturdayTimeIn" name="SaturdayTimeIn" onchange="updateHash('Saturday')">
+								<option value='0' SELECTED>8:00 a.m.</option>
+								<option value='.5'>8:30 a.m.</option>
+								<option value='1'>9:00 a.m.</option>
+								<option value='1.5'>9:30 a.m.</option>
+								<option value='2'>10:00 a.m.</option>
+								<option value='2.5'>10:30 a.m.</option>
+								<option value='3'>11:00 a.m.</option>
+								<option value='3.5'>11:30 a.m.</option>
+								<option value='4'>12:00 p.m.</option>
+								<option value='4.5'>12:30 p.m.</option>
+								<option value='5'>1:00 p.m.</option>
+								<option value='5.5'>1:30 p.m.</option>
+								<option value='6'>2:00 p.m.</option>
+								<option value='6.5'>2:30 p.m.</option>
+								<option value='7'>3:00 p.m.</option>
+								<option value='7.5'>3:30 p.m.</option>
+								<option value='8'>4:00 p.m.</option>	
+								<option value='8.5'>4:30 p.m.</option>
+								<option value='9'>5:00 p.m.</option>
+								<option value='9.5'>5:30 p.m.</option>
+								<option value='10'>6:00 p.m.</option>
+								<option value='10.5'>6:30 p.m.</option>
+								<option value='11'>7:00 p.m.</option>
+							</select>
+						</td>
+						<td>
+							<select id="SaturdayLunchIn" name="SaturdayLunchIn" onchange="updateHash('Saturday')">
+								<option value='0' SELECTED>10:00 a.m.</option>
+								<option value='.5'>10:30 a.m.</option>
+								<option value='1'>11:00 a.m.</option>
+								<option value='1.5'>11:30 a.m.</option>
+								<option value='2'>12:00 p.m.</option>
+								<option value='2.5'>12:30 p.m.</option>
+								<option value='3'>1:00 p.m.</option>
+								<option value='3.5'>1:30 p.m.</option>
+								<option value='4'>2:00 p.m.</option>
+								<option value='4.5'>2:30 p.m.</option>
+								<option value='5'>3:00 p.m.</option>
+								<option value='5.5'>3:30 p.m.</option>
+								<option value='6'>4:00 p.m.</option>	
+							</select>
+						</td>
+						<td>
+							<select id="SaturdayLunchOut" name="SaturdayLunchOut" onchange="updateHash('Saturday')">
+								<option value='0' SELECTED>10:00 a.m.</option>
+								<option value='.5'>10:30 a.m.</option>
+								<option value='1'>11:00 a.m.</option>
+								<option value='1.5'>11:30 a.m.</option>
+								<option value='2'>12:00 p.m.</option>
+								<option value='2.5'>12:30 p.m.</option>
+								<option value='3'>1:00 p.m.</option>
+								<option value='3.5'>1:30 p.m.</option>
+								<option value='4'>2:00 p.m.</option>
+								<option value='4.5'>2:30 p.m.</option>
+								<option value='5'>3:00 p.m.</option>
+								<option value='5.5'>3:30 p.m.</option>
+								<option value='6'>4:00 p.m.</option>	
+							</select>
+						</td>
+						<td>
+							<select id="SaturdayTimeOut" name="SaturdayTimeOut" onchange="updateHash('Saturday')">
+								<option value='0' SELECTED>8:00 a.m.</option>
+								<option value='.5'>8:30 a.m.</option>
+								<option value='1'>9:00 a.m.</option>
+								<option value='1.5'>9:30 a.m.</option>
+								<option value='2'>10:00 a.m.</option>
+								<option value='2.5'>10:30 a.m.</option>
+								<option value='3'>11:00 a.m.</option>
+								<option value='3.5'>11:30 a.m.</option>
+								<option value='4'>12:00 p.m.</option>
+								<option value='4.5'>12:30 p.m.</option>
+								<option value='5'>1:00 p.m.</option>
+								<option value='5.5'>1:30 p.m.</option>
+								<option value='6'>2:00 p.m.</option>
+								<option value='6.5'>2:30 p.m.</option>
+								<option value='7'>3:00 p.m.</option>
+								<option value='7.5'>3:30 p.m.</option>
+								<option value='8'>4:00 p.m.</option>	
+								<option value='8.5'>4:30 p.m.</option>
+								<option value='9'>5:00 p.m.</option>
+								<option value='9.5'>5:30 p.m.</option>
+								<option value='10'>6:00 p.m.</option>
+								<option value='10.5'>6:30 p.m.</option>
+								<option value='11'>7:00 p.m.</option>
+							</select>
+						</td>
+						<td name='total_hours_saturday' style='font-size: 20px; padding-left: 4%;'><strong><output type="text" id="totSaturday"></output></strong></td>
+					</tr>
+					<tr  height='50px'>
+						<td>Sunday</td>
+		<td>
+							<select id="SundayTimeIn" name="SundayTimeIn" onchange="updateHash('Sunday')">
+								<option value='0' SELECTED>8:00 a.m.</option>
+								<option value='.5'>8:30 a.m.</option>
+								<option value='1'>9:00 a.m.</option>
+								<option value='1.5'>9:30 a.m.</option>
+								<option value='2'>10:00 a.m.</option>
+								<option value='2.5'>10:30 a.m.</option>
+								<option value='3'>11:00 a.m.</option>
+								<option value='3.5'>11:30 a.m.</option>
+								<option value='4'>12:00 p.m.</option>
+								<option value='4.5'>12:30 p.m.</option>
+								<option value='5'>1:00 p.m.</option>
+								<option value='5.5'>1:30 p.m.</option>
+								<option value='6'>2:00 p.m.</option>
+								<option value='6.5'>2:30 p.m.</option>
+								<option value='7'>3:00 p.m.</option>
+								<option value='7.5'>3:30 p.m.</option>
+								<option value='8'>4:00 p.m.</option>	
+								<option value='8.5'>4:30 p.m.</option>
+								<option value='9'>5:00 p.m.</option>
+								<option value='9.5'>5:30 p.m.</option>
+								<option value='10'>6:00 p.m.</option>
+								<option value='10.5'>6:30 p.m.</option>
+								<option value='11'>7:00 p.m.</option>
+							</select>
+						</td>
+						<td>
+							<select id="SundayLunchIn" name="SundayLunchIn" onchange="updateHash('Sunday')">
+								<option value='0' SELECTED>10:00 a.m.</option>
+								<option value='.5'>10:30 a.m.</option>
+								<option value='1'>11:00 a.m.</option>
+								<option value='1.5'>11:30 a.m.</option>
+								<option value='2'>12:00 p.m.</option>
+								<option value='2.5'>12:30 p.m.</option>
+								<option value='3'>1:00 p.m.</option>
+								<option value='3.5'>1:30 p.m.</option>
+								<option value='4'>2:00 p.m.</option>
+								<option value='4.5'>2:30 p.m.</option>
+								<option value='5'>3:00 p.m.</option>
+								<option value='5.5'>3:30 p.m.</option>
+								<option value='6'>4:00 p.m.</option>	
+							</select>
+						</td>
+						<td>
+							<select id="SundayLunchOut" name="SundayLunchOut" onchange="updateHash('Sunday')">
+								<option value='0' SELECTED>10:00 a.m.</option>
+								<option value='.5'>10:30 a.m.</option>
+								<option value='1'>11:00 a.m.</option>
+								<option value='1.5'>11:30 a.m.</option>
+								<option value='2'>12:00 p.m.</option>
+								<option value='2.5'>12:30 p.m.</option>
+								<option value='3'>1:00 p.m.</option>
+								<option value='3.5'>1:30 p.m.</option>
+								<option value='4'>2:00 p.m.</option>
+								<option value='4.5'>2:30 p.m.</option>
+								<option value='5'>3:00 p.m.</option>
+								<option value='5.5'>3:30 p.m.</option>
+								<option value='6'>4:00 p.m.</option>	
+							</select>
+						</td>
+						<td>
+							<select id="SundayTimeOut" name="SundayTimeOut" onchange="updateHash('Sunday')">
+								<option value='0' SELECTED>8:00 a.m.</option>
+								<option value='.5'>8:30 a.m.</option>
+								<option value='1'>9:00 a.m.</option>
+								<option value='1.5'>9:30 a.m.</option>
+								<option value='2'>10:00 a.m.</option>
+								<option value='2.5'>10:30 a.m.</option>
+								<option value='3'>11:00 a.m.</option>
+								<option value='3.5'>11:30 a.m.</option>
+								<option value='4'>12:00 p.m.</option>
+								<option value='4.5'>12:30 p.m.</option>
+								<option value='5'>1:00 p.m.</option>
+								<option value='5.5'>1:30 p.m.</option>
+								<option value='6'>2:00 p.m.</option>
+								<option value='6.5'>2:30 p.m.</option>
+								<option value='7'>3:00 p.m.</option>
+								<option value='7.5'>3:30 p.m.</option>
+								<option value='8'>4:00 p.m.</option>	
+								<option value='8.5'>4:30 p.m.</option>
+								<option value='9'>5:00 p.m.</option>
+								<option value='9.5'>5:30 p.m.</option>
+								<option value='10'>6:00 p.m.</option>
+								<option value='10.5'>6:30 p.m.</option>
+								<option value='11'>7:00 p.m.</option>
+							</select>
+						</td>
+						<td name='total_hours_sunday' style='font-size: 20px; padding-left: 4%;'><strong><output type="text" id="totSunday"></output></strong></td>
+					</tr>
+					<tr>
+						<td>
+
+						</td>
+						<td style='vertical-align: top; padding-right: 29px;' height='125px'>
+							<select name='manager' style='height: 28px; margin-top: 10px;'>
+								<option value='cyrus.fakour@blackbaud.com'>Cyrus Fakour</option>	
+							</select><br>
+								Select your manager
+						</td>
+						<td style='padding-top: 1.6%; padding-right: 29px;' height='125px'>
+							<input type='text' name='intern_name' style='height: 28px;'><br>
+							First and Last Name
+						</td>
+						<td height='55px' style='padding-right: 30px; padding-top: 1.6%; word-wrap: break-word; width: 200px; font-size: 12px;'>
+							<input onclick='scroll()' name='weekof' id="datepicker" style='margin-bottom: 8px;'><br>
+							Enter the date of the FRIDAY of the week for which you are submitting this time sheet
+						</td>
+						<td width='138px'>
+							
+							<div class='total_hours'>
+								<strong>Total Hours</strong>
+							</div>
+							<div class='total_hours_value'>
+								<strong name="total_hours_week"><output type="text" id="totWeek"></output></strong>
+							</div>
+						</td>
+						<td width='100px' style='padding-top: 20px;'>
+							<input id="subbut" type='submit' class='btn btn-success' value='Submit'>
+						</td>
+					</tr>
+				</table>
+			</form>
+				<script type="text/javascript" src="assets/js/calcTime.js"> </script>
+				<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+				<script type="text/javascript" src="assets/js/bootbox.js"></script>
+				<script type="text/javascript" src="assets/js/bootstrap-modal.js"></script>
+				<script type="text/javascript" src="assets/js/bootstrap-transition.js"></script>
+				<script type="text/javascript">
+					$('form').submit(function() {
+						return false;
+					});
+					$('form').submit(function() {
+						if (document.getElementById('totWeek').textContent != 'Error' && document.getElementById('totWeek').textContent != '') {
+							var currentForm = this;
+							bootbox.confirm("Are you sure?", function(result) {
+							if (result) {
+								currentForm.submit();
+								}
+							});
 						}
 					});
-				}
-			});
-		</script>
+				</script>

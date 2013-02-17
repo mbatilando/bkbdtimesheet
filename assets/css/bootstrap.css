@@ -6048,3 +6048,7 @@ a.badge:hover {
  margin:0 auto !important;
  float:none;
 }
+
+#datepicker {
+  color: #43A942;
+}

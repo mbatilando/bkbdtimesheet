@@ -1,12 +1,3 @@
-new datepickr('datepick', {
-		'dateFormat': 'm/d/y'
-	});
-
-	function scroll () {
-		console.log("here");
-		window.scrollTo(0, document.body.scrollHeight);
-	}
-
 	var myHash = new Object();
 	myHash['Monday'];
 	myHash['Tuesday'];
