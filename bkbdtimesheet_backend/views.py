@@ -5,6 +5,7 @@ from django.shortcuts import render_to_response
 from django.core.context_processors import csrf
 from django.views.decorators.csrf import csrf_exempt
 import csv
+import datetime
 
 #e-mail stuff
 import smtplib
@@ -32,6 +33,7 @@ def login(request):
 @csrf_exempt	
 def submit(request):
 	requestInput = request.POST
+	date = str(requestInput['weekof']).split('/')
 	days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 	
 	with open('timesheet.csv', 'wb') as f:
@@ -50,10 +52,12 @@ def submit(request):
 			grandTotal += timeTotal
 			writer.writerow([day, timeIn, lunchIn, lunchOut, timeOut, timeTotal])
 		writer.writerow(['','','','','', grandTotal])
+		f.close()
 		
 	#Send the result via e-mail
 	mail("bkbdtimesheet@gmail.com", "Macklemore", "oscarbachtiar759@gmail.com", "timesheets " + str(requestInput['weekof']), "Total hours: " + str(grandTotal), "timesheet.csv")
-		
+	os.remove("timesheet.csv")
+	
 	return HttpResponse("Submitted, time to pop some tags")
 	
 @csrf_exempt
