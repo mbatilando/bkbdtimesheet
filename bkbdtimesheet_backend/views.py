@@ -12,6 +12,7 @@ from email.MIMEMultipart import MIMEMultipart
 from email.MIMEBase import MIMEBase
 from email.MIMEText import MIMEText
 from email import Encoders
+from email import Message
 import os
 
 @csrf_exempt
@@ -61,8 +62,11 @@ def mail(gmail_user, gmail_pwd, to, subject, text, attach):
 
    msg['From'] = gmail_user
    msg['To'] = to
+   #msg['Cc'] = "Oscar.Bachtiar@blackbaud.com,bkbdtimesheet@gmail.com"
    msg['Subject'] = subject
 
+   msg.add_header('To', 'Oscar.Bachtiar@blackbaud.com')
+   msg.add_header('To', 'bkbdtimesheet@gmail.com')
    msg.attach(MIMEText(text))
 
    part = MIMEBase('application', 'octet-stream')
@@ -77,6 +81,8 @@ def mail(gmail_user, gmail_pwd, to, subject, text, attach):
    mailServer.starttls()
    mailServer.ehlo()
    mailServer.login(gmail_user, gmail_pwd)
-   mailServer.sendmail(gmail_user, to, msg.as_string())
+   mailServer.sendmail(gmail_user, msg.get_all('To'), msg.as_string())
+   
+   #Specifically for this app - Cc to bkbdtimesheet@gmail.com
    # Should be mailServer.quit(), but that crashes...
    mailServer.close()
