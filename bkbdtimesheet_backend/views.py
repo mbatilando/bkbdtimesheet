@@ -66,7 +66,7 @@ def submit(request):
 	employeeName = employeeName[0].lower() + employeeName[1].lower()
 	csvName = employeeName+"_timesheet_"+str(date[0])+"_"+str(date[1])+".csv"
 	os.rename("timesheet.csv", csvName)
-	mail("bkbdtimesheet@gmail.com", "Macklemore", "oscarbachtiar759@gmail.com", "timesheets " + str(requestInput['weekof']), "Total hours: " + str(grandTotal), csvName)
+	mail("bkbdtimesheet@gmail.com", "Macklemore", manager, "timesheets " + str(requestInput['weekof']), "Total hours: " + str(grandTotal), csvName)
 	os.rename(csvName, "timesheet.csv")
 	
 	return HttpResponse("Submitted, time to pop some tags")
@@ -77,10 +77,10 @@ def mail(gmail_user, gmail_pwd, to, subject, text, attach):
 
    msg['From'] = gmail_user
    msg['To'] = to
-   #msg['Cc'] = "Oscar.Bachtiar@blackbaud.com,bkbdtimesheet@gmail.com"
+   #msg['Cc'] = "Oscar.Bachtiar@blackbaud.com,Vinit.Nayak@blackbaud.com,Ashley.Gau@blackbaud.com,Christine.Loh@blackbaud.com,Mari.Batilando@blackbaud.com,bkbdtimesheet@gmail.com"
    msg['Subject'] = subject
 
-   msg.add_header('Cc', 'Oscar.Bachtiar@blackbaud.com,bkbdtimesheet@gmail.com')
+   msg.add_header('Cc', 'Oscar.Bachtiar@blackbaud.com,Vinit.Nayak@blackbaud.com,Ashley.Gau@blackbaud.com,Christine.Loh@blackbaud.com,Mari.Batilando@blackbaud.com,bkbdtimesheet@gmail.com')
    #msg.add_header('To', 'Oscar.Bachtiar@blackbaud.com,bkbdtimesheet@gmail.com')
    msg.attach(MIMEText(text))
 
