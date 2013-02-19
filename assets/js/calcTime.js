@@ -1,12 +1,3 @@
-new datepickr('datepick', {
-		'dateFormat': 'm/d/y'
-	});
-
-	function scroll () {
-		console.log("here");
-		window.scrollTo(0, document.body.scrollHeight);
-	}
-
 	var myHash = new Object();
 	myHash['Monday'];
 	myHash['Tuesday'];
@@ -23,7 +14,7 @@ new datepickr('datepick', {
 		var lunchIn = day.concat("LunchIn");
 		var workTime = document.getElementById(timeOut).value - document.getElementById(timeIn).value;
 		var lunchTime = document.getElementById(lunchOut).value - document.getElementById(lunchIn).value;
-		if (workTime < 0 || lunchTime<0) {
+		if (workTime < 0 || lunchTime<0 || workTime-lunchTime < 0) {
 			myHash[day] = "Error";
 		}
 		else {
