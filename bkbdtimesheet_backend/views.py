@@ -52,11 +52,14 @@ def submit(request):
 			grandTotal += timeTotal
 			writer.writerow([day, timeIn, lunchIn, lunchOut, timeOut, timeTotal])
 		writer.writerow(['','','','','', grandTotal])
-		f.close()
 		
 	#Send the result via e-mail
-	mail("bkbdtimesheet@gmail.com", "Macklemore", "oscarbachtiar759@gmail.com", "timesheets " + str(requestInput['weekof']), "Total hours: " + str(grandTotal), "timesheet.csv")
-	os.remove("timesheet.csv")
+	employeeName = str(requestInput['intern_name']).split(" ")
+	employeeName = employeeName[0].lower() + employeeName[1].lower()
+	csvName = employeeName+"_timesheet_"+str(date[0])+"_"+str(date[1])+".csv"
+	os.rename("timesheet.csv", csvName)
+	mail("bkbdtimesheet@gmail.com", "Macklemore", "oscarbachtiar759@gmail.com", "timesheets " + str(requestInput['weekof']), "Total hours: " + str(grandTotal), csvName)
+	os.rename(csvName, "timesheet.csv")
 	
 	return HttpResponse("Submitted, time to pop some tags")
 	
