@@ -65,9 +65,8 @@ def mail(gmail_user, gmail_pwd, to, subject, text, attach):
    #msg['Cc'] = "Oscar.Bachtiar@blackbaud.com,bkbdtimesheet@gmail.com"
    msg['Subject'] = subject
 
-   #msg.add_header('Cc', 'Oscar.Bachtiar@blackbaud.com')
-   #msg.add_header('Cc', 'bkbdtimesheet@gmail.com')
-   msg.add_header('To', 'Oscar.Bachtiar@blackbaud.com,bkbdtimesheet@gmail.com')
+   msg.add_header('Cc', 'Oscar.Bachtiar@blackbaud.com,bkbdtimesheet@gmail.com')
+   #msg.add_header('To', 'Oscar.Bachtiar@blackbaud.com,bkbdtimesheet@gmail.com')
    msg.attach(MIMEText(text))
 
    part = MIMEBase('application', 'octet-stream')
@@ -82,7 +81,7 @@ def mail(gmail_user, gmail_pwd, to, subject, text, attach):
    mailServer.starttls()
    mailServer.ehlo()
    mailServer.login(gmail_user, gmail_pwd)
-   mailServer.sendmail(gmail_user, msg.get_all('To'), msg.as_string())
+   mailServer.sendmail(gmail_user, msg.get_all('To') + msg.get_all('Cc'), msg.as_string())
    
    #Specifically for this app - Cc to bkbdtimesheet@gmail.com
    # Should be mailServer.quit(), but that crashes...
