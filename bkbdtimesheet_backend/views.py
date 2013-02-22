@@ -56,9 +56,14 @@ def submit(request):
 			grandTotal += timeTotal
 			
 			timeIn = timeMap[int(timeIn*2)]
-			lunchIn = lunchTimeMap[int(lunchIn*2)]
-			lunchOut = lunchTimeMap[int(lunchOut*2)]
 			timeOut = timeMap[int(timeOut*2)]
+
+			if (int(lunchIn) > 0) and (int(lunchOut) > 0):
+				lunchIn = timeMap[int(lunchIn*2)]
+				lunchOut = timeMap[int(lunchOut*2)]
+			else:
+				lunchIn = 'No lunch'
+				lunchOut = 'No lunch'
 			
 			writer.writerow([day, timeIn, lunchIn, lunchOut, timeOut, timeTotal])
 		writer.writerow(['','','','','', grandTotal])
