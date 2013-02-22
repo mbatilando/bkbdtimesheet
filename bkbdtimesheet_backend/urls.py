@@ -31,7 +31,3 @@ urlpatterns = patterns('',
 )
 
 #urlpatterns += staticfiles_urlpatterns()
-
-if settings.DEBUG:
-	urlpatterns += patterns('django.contrib.staticfiles.views', url(r'^asstes/(?P<path>.*)$', 'serve'),
-	)
