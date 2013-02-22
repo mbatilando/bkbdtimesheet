@@ -32,7 +32,7 @@ def login(request):
 
 @csrf_exempt	
 def submit(request):
-"""
+	"""
 	requestInput = request.POST
 	date = str(requestInput['weekof']).split('/')
 	days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
