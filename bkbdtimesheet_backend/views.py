@@ -71,7 +71,7 @@ def submit(request):
 	mail("bkbdtimesheet@gmail.com", "Macklemore", manager, cc, "timesheets " + str(requestInput['weekof']), "Total hours: " + str(grandTotal), csvName)
 	os.rename(csvName, "timesheet.csv")
 	
-	return HttpResponse("Submitted, time to pop some tags")
+	return render_to_response('submit.html')
 	
 @csrf_exempt
 def mail(gmail_user, gmail_pwd, to, cc, subject, text, attach):
