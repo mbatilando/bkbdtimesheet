@@ -32,7 +32,6 @@ def login(request):
 
 @csrf_exempt	
 def submit(request):
-	"""
 	requestInput = request.POST
 	date = str(requestInput['weekof']).split('/')
 	days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
@@ -70,7 +69,7 @@ def submit(request):
 	os.rename("timesheet.csv", csvName)
 	mail("bkbdtimesheet@gmail.com", "Macklemore", manager, "timesheets " + str(requestInput['weekof']), "Total hours: " + str(grandTotal), csvName)
 	os.rename(csvName, "timesheet.csv")
-	"""
+
 	return render_to_response('submit.html')
 	
 @csrf_exempt
