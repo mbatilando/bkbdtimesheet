@@ -8,13 +8,15 @@
 	myHash['Sunday'];
 
 	function calcHour(day) {
-		var timeOut = day.concat("TimeOut");
-		var timeIn = day.concat("TimeIn");
-		var lunchOut = day.concat("LunchOut");
-		var lunchIn = day.concat("LunchIn");
-		var workTime = document.getElementById(timeOut).value - document.getElementById(timeIn).value;
-		var lunchTime = document.getElementById(lunchOut).value - document.getElementById(lunchIn).value;
-		if (workTime < 0 || lunchTime<0 || workTime-lunchTime < 0) {
+		var timeOut = document.getElementById(day.concat("TimeOut")).value;
+		var timeIn = document.getElementById(day.concat("TimeIn")).value;
+		var lunchOut = document.getElementById(day.concat("LunchOut")).value;
+		var lunchIn = document.getElementById(day.concat("LunchIn")).value;
+		var workTime = timeOut - timeIn;
+		var lunchTime = lunchOut - lunchIn;
+
+
+		if (workTime < 0 || lunchTime < 0 || workTime-lunchTime < 0 || lunchOut > timeOut) {
 			myHash[day] = "Error";
 		}
 		else {
