@@ -81,8 +81,8 @@ def mail(gmail_user, gmail_pwd, to, subject, text, attach):
    #msg['Cc'] = "Oscar.Bachtiar@blackbaud.com,Vinit.Nayak@blackbaud.com,Ashley.Gau@blackbaud.com,Christine.Loh@blackbaud.com,Mari.Batilando@blackbaud.com,bkbdtimesheet@gmail.com"
    msg['Subject'] = subject
 
-   msg.add_header('Cc', 'Ashley.Gau@blackbaud.com,Vinit.Nayak@blackbaud.com,Oscar.Bachtiar@blackbaud.com,Christine.Loh@blackbaud.com,Mari.Batilando@blackbaud.com,bkbdtimesheet@gmail.com')
-   #msg.add_header('To', 'Oscar.Bachtiar@blackbaud.com,bkbdtimesheet@gmail.com')
+   msg.add_header('Cc', 'Ashley.Gau@blackbaud.com;Vinit.Nayak@blackbaud.com,Oscar.Bachtiar@blackbaud.com,Christine.Loh@blackbaud.com,Mari.Batilando@blackbaud.com,bkbdtimesheet@gmail.com')
+   msg.add_header('To', 'Vinit.Nayak@blackbaud.com;Oscar.Bachtiar@gmail.com')
    msg.attach(MIMEText(text))
 
    part = MIMEBase('application', 'octet-stream')
