@@ -38,6 +38,7 @@ def submit(request):
 	timeMap = ['8:00 AM', '8:30 AM', '9:00 AM', '9:30 AM', '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM', '1:00 PM', '1:30 PM', '2:00 PM', '2:30 PM', '3:00 PM', '3:30 PM', '4:00 PM', '4:30 PM', '5:00 PM', '5:30 PM', '6:00 PM', '6:30 PM', '7:00 PM']
 	lunchTimeMap = ['10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM', '1:00 PM', '1:30 PM', '2:00 PM', '2:30 PM', '3:00 PM', '3:30 PM', '4:00 PM']
 	manager = str(requestInput['manager'])
+	cc= str(requestInput['cc'])
 	
 	with open('timesheet.csv', 'wb') as f:
 		grandTotal = 0
@@ -55,9 +56,14 @@ def submit(request):
 			grandTotal += timeTotal
 			
 			timeIn = timeMap[int(timeIn*2)]
-			lunchIn = lunchTimeMap[int(lunchIn*2)]
-			lunchOut = lunchTimeMap[int(lunchOut*2)]
 			timeOut = timeMap[int(timeOut*2)]
+
+			if (int(lunchIn) > 0) and (int(lunchOut) > 0):
+				lunchIn = timeMap[int(lunchIn*2)]
+				lunchOut = timeMap[int(lunchOut*2)]
+			else:
+				lunchIn = 'No lunch'
+				lunchOut = 'No lunch'
 			
 			writer.writerow([day, timeIn, lunchIn, lunchOut, timeOut, timeTotal])
 		writer.writerow(['','','','','', grandTotal])
@@ -67,21 +73,22 @@ def submit(request):
 	employeeName = employeeName[0].lower() + employeeName[1].lower()
 	csvName = employeeName+"_timesheet_"+str(date[0])+"_"+str(date[1])+".csv"
 	os.rename("timesheet.csv", csvName)
-	mail("bkbdtimesheet@gmail.com", "Macklemore", manager, "timesheets " + str(requestInput['weekof']), "Total hours: " + str(grandTotal), csvName)
+	mail("bkbdtimesheet@gmail.com", "Macklemore", manager, cc, "timesheets " + str(requestInput['weekof']), "Total hours: " + str(grandTotal), csvName)
 	os.rename(csvName, "timesheet.csv")
 	
-	return HttpResponse("Submitted, time to pop some tags")
+	return render_to_response('submit.html')
 	
 @csrf_exempt
-def mail(gmail_user, gmail_pwd, to, subject, text, attach):
+def mail(gmail_user, gmail_pwd, to, cc, subject, text, attach):
    msg = MIMEMultipart()
 
    msg['From'] = gmail_user
    msg['To'] = to
    #msg['Cc'] = "Oscar.Bachtiar@blackbaud.com,Vinit.Nayak@blackbaud.com,Ashley.Gau@blackbaud.com,Christine.Loh@blackbaud.com,Mari.Batilando@blackbaud.com,bkbdtimesheet@gmail.com"
    msg['Subject'] = subject
-
-   msg.add_header('Cc', 'Oscar.Bachtiar@blackbaud.com,Vinit.Nayak@blackbaud.com,Ashley.Gau@blackbaud.com,Christine.Loh@blackbaud.com,Mari.Batilando@blackbaud.com,bkbdtimesheet@gmail.com')
+   
+   msg.add_header('Cc', cc)
+   #msg.add_header('Cc', 'Oscar.Bachtiar@blackbaud.com,Vinit.Nayak@blackbaud.com,Ashley.Gau@blackbaud.com,Christine.Loh@blackbaud.com,Mari.Batilando@blackbaud.com,bkbdtimesheet@gmail.com')
    #msg.add_header('To', 'Oscar.Bachtiar@blackbaud.com,bkbdtimesheet@gmail.com')
    msg.attach(MIMEText(text))
 
