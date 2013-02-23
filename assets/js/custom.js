@@ -46,7 +46,8 @@ function calcHour(day) {
 	var workTime = parseFloat(timeOut - timeIn);
 	var lunchTime = parseFloat(lunchOut - lunchIn);
 
-	if (workTime < 0 || lunchTime < 0 || workTime-lunchTime < 0 || lunchOut > timeOut) {
+	if (workTime < 0 || lunchTime < 0 || workTime-lunchTime < 0 || lunchOut > timeOut || 
+		(lunchTime > 0 && lunchOut > timeOut + 2)) {
 		myHash[day] = "Error";
 	}
 	else {
@@ -69,8 +70,8 @@ return total;
 }
 
 function updateHash(day) {
-var totDay = "tot".concat(day);
-calcHour(day);
-document.getElementById(totDay).value=myHash[day];
-document.getElementById('totWeek').value=calcTotal();
+	var totDay = "tot".concat(day);
+	calcHour(day);
+	document.getElementById(totDay).value=myHash[day];
+	document.getElementById('totWeek').value=calcTotal();
 }
