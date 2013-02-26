@@ -37,17 +37,18 @@ def login(request):
 #	password = request.POST.get('password', '')
 	username = temp['username']
 	password = temp['password']
+	response_data = {}
 	user = auth.authenticate(username=username, password=password)
 	if user is not None and user.is_active:
 		# Correct password, and the user is marked "active"
 		auth.login(request, user)
 		# Redirect to a success page. OR send a response that says successful authentication
 		# return HttpResponseRedirect("/account/loggedin/")
-		return HttpResponse("SUCCESS!")
+		return HttpResponse(json.dumps(response_data), content_type="application/json")
 	else:
 		# Show error page OR send a response that says failed authentication
 		# return HttpResponseRedirect("/account/invalid/")
-		return HttpResponse("FAILURE!")
+		return HttpResponse(json.dumps(response_data), content_type="application/json")
 	
 	#return render_to_response('login.html')
 	
