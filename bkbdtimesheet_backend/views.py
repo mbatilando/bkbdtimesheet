@@ -39,19 +39,10 @@ def login(request):
 	req['title'] = 'This is a constant result.'
 	response = json.dumps(req)
 	response = callback + '(' + response + ');'
-	print "USERNAME:"
-	print request.GET.get('username', 'username not here')
-	print "PASSWORD:"
-	print request.GET.get('password', 'password not here')
-	return HttpResponse(response, mimetype="application/json")
-
-	"""
-	temp = json.loads(request.body)
-	print "What about this?"
-#	username = request.POST.get('username', '')
-#	password = request.POST.get('password', '')
-	username = temp['username']
-	password = temp['password']
+	#return HttpResponse(response, mimetype="application/json")
+	
+	username = request.GET.get('username', '')
+	password = request.GET.get('password', '')
 	response_data = {}
 	user = auth.authenticate(username=username, password=password)
 	if user is not None and user.is_active:
@@ -60,16 +51,13 @@ def login(request):
 		# Redirect to a success page. OR send a response that says successful authentication
 		# return HttpResponseRedirect("/account/loggedin/")
 		print "YEEE"
-		return HttpResponse(json.dumps(response_data), content_type="application/json")
+		return HttpResponse(response, mimetype="application/json")
 	else:
 		# Show error page OR send a response that says failed authentication
 		# return HttpResponseRedirect("/account/invalid/")
 		print "FAAIILL"
-		return HttpResponse(json.dumps(response_data), content_type="application/json")
-	
-	#return render_to_response('login.html')
-	"""
-	
+		return HttpResponse(response, mimetype="application/json")
+		
 @csrf_exempt
 def logout(request):
 	auth.logout(request)
