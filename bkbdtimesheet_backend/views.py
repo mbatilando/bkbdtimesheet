@@ -44,7 +44,6 @@ def login(request):
 	print request.GET.get('username', 'username not here')
 	print request.GET.get('password', 'password not here')
 	print request.GET.items()
-	print request.POST.items()
 	print "THESE"
 	temp = json.loads(request.body)
 	print "USERNAME:"
