@@ -46,7 +46,7 @@ def login(request):
 	print request.GET.items()
 	print request.GET.items()[2]
 	print "THESE"
-	temp = json.loads(request.body)
+	temp = json.loads(request.GET.items()[2])
 	print "USERNAME:"
 	print temp['username']
 #	print request.POST.get('username', '')
