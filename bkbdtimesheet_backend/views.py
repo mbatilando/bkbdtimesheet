@@ -33,15 +33,14 @@ def index(request):
 
 @csrf_exempt	
 def login(request):
-	print "Can you see this?"
 	
 	callback = request.GET.get('callback', '')	
-	print "What about this?"
 	req = {}
 	req['title'] = 'This is a constant result.'
 	response = json.dumps(req)
 	response = callback + '(' + response + ');'
-	print "is THIS visible??"
+	print request.POST.get('username', '')
+	print request.POST.get('password', '')
 	return HttpResponse(response, mimetype="application/json")
 
 	"""
