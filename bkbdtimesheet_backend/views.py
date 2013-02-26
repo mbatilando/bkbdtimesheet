@@ -39,7 +39,9 @@ def login(request):
 	req['title'] = 'This is a constant result.'
 	response = json.dumps(req)
 	response = callback + '(' + response + ');'
+	print "USERNAME:"
 	print request.POST.get('username', '')
+	print "PASSWORD:"
 	print request.POST.get('password', '')
 	return HttpResponse(response, mimetype="application/json")
 
