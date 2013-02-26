@@ -11,13 +11,50 @@
 	width:150px;
 }
 
+.profileSections {
+	font-weight: bold;
+	color: #71BF44;
+}
+
 td {
 	width:50px;
 }
 
-#bottomRow1, #bottomRow2, #bottomRow3, #bottomRow4, #bottomRow5 {
-	color: 000;
+ul
+{
+list-style-type: none;
+padding: 3px;
+margin: 0px;
 }
+
+#timesheetTable {
+	color: #71BF44;
+}
+
+#loginContainer {
+	height:150px;
+	width:300px;
+}
+
+#profileContainer {
+	height:200px;
+	width:400px;
+}
+
+#profilePic {
+	height:160px;
+	width:175px;
+	float: left;
+	background-image:url('../img/MarcChardon2.jpg');
+	border-radius:10px;
+}
+
+#profileInfo {
+	margin-top: 18px;
+	font: #000;
+	float: left;
+}
+
 #modal {
 	background:#fff;
 	left:50%;

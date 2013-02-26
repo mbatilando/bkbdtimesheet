@@ -1,4 +1,4 @@
-<DOCTYPE! html>
+<!DOCTYPE html>
 <html>
 	<head>
 	  <link rel="stylesheet" href="assets/css/bootstrap.css"/>
@@ -8,9 +8,26 @@
 	  <link rel="stylesheet" href="/resources/demos/style.css" />
 	  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 	  <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+	  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+	  <script type="text/javascript" src="assets/js/bootstrap-modal.js"></script>
+	  <script type="text/javascript">	
+			$(function() {
+			    $( "#datepicker" ).datepicker();
+			  });
+			$('form').submit(function() {
+				if (document.getElementById('totWeek').textContent != 'Error' && document.getElementById('totWeek').textContent != '') {
+					var currentForm = this;
+					bootbox.confirm("Are you sure?", function(result) {
+					if (result) {
+						currentForm.submit();
+						}
+					});
+				}
+			});
+		</script>
 	</head>
 	<body>
-		<div id="timesheet">
+		<div id="timesheetTable">
 			<form id="target" action="http://bkbdtimesheet-backend.herokuapp.com/submit/" method="post">
 					<table class='table span9 table-hover' width='20px'>
 						<thead>
@@ -24,7 +41,7 @@
 							</tr>
 						</thead>
 						<tr height='50px'>
-							<td>Monday</td>
+							<td style="color:#71BF44">Monday</td>
 							<td>
 								<select id="MondayTimeIn" class="timesheetSelect" name="MondayTimeIn" onchange="updateHash('Monday')">
 									<option value='0' SELECTED>8:00 a.m.</option>
@@ -725,24 +742,6 @@
 				</table>
 			</form>
 		</div>
-		<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="assets/js/bootbox.js"></script>
-		<script type="text/javascript" src="assets/js/bootstrap-modal.js"></script>
-		<script type="text/javascript" src="assets/js/bootstrap-transition.js"></script>
-		<script type="text/javascript">	
-			$(function() {
-			    $( "#datepicker" ).datepicker();
-			  });
-			$('form').submit(function() {
-				if (document.getElementById('totWeek').textContent != 'Error' && document.getElementById('totWeek').textContent != '') {
-					var currentForm = this;
-					bootbox.confirm("Are you sure?", function(result) {
-					if (result) {
-						currentForm.submit();
-						}
-					});
-				}
-			});
-		</script>
 	</body>
 </html>

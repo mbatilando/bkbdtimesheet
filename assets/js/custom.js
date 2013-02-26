@@ -5,14 +5,26 @@
 var x = 'foo';
 $(document).ready(function() {
 	$('#main').fadeIn("slow");
-		x = $('#timesheet').load('timesheet.html');
-		document.getElementById('timesheet').hidden = true;
+		//x = $('#timesheet').load('timesheet.html');
+		//document.getElementById('timesheet').hidden = true;
 	});
 
+
 $("#loginBut").click(function(){
-	$('#main').fadeOut('fast');
-	$('#timesheet').css('visibility','visible').hide().fadeIn('slow');
+	$("#timesheet").hide().load('timesheet.html').fadeIn(600);
+	//$("#loginContainer").hide().empty().load('profile.html').fadeIn();
+	$('#loginContainer').remove();
+	$('#replace').hide().load('profile.html').fadeIn(600);
 });
+
+
+// $("#loginBut").click(function(){
+// 	$('#main').fadeOut('fast');
+// 	$('#timesheet').css('visibility','visible').hide().fadeIn('slow');
+// });
+
+
+
 
 $('form').submit(function() {
 	if (document.getElementById('totWeek').textContent != 'Error' && document.getElementById('totWeek').textContent != '') {
@@ -75,3 +87,4 @@ function updateHash(day) {
 	document.getElementById(totDay).value=myHash[day];
 	document.getElementById('totWeek').value=calcTotal();
 }
+
