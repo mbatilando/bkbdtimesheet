@@ -39,20 +39,10 @@ def login(request):
 	req['title'] = 'This is a constant result.'
 	response = json.dumps(req)
 	response = callback + '(' + response + ');'
-	print "WHAT'S BETWEEN"
-	print request.GET.get('callback', '')
-	print request.GET.get('username', 'username not here')
-	print request.GET.get('password', 'password not here')
-	print request.GET.items()
-	print request.GET.items()[2]
-	print "THESE"
-	temp = json.loads(request.GET.items()[2])
 	print "USERNAME:"
-	print temp['username']
-#	print request.POST.get('username', '')
+	print request.GET.get('username', 'username not here')
 	print "PASSWORD:"
-	print temp['password']
-#	print request.POST.get('password', '')
+	print request.GET.get('password', 'password not here')
 	return HttpResponse(response, mimetype="application/json")
 
 	"""
