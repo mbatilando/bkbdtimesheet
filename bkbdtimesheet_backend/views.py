@@ -34,6 +34,8 @@ def index(request):
 @csrf_exempt	
 def login(request):
 	print "Can you see this?"
+	return HttpResponse(json.dumps({}), content_type="application/json")
+	
 	temp = json.loads(request.body)
 	print "What about this?"
 #	username = request.POST.get('username', '')
