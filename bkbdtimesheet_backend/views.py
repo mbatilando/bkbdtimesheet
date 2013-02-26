@@ -44,8 +44,11 @@ def login(request):
 	username = request.GET.get('username', '')
 	password = request.GET.get('password', '')
 	response_data = {}
+	print "Can you see this?"
 	user = auth.authenticate(username=username, password=password)
+	print "How bout this?"
 	if user is not None and user.is_active:
+		print "Woo-hoo"
 		# Correct password, and the user is marked "active"
 		auth.login(request, user)
 		# Redirect to a success page. OR send a response that says successful authentication
@@ -53,6 +56,7 @@ def login(request):
 		print "YEEE"
 		return HttpResponse(response, mimetype="application/json")
 	else:
+		print "NAAAW"
 		# Show error page OR send a response that says failed authentication
 		# return HttpResponseRedirect("/account/invalid/")
 		print "FAAIILL"
