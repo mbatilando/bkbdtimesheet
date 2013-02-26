@@ -27,12 +27,15 @@ def index(request):
 	#t = get_template('index.html')
 	#html = t.render(Context())
 	#return HttpResponse(html)
+	print "WELCOME"
 	return render_to_response('index.html')
 
 
 @csrf_exempt	
 def login(request):
+	print "Can you see this?"
 	temp = json.loads(request.body)
+	print "What about this?"
 #	username = request.POST.get('username', '')
 #	password = request.POST.get('password', '')
 	username = temp['username']
@@ -44,10 +47,12 @@ def login(request):
 		auth.login(request, user)
 		# Redirect to a success page. OR send a response that says successful authentication
 		# return HttpResponseRedirect("/account/loggedin/")
+		print "YEEE"
 		return HttpResponse(json.dumps(response_data), content_type="application/json")
 	else:
 		# Show error page OR send a response that says failed authentication
 		# return HttpResponseRedirect("/account/invalid/")
+		print "FAAIILL"
 		return HttpResponse(json.dumps(response_data), content_type="application/json")
 	
 	#return render_to_response('login.html')
@@ -140,3 +145,4 @@ def mail(gmail_user, gmail_pwd, to, cc, subject, text, attach):
    #Specifically for this app - Cc to bkbdtimesheet@gmail.com
    # Should be mailServer.quit(), but that crashes...
    mailServer.close()
+   
