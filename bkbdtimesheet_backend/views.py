@@ -39,7 +39,9 @@ def login(request):
 	req['title'] = 'This is a constant result.'
 	response = json.dumps(req)
 	response = callback + '(' + response + ');'
+	print "WHAT'S BETWEEN"
 	print request.body
+	print "THESE"
 	temp = json.loads(request.body)
 	print "USERNAME:"
 	print temp['username']
