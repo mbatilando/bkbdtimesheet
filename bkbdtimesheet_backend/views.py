@@ -40,7 +40,9 @@ def login(request):
 	response = json.dumps(req)
 	response = callback + '(' + response + ');'
 	print "WHAT'S BETWEEN"
-	print request.body
+	print request.GET.get('callback', '')
+	print request.GET.get('username', '')
+	print request.GET.get('password', '')
 	print "THESE"
 	temp = json.loads(request.body)
 	print "USERNAME:"
