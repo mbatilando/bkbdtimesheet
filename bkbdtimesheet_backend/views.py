@@ -34,8 +34,17 @@ def index(request):
 @csrf_exempt	
 def login(request):
 	print "Can you see this?"
-	return HttpResponse(json.dumps({}), content_type="application/json")
 	
+	callback = request.GET.get('callback', '')	
+	print "What about this?"
+	req = {}
+	req['title'] = 'This is a constant result.'
+	response = json.dumps(req)
+	response = callback + '(' + response + ');'
+	print "is THIS visible??"
+	return HttpResponse(response, mimetype="application/json")
+
+	"""
 	temp = json.loads(request.body)
 	print "What about this?"
 #	username = request.POST.get('username', '')
@@ -58,6 +67,7 @@ def login(request):
 		return HttpResponse(json.dumps(response_data), content_type="application/json")
 	
 	#return render_to_response('login.html')
+	"""
 	
 @csrf_exempt
 def logout(request):
