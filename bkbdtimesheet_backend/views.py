@@ -6,6 +6,9 @@ from django.core.context_processors import csrf
 from django.views.decorators.csrf import csrf_exempt
 import csv
 import datetime
+import json
+import sys
+import re
 
 #e-mail stuff
 import smtplib
@@ -29,8 +32,11 @@ def index(request):
 
 @csrf_exempt	
 def login(request):
-	username = request.POST.get('username', '')
-	password = request.POST.get('password', '')
+	temp = json.loads(request.body)
+#	username = request.POST.get('username', '')
+#	password = request.POST.get('password', '')
+	username = temp['username']
+	password = temp['password']
 	user = auth.authenticate(username=username, password=password)
 	if user is not None and user.is_active:
 		# Correct password, and the user is marked "active"
