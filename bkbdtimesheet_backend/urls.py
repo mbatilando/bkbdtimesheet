@@ -1,19 +1,23 @@
 from django.conf.urls import patterns, include, url
-from bkbdtimesheet_backend.views import index, login, submit
+from bkbdtimesheet_backend.views import index, submit, login, logout
 from django.views.generic.simple import redirect_to
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
 import os
 
 # Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+from django.contrib import admin
+admin.autodiscover()
+
+# Views for authentication
+# from django.contrib.auth.views import login, logout
 
 urlpatterns = patterns('',
 	('^$', index),
 	(r'^index/$', index),
-	(r'^login/$', login),
 	(r'^submit/$', submit),
+	(r'^login/$', login),
+	(r'^logout/$', logout),
 	(r'^(?P<path>.*js)$', 'django.views.static.serve', {'document_root': os.path.abspath(os.path.curdir).replace('\\','/')}),
 	(r'^(?P<path>.*css)$', 'django.views.static.serve', {'document_root': os.path.abspath(os.path.curdir).replace('\\','/')}),
 	(r'^(?P<path>.*png)$', 'django.views.static.serve', {'document_root': os.path.abspath(os.path.curdir).replace('\\','/')}),
@@ -27,7 +31,7 @@ urlpatterns = patterns('',
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/', include(admin.site.urls)),
 )
 
 #urlpatterns += staticfiles_urlpatterns()

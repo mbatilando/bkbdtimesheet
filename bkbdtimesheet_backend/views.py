@@ -16,6 +16,9 @@ from email import Encoders
 from email import Message
 import os
 
+#Authentication stuff
+from django.contrib import auth
+
 @csrf_exempt
 def index(request):
 	#t = get_template('index.html')
@@ -23,12 +26,33 @@ def index(request):
 	#return HttpResponse(html)
 	return render_to_response('index.html')
 
+
 @csrf_exempt	
 def login(request):
-	#t = get_template('login.html')
-	#html = t.render(Context())
-	#return HttpResponse(html)
-	return render_to_response('login.html')
+	username = request.POST.get('username', '')
+	password = request.POST.get('password', '')
+	user = auth.authenticate(username=username, password=password)
+	if user is not None and user.is_active:
+		# Correct password, and the user is marked "active"
+		auth.login(request, user)
+		# Redirect to a success page. OR send a response that says successful authentication
+		# return HttpResponseRedirect("/account/loggedin/")
+		return HttpResponse("SUCCESS!")
+	else:
+		# Show error page OR send a response that says failed authentication
+		# return HttpResponseRedirect("/account/invalid/")
+		return HttpResponse("FAILURE!")
+	
+	#return render_to_response('login.html')
+	
+@csrf_exempt
+def logout(request):
+	auth.logout(request)
+	# Redirect to success page OR successful logout page
+	# return HttpResponseRedirect("/account/loggedout/")
+	return HttpResponse("SUCCESS!")
+
+
 
 @csrf_exempt	
 def submit(request):
