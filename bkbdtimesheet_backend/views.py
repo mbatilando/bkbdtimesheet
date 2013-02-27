@@ -45,6 +45,8 @@ def login(request):
 	passwordInput = request.GET.get('password', '')
 	print usernameInput
 	print passwordInput
+	print "Let's get started"
+	user0 = auth.authenticate(username='gemini', password='kanon')
 	print "Can you see this?"
 	user = auth.authenticate(username=usernameInput, password=passwordInput)
 	print "How bout this?"
