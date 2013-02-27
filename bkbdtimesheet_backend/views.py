@@ -41,11 +41,12 @@ def login(request):
 	response = callback + '(' + response + ');'
 	#return HttpResponse(response, mimetype="application/json")
 	
-	username = request.GET.get('username', '')
-	password = request.GET.get('password', '')
-	response_data = {}
+	usernameInput = request.GET.get('username', '')
+	passwordInput = request.GET.get('password', '')
+	print usernameInput
+	print passwordInput
 	print "Can you see this?"
-	user = auth.authenticate(username=username, password=password)
+	user = auth.authenticate(username=usernameInput, password=passwordInput)
 	print "How bout this?"
 	if user is not None and user.is_active:
 		print "Woo-hoo"
