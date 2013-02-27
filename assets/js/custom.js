@@ -10,12 +10,42 @@ $(document).ready(function() {
 	});
 
 
+function jsonLogin(url, username, password) {
+	$.ajax({
+		type: 'POST',
+		url: url,
+		crossDomain: true,
+		data: {username: username, password: password},
+		contentType: "application/json",
+		dataType: "jsonp",
+		success: function(data) {return successLogin();},
+		error: function(err) { alert('error occurred on request');}
+	});
+}
+	
+function successLogin() {
+	$('#timesheet').hide().load('timesheet.html').fadeIn(600);
+	$('#loginContainer').remove();
+	$('#replace').hide().load('profile.html').fadeIn(600);
+}
+
+$("#loginBut").click(function(){
+	username = $('#login-username').val();
+	password = $('#login-password').val();
+	url = "http://bkbdtimesheet-backend.herokuapp.com/login";
+	jsonLogin(url, username, password);
+	return false;
+});
+
+
+/*
 $("#loginBut").click(function(){
 	$("#timesheet").hide().load('timesheet.html').fadeIn(600);
 	//$("#loginContainer").hide().empty().load('profile.html').fadeIn();
 	$('#loginContainer').remove();
 	$('#replace').hide().load('profile.html').fadeIn(600);
 });
+*/
 
 
 // $("#loginBut").click(function(){
