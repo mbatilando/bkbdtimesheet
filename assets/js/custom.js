@@ -89,12 +89,16 @@ function calcHour(day) {
 	var lunchTime = parseFloat(lunchOut - lunchIn);
 
 	if (workTime < 0 || lunchTime < 0 || workTime-lunchTime < 0 || lunchOut > timeOut || 
-		(lunchTime > 0 && lunchOut > timeOut + 2)) {
+		(lunchTime > 0 && lunchOut > timeOut + 2 ) {
 		myHash[day] = "Error";
-		
-	}	else if (lunchIn<0 || lunchOut<0) { //No lunch is selected
-			myHash[day] = workTime;
 	}
+	else if (lunchIn<0 && lunchOut<0) { //No lunch is selected
+		myHash[day] = workTime;		
+	}	
+	else if (lunchIn<0 || lunchOut<0) { //lunchIn or lunchOut is set to noLunch but not both
+		myHash[day] = "Error";
+	} 
+
 	else {
 		myHash[day] = workTime - lunchTime;
 	}
