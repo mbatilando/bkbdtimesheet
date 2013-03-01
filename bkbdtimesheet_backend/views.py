@@ -37,33 +37,35 @@ def login(request):
 	callback = request.GET.get('callback', '')	
 	req = {}
 	req['title'] = 'This is a constant result.'
-	response = json.dumps(req)
-	response = callback + '(' + response + ');'
-	#return HttpResponse(response, mimetype="application/json")
+	req['result'] = 0
+	#response = json.dumps(req)
+	#response = callback + '(' + response + ');'
 	
-	usernameInput = request.GET.get('username', '')
-	passwordInput = request.GET.get('password', '')
-	print usernameInput
-	print passwordInput
-	print "Let's get started"
-	user0 = auth.authenticate(username='gemini', password='kanon')
-	print "Can you see this?"
-	user = auth.authenticate(username=usernameInput, password=passwordInput)
-	print "How bout this?"
+	username = request.GET.get('username', '')
+	password = request.GET.get('password', '')
+	#print usernameInput
+	#print passwordInput
+	user = auth.authenticate(username=username, password=password)
 	if user is not None and user.is_active:
-		print "Woo-hoo"
-		# Correct password, and the user is marked "active"
 		auth.login(request, user)
+		req['result'] = 1
+		#print "Woo-hoo"
+		# Correct password, and the user is marked "active"
+		#auth.login(request, user)
 		# Redirect to a success page. OR send a response that says successful authentication
 		# return HttpResponseRedirect("/account/loggedin/")
-		print "YEEE"
-		return HttpResponse(response, mimetype="application/json")
+		#print "YEEE"
+		#return HttpResponse(response, mimetype="application/json")
 	else:
-		print "NAAAW"
+		req['result'] = -1
+		#print "NAAAW"
 		# Show error page OR send a response that says failed authentication
 		# return HttpResponseRedirect("/account/invalid/")
-		print "FAAIILL"
-		return HttpResponse(response, mimetype="application/json")
+		#print "FAAIILL"
+		#return HttpResponse(response, mimetype="application/json")
+	response = json.dumps(req)
+	response = callback + '(' + response + ');'
+	return HttpResponse(response, mimetype="application/json")
 		
 @csrf_exempt
 def logout(request):
