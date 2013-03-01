@@ -22,6 +22,37 @@ function jsonLogin(url, username, password) {
 		error: function(err) { alert('error occurred on request');}
 	});
 }
+
+
+function jsonSubmit(url, username, password) {
+	myHash = {};
+	days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+	for (var i=0; i < days.length; i++){
+		dayTimeIn = days[i].concat("TimeIn")
+		var dayTimeIn = days[i].concat("TimeIn"); 
+		myHash[dayTimeIn] = document.getElementsByName(dayTimeIn).val();
+		var dayLunchIn = days[i].concat("LunchIn");
+		myHash[dayLunchIn] = document.getElementsByName(dayLunchIn).val();
+		var dayLunchOut = days[i].concat("LunchOut");
+		myHash[dayLunchOut] = document.getElementsByName(dayLunchOut).val();
+		var dayTimeOut = days[i].concat("TimeOut");
+		myHash[dayTimeOut] = document.getElementsByName(dayTimeOut).val();
+	}
+	myHash["username"] = $('#login-username').val();
+	myHash["password"] = $('#login-password').val();
+
+	$.ajax({
+		type: 'POST',
+		url: url,
+		crossDomain: true,
+		data: myHash,
+		contentType: "application/json",
+		dataType: "jsonp",
+		success: function(data) {return successLogin();},
+		error: function(err) { alert('error occurred on request');}
+	});
+}
+
 	
 function successLogin() {
 	$('#timesheet').hide().load('timesheet.html').fadeIn(600);
@@ -37,6 +68,29 @@ $("#loginBut").click(function(){
 	return false;
 });
 
+function jsonSubmit(hash) {
+	$.ajax({
+		type: 'POST',
+		url: url,
+		crossDomain: true,
+		data: {Monday: hash['Monday'], Tuesday: hash['Tuesday'], Wednesday:hash['Wednesday'], Thursday:hash['Thursday'], Friday:hash['Friday'], Saturday:hash['Saturday'], Sunday:hash['Sunday']},
+		contentType: "application/json",
+		dataType: "jsonp",
+		success: function(data) {return successSubmit();},
+		error: function(err) { alert('error occurred on request');}
+	});
+}
+
+function successSubmit() {
+	$('#timesheet').hide().load('submit.html').fadeIn(600);
+	$('#loginContainer').remove();
+	$('#replace').hide().load('profile.html').fadeIn(600);
+}
+
+$("#submitBut").click(function(){
+	jsonSubmit(myHash);
+	return false;
+});
 
 /*
 $("#loginBut").click(function(){
@@ -88,13 +142,17 @@ function calcHour(day) {
 	var workTime = parseFloat(timeOut - timeIn);
 	var lunchTime = parseFloat(lunchOut - lunchIn);
 
-	if (workTime < 0 || lunchTime < 0 || workTime-lunchTime < 0 || lunchOut > timeOut || 
-		(lunchTime > 0 && lunchOut > timeOut + 2)) {
+
+	if (workTime < 0 || lunchTime < 0 || workTime-lunchTime < 0 || lunchOut > timeOut || (lunchTime > 0 && lunchOut > timeOut + 2 )) {
 		myHash[day] = "Error";
-		
-	}	else if (lunchIn<0 || lunchOut<0) { //No lunch is selected
-			myHash[day] = workTime;
 	}
+	else if (lunchIn<0 && lunchOut<0) { //No lunch is selected
+		myHash[day] = workTime;		
+	}	
+	else if (lunchIn<0 || lunchOut<0) { //lunchIn or lunchOut is set to noLunch but not both
+		myHash[day] = "Error";
+	} 
+
 	else {
 		myHash[day] = workTime - lunchTime;
 	}
