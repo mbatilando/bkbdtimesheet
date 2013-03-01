@@ -16,7 +16,7 @@
 		var lunchTime = parseInt(lunchOut - lunchIn);
 
 		if (workTime < 0 || lunchTime < 0 || workTime-lunchTime < 0 || lunchOut > timeOut) {
-			myHash[day] = "Error";
+			myHash[day] = "Poop";
 		}
 		else if (lunchIn<0 || lunchOut<0) { //No lunch is selected
 			myHash[day] = workTime;
