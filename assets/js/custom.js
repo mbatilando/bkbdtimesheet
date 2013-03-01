@@ -37,6 +37,29 @@ $("#loginBut").click(function(){
 	return false;
 });
 
+function jsonSubmit(hash) {
+	$.ajax({
+		type: 'POST',
+		url: url,
+		crossDomain: true,
+		data: {Monday: hash['Monday'], Tuesday: hash['Tuesday'], Wednesday:hash['Wednesday'], Thursday:hash['Thursday'], Friday:hash['Friday'], Saturday:hash['Saturday'], Sunday:hash['Sunday']}
+		contentType: "application/json",
+		dataType: "jsonp",
+		success: function(data) {return successSubmit();},
+		error: function(err) { alert('error occurred on request');}
+	});
+}
+
+function successSubmit() {
+	$('#timesheet').hide().load('submit.html').fadeIn(600);
+	$('#loginContainer').remove();
+	$('#replace').hide().load('profile.html').fadeIn(600);
+}
+
+$("#submitBut").click(function(){
+	jsonSubmit(myHash);
+	return false;
+});
 
 /*
 $("#loginBut").click(function(){
