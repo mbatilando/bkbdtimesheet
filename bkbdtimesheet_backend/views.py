@@ -49,6 +49,7 @@ def login(request):
 	if user is not None and user.is_active:
 		auth.login(request, user)
 		req['result'] = 1
+		print "EPIC WIIIN"
 		#print "Woo-hoo"
 		# Correct password, and the user is marked "active"
 		#auth.login(request, user)
@@ -58,6 +59,7 @@ def login(request):
 		#return HttpResponse(response, mimetype="application/json")
 	else:
 		req['result'] = -1
+		print "EPIC FAAILL"
 		#print "NAAAW"
 		# Show error page OR send a response that says failed authentication
 		# return HttpResponseRedirect("/account/invalid/")
