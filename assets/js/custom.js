@@ -42,7 +42,7 @@ function jsonSubmit(hash) {
 		type: 'POST',
 		url: url,
 		crossDomain: true,
-		data: {Monday: hash['Monday'], Tuesday: hash['Tuesday'], Wednesday:hash['Wednesday'], Thursday:hash['Thursday'], Friday:hash['Friday'], Saturday:hash['Saturday'], Sunday:hash['Sunday']}
+		data: {Monday: hash['Monday'], Tuesday: hash['Tuesday'], Wednesday:hash['Wednesday'], Thursday:hash['Thursday'], Friday:hash['Friday'], Saturday:hash['Saturday'], Sunday:hash['Sunday']},
 		contentType: "application/json",
 		dataType: "jsonp",
 		success: function(data) {return successSubmit();},
