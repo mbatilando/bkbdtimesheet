@@ -61,10 +61,11 @@ function successLogin() {
 }
 
 $("#loginBut").click(function(){
-	username = $('#login-username').val();
-	password = $('#login-password').val();
-	url = "http://bkbdtimesheet-backend.herokuapp.com/login";
-	jsonLogin(url, username, password);
+	//username = $('#login-username').val();
+	//password = $('#login-password').val();
+	//url = "http://bkbdtimesheet-backend.herokuapp.com/login";
+	//jsonLogin(url, username, password);
+	successLogin();
 	return false;
 });
 
