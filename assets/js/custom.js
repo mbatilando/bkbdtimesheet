@@ -58,14 +58,14 @@ function successLogin() {
 	$('#replace').hide().load('profile.html').fadeIn(600);
 }
 
-$("#loginBut").click(function(){
-	//username = $('#login-username').val();
-	//password = $('#login-password').val();
-	//url = "http://bkbdtimesheet-backend.herokuapp.com/login";
-	//jsonLogin(url, username, password);
-	successLogin();
-	return false;
-});
+// $("#loginBut").click(function(){
+// 	//username = $('#login-username').val();
+// 	//password = $('#login-password').val();
+// 	//url = "http://bkbdtimesheet-backend.herokuapp.com/login";
+// 	//jsonLogin(url, username, password);
+// 	successLogin();
+// 	return false;
+// });
 
 
 $("#submitBut2").click(function(){
