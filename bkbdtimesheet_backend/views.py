@@ -18,6 +18,7 @@ from email.MIMEText import MIMEText
 from email import Encoders
 from email import Message
 import os
+from datetime import timedelta, date
 
 #Authentication stuff
 from django.contrib import auth
@@ -37,33 +38,37 @@ def login(request):
 	callback = request.GET.get('callback', '')	
 	req = {}
 	req['title'] = 'This is a constant result.'
-	response = json.dumps(req)
-	response = callback + '(' + response + ');'
-	#return HttpResponse(response, mimetype="application/json")
+	req['result'] = 0
+	#response = json.dumps(req)
+	#response = callback + '(' + response + ');'
 	
-	usernameInput = request.GET.get('username', '')
-	passwordInput = request.GET.get('password', '')
-	print usernameInput
-	print passwordInput
-	print "Let's get started"
-	user0 = auth.authenticate(username='gemini', password='kanon')
-	print "Can you see this?"
-	user = auth.authenticate(username=usernameInput, password=passwordInput)
-	print "How bout this?"
+	username = request.GET.get('username', '')
+	password = request.GET.get('password', '')
+	#print usernameInput
+	#print passwordInput
+	user = auth.authenticate(username=username, password=password)
 	if user is not None and user.is_active:
-		print "Woo-hoo"
-		# Correct password, and the user is marked "active"
 		auth.login(request, user)
+		req['result'] = 1
+		print "EPIC WIIIN"
+		#print "Woo-hoo"
+		# Correct password, and the user is marked "active"
+		#auth.login(request, user)
 		# Redirect to a success page. OR send a response that says successful authentication
 		# return HttpResponseRedirect("/account/loggedin/")
-		print "YEEE"
-		return HttpResponse(response, mimetype="application/json")
+		#print "YEEE"
+		#return HttpResponse(response, mimetype="application/json")
 	else:
-		print "NAAAW"
+		req['result'] = -1
+		print "EPIC FAAILL"
+		#print "NAAAW"
 		# Show error page OR send a response that says failed authentication
 		# return HttpResponseRedirect("/account/invalid/")
-		print "FAAIILL"
-		return HttpResponse(response, mimetype="application/json")
+		#print "FAAIILL"
+		#return HttpResponse(response, mimetype="application/json")
+	response = json.dumps(req)
+	response = callback + '(' + response + ');'
+	return HttpResponse(response, mimetype="application/json")
 		
 @csrf_exempt
 def logout(request):
@@ -78,6 +83,9 @@ def logout(request):
 def submit(request):
 	requestInput = request.POST
 	date = str(requestInput['weekof']).split('/')
+	fridayDate = datetime.date(date[2], date[1], date[0])
+	oneDay = timedelta(days=1)
+	
 	days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 	timeMap = ['8:00 AM', '8:30 AM', '9:00 AM', '9:30 AM', '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM', '1:00 PM', '1:30 PM', '2:00 PM', '2:30 PM', '3:00 PM', '3:30 PM', '4:00 PM', '4:30 PM', '5:00 PM', '5:30 PM', '6:00 PM', '6:30 PM', '7:00 PM']
 	lunchTimeMap = ['10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM', '1:00 PM', '1:30 PM', '2:00 PM', '2:30 PM', '3:00 PM', '3:30 PM', '4:00 PM']
@@ -85,19 +93,23 @@ def submit(request):
 	cc= str(requestInput['cc'])
 	
 	with open('timesheet.csv', 'wb') as f:
-		grandTotal = 0
+		weeklyHours = 0
 		writer = csv.writer(f)
-		writer.writerow(['Name:', str(requestInput['intern_name'])])
+		writer.writerow(['Employee Time Sheet'])
+		writer.writerow(['Employee Name:', str(requestInput['intern_name'])])
+		writer.writerow(['Department:', 'Quality Assurance'])
 		writer.writerow(['Week of:', str(requestInput['weekof'])])
-		writer.writerow(['Day', 'TimeIn', 'LunchIn', 'LunchOut', 'TimeOut', 'Total'])
+		writer.writerow(['Weekday', 'Date', 'Start Work', 'Time Out (Lunch)', 'Time in (Lunch)', 'End Work', 'Total Hours', 'Weekly Hours'])
 		for i in range(0, len(days)):
 			day = str(days[i])
+			curDate = fridayDate - (4 - i)*oneDay
+			curDate = curDate.strftime("%m/%d/%y")
 			timeIn = float(requestInput[str(days[i])+'TimeIn'])
 			lunchIn = float(requestInput[str(days[i])+'LunchIn'])
 			lunchOut = float(requestInput[str(days[i])+'LunchOut'])			
 			timeOut = float(requestInput[str(days[i])+'TimeOut'])
-			timeTotal = timeOut - timeIn - (lunchOut - lunchIn)
-			grandTotal += timeTotal
+			totalHours = timeOut - timeIn - (lunchOut - lunchIn)
+			weeklyHours += timeTotal
 			
 			timeIn = timeMap[int(timeIn*2)]
 			timeOut = timeMap[int(timeOut*2)]
@@ -109,15 +121,19 @@ def submit(request):
 				lunchIn = 'No lunch'
 				lunchOut = 'No lunch'
 			
-			writer.writerow([day, timeIn, lunchIn, lunchOut, timeOut, timeTotal])
-		writer.writerow(['','','','','', grandTotal])
+			writer.writerow([day, curDate, timeIn, lunchIn, lunchOut, timeOut, totalHours, weeklyHours])
+		writer.writerow([''])
+		writer.writerow(['Weekly Total'])
+		writer.writerow(['Total hours:', weeklyHours])
+		writer.writerow(['Regular hours:', weeklyHours])
+		writer.writerow(['Overtime hours:', 0])
 		
 	#Send the result via e-mail
 	employeeName = str(requestInput['intern_name']).split(" ")
 	employeeName = employeeName[0].lower() + employeeName[1].lower()
 	csvName = employeeName+"_timesheet_"+str(date[0])+"_"+str(date[1])+".csv"
 	os.rename("timesheet.csv", csvName)
-	mail("bkbdtimesheet@gmail.com", "Macklemore", manager, cc, "timesheets " + str(requestInput['weekof']), "Total hours: " + str(grandTotal), csvName)
+	mail("bkbdtimesheet@gmail.com", "Macklemore", manager, cc, "timesheets " + str(requestInput['weekof']), "Total hours: " + str(weeklyHours), csvName)
 	os.rename(csvName, "timesheet.csv")
 	
 	return render_to_response('submit.html')
