@@ -7,6 +7,10 @@
 	color:2D302D;
 	}
 
+#canvasloader-container {
+	margin-top:5px; 
+	margin-left:10px;
+}
 .inputField, .bossSelect, .timesheetSelect {
 	width:150px;
 }
@@ -100,4 +104,5 @@ margin: 0px;
 }
 #modal .btn {
 	float:right;
+	margin-bottom: 7px;
 }

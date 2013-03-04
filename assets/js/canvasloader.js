@@ -120,9 +120,9 @@
 	* <li><strong>safeVML (Boolean):</strong> If set to true, the amount of CanvasLoader shapes are limited in VML mode. It prevents CPU overkilling when rendering loaders with high density. The default value is true.</li>
 	**/
 	p.init = function (pId, opt) {
-		
+
 		if (typeof(opt.safeVML) === "boolean") { safeVML = opt.safeVML; }
-		
+
 		/*
 		* Find the containing div by id
 		* If the container element cannot be found we use the document body itself
@@ -604,7 +604,7 @@
 		if (typeof (this.timer) !== "number") {
 			var t = this;
 			this.timer = self.setInterval(function () { t.tick(); }, Math.round(1000 / this.fps));
-			setCSS(this.cont, {display: "block"});
+			setCSS(this.cont, {display: "inline"});
 		}
 	};
 	/**

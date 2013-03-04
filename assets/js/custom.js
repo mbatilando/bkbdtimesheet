@@ -4,9 +4,7 @@
 
 var x = 'foo';
 $(document).ready(function() {
-	$('#main').fadeIn("slow");
-		//x = $('#timesheet').load('timesheet.html');
-		//document.getElementById('timesheet').hidden = true;
+	$('#main').fadeIn(600);
 	});
 
 
@@ -24,7 +22,7 @@ function jsonLogin(url, username, password) {
 }
 
 
-function jsonSubmit(url, username, password) {
+function jsonSubmit(url) {
 	myHash = {};
 	days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 	for (var i=0; i < days.length; i++){
@@ -68,18 +66,20 @@ $("#loginBut").click(function(){
 	return false;
 });
 
-function jsonSubmit(hash) {
-	$.ajax({
-		type: 'POST',
-		url: url,
-		crossDomain: true,
-		data: {Monday: hash['Monday'], Tuesday: hash['Tuesday'], Wednesday:hash['Wednesday'], Thursday:hash['Thursday'], Friday:hash['Friday'], Saturday:hash['Saturday'], Sunday:hash['Sunday']},
-		contentType: "application/json",
-		dataType: "jsonp",
-		success: function(data) {return successSubmit();},
-		error: function(err) { alert('error occurred on request');}
-	});
-}
+
+$("#submitBut2").click(function(){
+	alert("hi");
+	$("#content").fadeOut().hide().load('submit.html').fadeIn(600);
+});
+
+
+
+
+$('a.modalConfirm').click(function() {
+    //split at the '_' and take the second offset
+    $("#content").fadeOut().hide().load('submit.html').fadeIn(600);
+});
+
 
 function successSubmit() {
 	$('#timesheet').hide().load('submit.html').fadeIn(600);
@@ -91,23 +91,6 @@ $("#submitBut").click(function(){
 	jsonSubmit(myHash);
 	return false;
 });
-
-/*
-$("#loginBut").click(function(){
-	$("#timesheet").hide().load('timesheet.html').fadeIn(600);
-	//$("#loginContainer").hide().empty().load('profile.html').fadeIn();
-	$('#loginContainer').remove();
-	$('#replace').hide().load('profile.html').fadeIn(600);
-});
-*/
-
-
-// $("#loginBut").click(function(){
-// 	$('#main').fadeOut('fast');
-// 	$('#timesheet').css('visibility','visible').hide().fadeIn('slow');
-// });
-
-
 
 
 $('form').submit(function() {
@@ -179,3 +162,12 @@ function updateHash(day) {
 	document.getElementById('totWeek').value=calcTotal();
 }
 
+function checkSubmit() {
+	document.getElementById('submitBut2').onclick = function() {
+		alert('hi');
+		alert(document.getElementById('totWeek').textContent);
+		if (document.getElementById('totWeek').textContent != 'Error' && document.getElementById('totWeek').textContent != '') {
+			$('#modal').show();
+		}
+	}
+}
