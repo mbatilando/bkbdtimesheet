@@ -87,6 +87,7 @@ def submit(request):
 	requestInput = request.GET
 
         print("where")
+        print(requestInput['weekof'])
 	
 	dateInput = str(requestInput['weekof']).split('/')
 
