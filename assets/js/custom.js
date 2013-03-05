@@ -20,37 +20,6 @@ function jsonLogin(url, username, password) {
 		error: function(err) { alert('error occurred on request');}
 	});
 }
-
-
-function jsonSubmit(url) {
-	myHash = {};
-	days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-	for (var i=0; i < days.length; i++){
-		dayTimeIn = days[i].concat("TimeIn")
-		var dayTimeIn = days[i].concat("TimeIn"); 
-		myHash[dayTimeIn] = document.getElementsByName(dayTimeIn).val();
-		var dayLunchIn = days[i].concat("LunchIn");
-		myHash[dayLunchIn] = document.getElementsByName(dayLunchIn).val();
-		var dayLunchOut = days[i].concat("LunchOut");
-		myHash[dayLunchOut] = document.getElementsByName(dayLunchOut).val();
-		var dayTimeOut = days[i].concat("TimeOut");
-		myHash[dayTimeOut] = document.getElementsByName(dayTimeOut).val();
-	}
-	myHash["username"] = $('#login-username').val();
-	myHash["password"] = $('#login-password').val();
-
-	$.ajax({
-		type: 'POST',
-		url: url,
-		crossDomain: true,
-		data: myHash,
-		contentType: "application/json",
-		dataType: "jsonp",
-		success: function(data) {return successLogin();},
-		error: function(err) { alert('error occurred on request');}
-	});
-}
-
 	
 function successLogin() {
 	$('#timesheet').hide().load('timesheet.html').fadeIn(600);
@@ -67,18 +36,60 @@ function successLogin() {
 // 	return false;
 // });
 
-
+/*
 $("#submitBut2").click(function(){
-	alert("hi");
 	$("#content").fadeOut().hide().load('submit.html').fadeIn(600);
 });
+*/
 
 
-
-
+/*
 $('a.modalConfirm').click(function() {
     //split at the '_' and take the second offset
     $("#content").fadeOut().hide().load('submit.html').fadeIn(600);
+});
+*/
+
+function jsonSubmit(url) {
+	myHash = {};
+	days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+	for (var i=0; i < days.length; i++){
+		var dayTimeIn = days[i].concat("TimeIn"); 
+		myHash[dayTimeIn] = $('#'.concat(dayTimeIn)).val();
+		var dayLunchIn = days[i].concat("LunchIn");
+		myHash[dayLunchIn] = $('#'.concat(dayLunchIn)).val();
+		var dayLunchOut = days[i].concat("LunchOut");
+		myHash[dayLunchOut] = $('#'.concat(dayLunchOut)).val();
+		var dayTimeOut = days[i].concat("TimeOut");
+		myHash[dayTimeOut] = $('#'.concat(dayTimeOut)).val();
+	}
+	
+	myHash['manager'] = $('#manager').val();
+	myHash['weekof'] = $('#datepicker').val();
+	myHash['intern_name'] = $('#intern_name').val();
+	myHash['cc'] = $('#cc').val();
+	
+	$.ajax({
+		type: 'GET',
+		url: url,
+		crossDomain: true,
+		data: myHash,
+		contentType: "application/json",
+		dataType: "jsonp",
+		success: function(data) {return successSubmit();},
+		error: function(err) { alert('error occurred on request');}
+	});
+		
+	alert("I think you were too hard on the beaver");
+}
+
+
+$("#modalConfirm").click(function() {
+	alert("Hey yo");
+	url = "http://bkbdtimesheet-backend.herokuapp.com/submit";
+	jsonSubmit(url);
+	alert("alright look");
+	return false;
 });
 
 
@@ -88,11 +99,12 @@ function successSubmit() {
 	$('#replace').hide().load('profile.html').fadeIn(600);
 }
 
+/*
 $("#submitBut").click(function(){
 	jsonSubmit(myHash);
 	return false;
 });
-
+*/
 
 $('form').submit(function() {
 	if (document.getElementById('totWeek').textContent != 'Error' && document.getElementById('totWeek').textContent != '') {

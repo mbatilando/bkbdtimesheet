@@ -37,7 +37,6 @@ def login(request):
 	
 	callback = request.GET.get('callback', '')	
 	req = {}
-	req['title'] = 'This is a constant result.'
 	req['result'] = 0
 	#response = json.dumps(req)
 	#response = callback + '(' + response + ');'
@@ -81,7 +80,9 @@ def logout(request):
 
 @csrf_exempt	
 def submit(request):
-	requestInput = request.POST
+	
+	#requestInput = request.POST
+	requestInput = request.GET
 	date = str(requestInput['weekof']).split('/')
 	fridayDate = datetime.date(date[2], date[1], date[0])
 	oneDay = timedelta(days=1)
@@ -135,8 +136,13 @@ def submit(request):
 	os.rename("timesheet.csv", csvName)
 	mail("bkbdtimesheet@gmail.com", "Macklemore", manager, cc, "timesheets " + str(requestInput['weekof']), "Total hours: " + str(weeklyHours), csvName)
 	os.rename(csvName, "timesheet.csv")
-	
-	return render_to_response('submit.html')
+
+	callback = request.GET.get('callback', '')	
+	req = {}
+	response = json.dumps(req)
+	response = callback + '(' + response + ');'
+	return HttpResponse(response, mimetype="application/json")
+
 	
 @csrf_exempt
 def mail(gmail_user, gmail_pwd, to, cc, subject, text, attach):

@@ -9,6 +9,7 @@
 	  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 	  <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
 	  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+	  <script type="text/javascript" src="assets/js/custom.js"></script>
 	  <script type="text/javascript">	
 			$(function() {
 			    $( "#datepicker" ).datepicker();
@@ -700,17 +701,17 @@
 						</tr>
 						<tr>
 							<td style='vertical-align: top; padding-right: 29px;' height='125px'>
-								<select name='manager' class='bossSelect' style='height: 28px; margin-top: 10px;'>
+								<select id="manager" name='manager' class='bossSelect' style='height: 28px; margin-top: 10px;'>
 									<option value='cyrus.fakour@blackbaud.com'>Cyrus Fakour</option>	
 								</select><br>
 									Select your manager
 							</td>
 							<td style='padding-top: 1.6%; padding-right: 29px;' height='125px'>
-								<input type='text' class='inputField'name='intern_name' style='height: 28px;'><br>
+								<input id="intern_name" type='text' class='inputField'name='intern_name' style='height: 28px;'><br>
 								First and Last Name
 							</td>
 							<td style='padding-top: 1.6%; padding-right: 29px;' height='125px'>
-								<input type='text' class='inputField' name='cc' style='height: 28px;'><br>
+								<input id="cc" type='text' class='inputField' name='cc' style='height: 28px;'><br>
 								E-mail
 							</td>
 							<td height='55px' style='padding-right: 30px; padding-top: 1.6%; word-wrap: break-word; width: 200px; font-size: 12px;'>
@@ -739,7 +740,8 @@
 				</header>
 				<footer class="cf">
 					<a href="#" class="btn btn-primary">No</a>
-					<a href="submit.html" id="modalConfirm" class="btn btn-danger modalConfirm">Yes</a>
+					<a id="modalConfirm" type="button" class="btn btn-danger modalConfirm">Yes</a>
+					<!-- <a href="submit.html" id="modalConfirm" class="btn btn-danger modalConfirm">Yes</a> -->				
 				</footer>
 			</aside>
 		</div>
