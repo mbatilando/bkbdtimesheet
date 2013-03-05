@@ -94,7 +94,7 @@ def submit(request):
 	print("is")
 	print("Date: " + str(dateInput))
 	
-	fridayDate = datetime.date(dateInput[2], dateInput[1], dateInput[0])
+	fridayDate = datetime.date(int(dateInput[2]), int(dateInput[1]), int(dateInput[0]))
 
         print("IT")
 	
