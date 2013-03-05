@@ -89,9 +89,9 @@ def submit(request):
 	fridayDate = datetime.date(int(dateInput[2]), int(dateInput[0]), int(dateInput[1]))
 	oneDay = timedelta(days=1)
 
-        print("DAY: " + fridayDate.day)
-        print("MONTH: " + fridayDate.month)
-        print("YEAR: " + fridayDate.year)
+        print("DAY: " + str(fridayDate.day))
+        print("MONTH: " + str(fridayDate.month))
+        print("YEAR: " + str(fridayDate.year))
 
 	print("Breakpoint 1")
 	
