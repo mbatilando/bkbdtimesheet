@@ -89,10 +89,6 @@ def submit(request):
 	fridayDate = datetime.date(int(dateInput[2]), int(dateInput[0]), int(dateInput[1]))
 	oneDay = timedelta(days=1)
 
-        print("DAY: " + str(fridayDate.day))
-        print("MONTH: " + str(fridayDate.month))
-        print("YEAR: " + str(fridayDate.year))
-
 	print("Breakpoint 1")
 	
 	days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
@@ -100,7 +96,6 @@ def submit(request):
 	lunchTimeMap = ['10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM', '1:00 PM', '1:30 PM', '2:00 PM', '2:30 PM', '3:00 PM', '3:30 PM', '4:00 PM']
 	manager = str(requestInput['manager'])
 	cc= str(requestInput['cc'])
-
 
 	print("Breakpoint 2")
 	
@@ -121,12 +116,24 @@ def submit(request):
 		for i in range(0, len(days)):
                         print("Breakpoint 5")
 			day = str(days[i])
+
+                        print("DON'T U WORRY CHILD")
+			
 			curDate = fridayDate - (4 - i)*oneDay
+
+                        print("WHERE")
+			
 			curDate = curDate.strftime("%m/%d/%y")
+
+                        print("IS")
+
 			timeIn = float(requestInput[str(days[i])+'TimeIn'])
 			lunchIn = float(requestInput[str(days[i])+'LunchIn'])
 			lunchOut = float(requestInput[str(days[i])+'LunchOut'])			
 			timeOut = float(requestInput[str(days[i])+'TimeOut'])
+
+                        print("IT")
+
 			totalHours = timeOut - timeIn - (lunchOut - lunchIn)
 			weeklyHours += timeTotal
 
