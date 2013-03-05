@@ -80,6 +80,8 @@ def logout(request):
 
 @csrf_exempt	
 def submit(request):
+
+        print("Breakpoint 0")
 	
 	#requestInput = request.POST
 	requestInput = request.GET
