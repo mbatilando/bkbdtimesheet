@@ -92,7 +92,7 @@ def submit(request):
 	dateInput = str(requestInput['weekof']).split('/')
 
 	print("is")
-	print("Date: " + dateInput)
+	print("Date: " + str(dateInput))
 	
 	fridayDate = datetime.date(dateInput[2], dateInput[1], dateInput[0])
 
