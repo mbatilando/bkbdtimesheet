@@ -85,8 +85,17 @@ def submit(request):
 	
 	#requestInput = request.POST
 	requestInput = request.GET
+
+        print("where")
+	
 	date = str(requestInput['weekof']).split('/')
+
+	print("is")
+	
 	fridayDate = datetime.date(date[2], date[1], date[0])
+
+        print("IT")
+	
 	oneDay = timedelta(days=1)
 
 	print("Breakpoint 1")
