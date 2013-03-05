@@ -80,7 +80,14 @@ def logout(request):
 
 @csrf_exempt	
 def submit(request):
-	
+
+	callback = request.GET.get('callback', '')	
+	req = {}
+	response = json.dumps(req)
+	response = callback + '(' + response + ');'
+	return HttpResponse(response, mimetype="application/json")
+
+	"""
 	#requestInput = request.POST
 	requestInput = request.GET
 	date = str(requestInput['weekof']).split('/')
@@ -136,12 +143,8 @@ def submit(request):
 	os.rename("timesheet.csv", csvName)
 	mail("bkbdtimesheet@gmail.com", "Macklemore", manager, cc, "timesheets " + str(requestInput['weekof']), "Total hours: " + str(weeklyHours), csvName)
 	os.rename(csvName, "timesheet.csv")
+        """
 
-	callback = request.GET.get('callback', '')	
-	req = {}
-	response = json.dumps(req)
-	response = callback + '(' + response + ');'
-	return HttpResponse(response, mimetype="application/json")
 
 	
 @csrf_exempt
