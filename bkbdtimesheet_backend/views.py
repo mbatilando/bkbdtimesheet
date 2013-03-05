@@ -80,31 +80,27 @@ def logout(request):
 
 @csrf_exempt	
 def submit(request):
-
-        requestInput = request.GET
-        print(requestInput)
-        print("Should be Atlas Genius: " + requestInput['intern_name'])
-
-	callback = request.GET.get('callback', '')	
-	req = {}
-	response = json.dumps(req)
-	response = callback + '(' + response + ');'
-	return HttpResponse(response, mimetype="application/json")
-
-	"""
+	
 	#requestInput = request.POST
 	requestInput = request.GET
 	date = str(requestInput['weekof']).split('/')
 	fridayDate = datetime.date(date[2], date[1], date[0])
 	oneDay = timedelta(days=1)
+
+	print("Breakpoint 1")
 	
 	days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 	timeMap = ['8:00 AM', '8:30 AM', '9:00 AM', '9:30 AM', '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM', '1:00 PM', '1:30 PM', '2:00 PM', '2:30 PM', '3:00 PM', '3:30 PM', '4:00 PM', '4:30 PM', '5:00 PM', '5:30 PM', '6:00 PM', '6:30 PM', '7:00 PM']
 	lunchTimeMap = ['10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM', '1:00 PM', '1:30 PM', '2:00 PM', '2:30 PM', '3:00 PM', '3:30 PM', '4:00 PM']
 	manager = str(requestInput['manager'])
 	cc= str(requestInput['cc'])
+
+	print("Breakpoint 2")
 	
 	with open('timesheet.csv', 'wb') as f:
+
+                print("Breakpoint 3")
+
 		weeklyHours = 0
 		writer = csv.writer(f)
 		writer.writerow(['Employee Time Sheet'])
@@ -112,7 +108,11 @@ def submit(request):
 		writer.writerow(['Department:', 'Quality Assurance'])
 		writer.writerow(['Week of:', str(requestInput['weekof'])])
 		writer.writerow(['Weekday', 'Date', 'Start Work', 'Time Out (Lunch)', 'Time in (Lunch)', 'End Work', 'Total Hours', 'Weekly Hours'])
+
+                print("Breakpoint 4")
+		
 		for i in range(0, len(days)):
+                        print("Breakpoint 5")
 			day = str(days[i])
 			curDate = fridayDate - (4 - i)*oneDay
 			curDate = curDate.strftime("%m/%d/%y")
@@ -122,9 +122,8 @@ def submit(request):
 			timeOut = float(requestInput[str(days[i])+'TimeOut'])
 			totalHours = timeOut - timeIn - (lunchOut - lunchIn)
 			weeklyHours += timeTotal
-			
-			timeIn = timeMap[int(timeIn*2)]
-			timeOut = timeMap[int(timeOut*2)]
+
+			print("Breakpoint 6")
 
 			if (int(lunchIn) > 0) and (int(lunchOut) > 0):
 				lunchIn = timeMap[int(lunchIn*2)]
@@ -134,11 +133,13 @@ def submit(request):
 				lunchOut = 'No lunch'
 			
 			writer.writerow([day, curDate, timeIn, lunchIn, lunchOut, timeOut, totalHours, weeklyHours])
+			
 		writer.writerow([''])
 		writer.writerow(['Weekly Total'])
 		writer.writerow(['Total hours:', weeklyHours])
 		writer.writerow(['Regular hours:', weeklyHours])
 		writer.writerow(['Overtime hours:', 0])
+		print("Breakpoint 7")
 		
 	#Send the result via e-mail
 	employeeName = str(requestInput['intern_name']).split(" ")
@@ -147,8 +148,13 @@ def submit(request):
 	os.rename("timesheet.csv", csvName)
 	mail("bkbdtimesheet@gmail.com", "Macklemore", manager, cc, "timesheets " + str(requestInput['weekof']), "Total hours: " + str(weeklyHours), csvName)
 	os.rename(csvName, "timesheet.csv")
-        """
-
+        
+        print("SUCCESS!")
+	callback = request.GET.get('callback', '')	
+	req = {}
+	response = json.dumps(req)
+	response = callback + '(' + response + ');'
+	return HttpResponse(response, mimetype="application/json")
 
 	
 @csrf_exempt
