@@ -108,6 +108,7 @@ def submit(request):
 	manager = str(requestInput['manager'])
 	cc= str(requestInput['cc'])
 	"""
+        requestInput = request.GET
 
 	print("Breakpoint 2")
 	
