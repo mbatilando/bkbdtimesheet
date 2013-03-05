@@ -135,7 +135,7 @@ def submit(request):
                         print("IT")
 
 			totalHours = timeOut - timeIn - (lunchOut - lunchIn)
-			weeklyHours += timeTotal
+			weeklyHours += totalHours
 
 			print("Breakpoint 6")
 
