@@ -81,6 +81,9 @@ def logout(request):
 @csrf_exempt	
 def submit(request):
 
+        requestInput = request.GET
+        print(requestInput)
+
 	callback = request.GET.get('callback', '')	
 	req = {}
 	response = json.dumps(req)
