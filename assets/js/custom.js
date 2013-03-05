@@ -80,23 +80,20 @@ function jsonSubmit(url) {
 		error: function(err) { alert('error occurred on request');}
 	});
 		
-	alert("I think you were too hard on the beaver");
 }
 
 
 $("#modalConfirm").click(function() {
-	alert("Hey yo");
 	url = "http://bkbdtimesheet-backend.herokuapp.com/submit";
 	jsonSubmit(url);
-	alert("alright look");
 	return false;
 });
 
 
 function successSubmit() {
-	$('#replace').hide().load('submit.html').fadeIn(600);
+	$('#replace').fadeOut().hide().load('submit.html').fadeIn(600);
 	$('#loginContainer').remove();
-	$('#timesheet').hide();
+	$('#timesheet').fadeOut().hide();
 }
 
 /*
