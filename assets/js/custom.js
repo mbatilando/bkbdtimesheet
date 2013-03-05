@@ -94,9 +94,9 @@ $("#modalConfirm").click(function() {
 
 
 function successSubmit() {
-	$('#timesheet').hide().load('submit.html').fadeIn(600);
+	$('#replace').hide().load('submit.html').fadeIn(600);
 	$('#loginContainer').remove();
-	$('#replace').hide().load('profile.html').fadeIn(600);
+	$('#timesheet').hide();
 }
 
 /*

@@ -83,6 +83,7 @@ def submit(request):
 
         requestInput = request.GET
         print(requestInput)
+        print("Should be Atlas Genius: " + requestInput['intern_name'])
 
 	callback = request.GET.get('callback', '')	
 	req = {}
