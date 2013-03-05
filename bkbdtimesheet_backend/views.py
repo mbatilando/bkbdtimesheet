@@ -88,12 +88,12 @@ def submit(request):
 
         print("where")
 	
-	date = str(requestInput['weekof']).split('/')
+	dateInput = str(requestInput['weekof']).split('/')
 
 	print("is")
-	print("Date: " + date)
+	print("Date: " + dateInput)
 	
-	fridayDate = datetime.date(date[2], date[1], date[0])
+	fridayDate = datetime.date(dateInput[2], dateInput[1], dateInput[0])
 
         print("IT")
 	
@@ -156,7 +156,7 @@ def submit(request):
 	#Send the result via e-mail
 	employeeName = str(requestInput['intern_name']).split(" ")
 	employeeName = employeeName[0].lower() + employeeName[1].lower()
-	csvName = employeeName+"_timesheet_"+str(date[0])+"_"+str(date[1])+".csv"
+	csvName = employeeName+"_timesheet_"+str(dateInput[0])+"_"+str(dateInput[1])+".csv"
 	os.rename("timesheet.csv", csvName)
 	mail("bkbdtimesheet@gmail.com", "Macklemore", manager, cc, "timesheets " + str(requestInput['weekof']), "Total hours: " + str(weeklyHours), csvName)
 	os.rename(csvName, "timesheet.csv")
