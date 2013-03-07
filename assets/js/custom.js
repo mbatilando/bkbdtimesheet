@@ -55,13 +55,14 @@ function jsonSubmit(url) {
 	myHash['intern_name'] = $('#intern_name').val();
 	myHash['cc'] = $('#cc').val();
 	email = $('#cc').val();
+	//error-checking
 	if (!(validEmail(email))) {
 		alert('Error: invalid e-mail address: '+email);
 	} 
-	else if  (document.getElementById('totWeek').textContent != '') {
+	else if  (document.getElementById('totWeek').textContent == '') {
 		alert('Error: worked zero hours this week.');
 	} 
-	else if (document.getElementById('totWeek').textContent != 'Error') {
+	else if (document.getElementById('totWeek').textContent == 'Error') {
 		alert('Error: invalid lunch or work time.');
 	}
 	else {
