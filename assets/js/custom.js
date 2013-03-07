@@ -71,6 +71,12 @@ function jsonSubmit(url) {
 	email = $('#cc').val();
 	if (!(validEmail(email))) {
 		alert('Error: invalid e-mail address: '+email);
+	} 
+	else if  (document.getElementById('totWeek').textContent != '') {
+		alert('Error: worked zero hours this week.');
+	} 
+	else if (document.getElementById('totWeek').textContent != 'Error') {
+		alert('Error: invalid lunch or work time.');
 	}
 	else {
 		$.ajax({
