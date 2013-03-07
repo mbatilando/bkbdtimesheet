@@ -57,7 +57,7 @@ function jsonSubmit(url) {
 	email = $('#cc').val();
 	//error-checking
 	if (!(validEmail(email))) {
-		alert('Error: invalid e-mail address: '+email + '\nPlease try again.');
+		alert('Error: '+email +' is an invalid e-mail address.'+ + '\nPlease try again.');
 	} 
 	else if  (document.getElementById('totWeek').textContent == '') {
 		alert('Error: worked zero hours this week.'+ '\nPlease try again.');
@@ -135,17 +135,17 @@ function calcHour(day) {
 }
 
 function calcTotal() {
-var total = 0;
-for (var day in myHash) {
-	if (typeof myHash[day] === "number") {
-		total += myHash[day];
+	var total = 0;
+	for (var day in myHash) {
+		if (typeof myHash[day] === "number") {
+			total += myHash[day];
+		}
+		else {
+		 total = "Error";
+		 break;
+		}
 	}
-	else {
-	 total = "Error";
-	 break;
-	}
-}
-return total;
+	return total;
 }
 
 function updateHash(day) {
@@ -156,6 +156,6 @@ function updateHash(day) {
 }
 
 function validEmail(email) {
-	var valid= /[^@]+@[^@]+\.[^@]+/;
+	var valid= /[^@]+@[^@]+\.[^@]+/; //something@something.something
 	return valid.test(email);
 }
