@@ -1,12 +1,17 @@
-////////////////////////
-//// LOGIN FUNCTIONS////
-////////////////////////
-
 var x = 'foo';
 $(document).ready(function() {
 	$('#main').fadeIn(600);
 	});
 
+///////////////////////////////////
+////  LOGIN FUNCTIONS////
+/////////////////////////////////
+	
+$("#modalConfirm").click(function() {
+	url = "http://bkbdtimesheet-backend.herokuapp.com/submit";
+	jsonSubmit(url);
+	return false;
+});
 
 function jsonLogin(url, username, password) {
 	$.ajax({
@@ -27,28 +32,9 @@ function successLogin() {
 	$('#replace').hide().load('profile.html').fadeIn(600);
 }
 
-// $("#loginBut").click(function(){
-// 	//username = $('#login-username').val();
-// 	//password = $('#login-password').val();
-// 	//url = "http://bkbdtimesheet-backend.herokuapp.com/login";
-// 	//jsonLogin(url, username, password);
-// 	successLogin();
-// 	return false;
-// });
-
-/*
-$("#submitBut2").click(function(){
-	$("#content").fadeOut().hide().load('submit.html').fadeIn(600);
-});
-*/
-
-
-/*
-$('a.modalConfirm').click(function() {
-    //split at the '_' and take the second offset
-    $("#content").fadeOut().hide().load('submit.html').fadeIn(600);
-});
-*/
+///////////////////////////////////
+////  SUBMIT FUNCTIONS////
+/////////////////////////////////
 
 function jsonSubmit(url) {
 	myHash = {};
@@ -92,14 +78,6 @@ function jsonSubmit(url) {
 	}
 }
 
-
-$("#modalConfirm").click(function() {
-	url = "http://bkbdtimesheet-backend.herokuapp.com/submit";
-	jsonSubmit(url);
-	return false;
-});
-
-
 function successSubmit() {
 	$('#replace').fadeOut().hide().load('submit.html').fadeIn(600);
 	$('#loginContainer').remove();
@@ -107,12 +85,6 @@ function successSubmit() {
 }
 
 /*
-$("#submitBut").click(function(){
-	jsonSubmit(myHash);
-	return false;
-});
-*/
-
 $('form').submit(function() {
 	if (document.getElementById('totWeek').textContent != 'Error' && document.getElementById('totWeek').textContent != ''&& validEmail(document.getElementById('cc').textContent)) {
 		var currentForm = this;
@@ -123,11 +95,11 @@ $('form').submit(function() {
 		});
 	}
 });
+*/
 
-
-////////////////////////
+////////////////////////////////
 // TIMESHEET FUNCTIONS//
-////////////////////////
+///////////////////////////////
 var myHash = new Object();
 myHash['Monday'];
 myHash['Tuesday'];
@@ -185,14 +157,4 @@ function updateHash(day) {
 function validEmail(email) {
 	var valid= /[^@]+@[^@]+\.[^@]+/;
 	return valid.test(email);
-}
-
-function checkSubmit() {
-	document.getElementById('submitBut2').onclick = function() {
-		alert('hi');
-		alert(document.getElementById('totWeek').textContent);
-		if (document.getElementById('totWeek').textContent != 'Error' && document.getElementById('totWeek').textContent != '' && validEmail(document.getElementById('cc').textContent)) {
-			$('#modal').show();
-		}
-	}
 }
