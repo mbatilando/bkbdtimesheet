@@ -57,13 +57,13 @@ function jsonSubmit(url) {
 	email = $('#cc').val();
 	//error-checking
 	if (!(validEmail(email))) {
-		alert('Error: invalid e-mail address: '+email);
+		alert('Error: invalid e-mail address: '+email + '\nPlease try again.');
 	} 
 	else if  (document.getElementById('totWeek').textContent == '') {
-		alert('Error: worked zero hours this week.');
+		alert('Error: worked zero hours this week.'+ '\nPlease try again.');
 	} 
 	else if (document.getElementById('totWeek').textContent == 'Error') {
-		alert('Error: invalid lunch or work time.');
+		alert('Error: invalid lunch or work time.'+ '\nPlease try again.');
 	}
 	else {
 		$.ajax({
