@@ -68,18 +68,22 @@ function jsonSubmit(url) {
 	myHash['weekof'] = $('#datepicker').val();
 	myHash['intern_name'] = $('#intern_name').val();
 	myHash['cc'] = $('#cc').val();
-	
-	$.ajax({
-		type: 'GET',
-		url: url,
-		crossDomain: true,
-		data: myHash,
-		contentType: "application/json",
-		dataType: "jsonp",
-		success: function(data) {return successSubmit();},
-		error: function(err) { alert('error occurred on request');}
-	});
-		
+	email = $('#cc').val();
+	if (!(validEmail(email))) {
+		alert('Error: invalid e-mail address: '+email);
+	}
+	else {
+		$.ajax({
+			type: 'GET',
+			url: url,
+			crossDomain: true,
+			data: myHash,
+			contentType: "application/json",
+			dataType: "jsonp",
+			success: function(data) {return successSubmit();},
+			error: function(err) { alert('error occurred on request');}
+		});
+	}
 }
 
 
@@ -104,7 +108,7 @@ $("#submitBut").click(function(){
 */
 
 $('form').submit(function() {
-	if (document.getElementById('totWeek').textContent != 'Error' && document.getElementById('totWeek').textContent != '') {
+	if (document.getElementById('totWeek').textContent != 'Error' && document.getElementById('totWeek').textContent != ''&& validEmail(document.getElementById('cc').textContent)) {
 		var currentForm = this;
 		bootbox.confirm("Are you sure?", function(result) {
 		if (result) {
