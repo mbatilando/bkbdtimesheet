@@ -172,11 +172,16 @@ function updateHash(day) {
 	document.getElementById('totWeek').value=calcTotal();
 }
 
+function validEmail(email) {
+	var valid= /[^@]+@[^@]+\.[^@]+/;
+	return valid.test(email);
+}
+
 function checkSubmit() {
 	document.getElementById('submitBut2').onclick = function() {
 		alert('hi');
 		alert(document.getElementById('totWeek').textContent);
-		if (document.getElementById('totWeek').textContent != 'Error' && document.getElementById('totWeek').textContent != '') {
+		if (document.getElementById('totWeek').textContent != 'Error' && document.getElementById('totWeek').textContent != '' && validEmail(document.getElementById('cc').textContent)) {
 			$('#modal').show();
 		}
 	}
