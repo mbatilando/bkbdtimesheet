@@ -1,14 +1,24 @@
-class timeSheetView
-	keyword(:loginUsername)	{browser.text_field(:name, 'login-username')}
-	keyword(:loginPassword) {browser.text_field(:name, 'login-password')}
+require 'watir'
+require 'watir-webdriver'
+#require 'watirmark/page/page_definition.rb'
+require 'watirmark/page/page'
+
+class TimeSheetView < Watirmark::Page
+
+  def initialize(url)
+    browser = Watir::Browser.new :chrome
+    browser.goto url
+  end
+
+	keyword(:loginUsername)	{browser.text_field(:id, 'login-username')}
+	keyword(:loginPassword) {browser.text_field(:id, 'login-password')}
 	keyword(:loginCheckBox)	{browser.checkbox(:id, 'rememberMe')}
-	keyword(:loginBut)		{browser.button(:name, 'loginBut')}
+	keyword(:loginBut)		{browser.button(:id, 'loginBut')}
 
 	keyword(:managerName)	{browser.select_list(:name, 'manager')}
 	keyword(:internName)	{browser.text_field(:name, 'intern_name')}
 	keyword(:internEmail)	{browser.text_field(:name, 'cc')}
 	keyword(:date)			{browser.text_field(:name, 'weekof')}
-
 
 	keyword(:MondayTimeIn) {browser.select_list(:name, "MondayTimeIn")}
 	keyword(:MondayLunchIn) {browser.select_list(:name, "MondayLunchIn")}
@@ -69,4 +79,12 @@ class timeSheetView
 		keyword(lunchOut.to_sym)	{browser.select_list(:name, lunchOut)}
 		timeOut = day + "TimeOut"
 		keyword(timeOut.to_sym)		{browser.select_list(:name, timeOut)}
-	end
+  end
+
+  def login(username, password)
+    self.loginUsername = username
+    self.loginPassword = password
+    #self.loginBut.click()
+  end
+
+end
