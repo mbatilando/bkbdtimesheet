@@ -2,8 +2,8 @@ require 'watir-webdriver'
 require 'watir'
 require 'watirmark/page/page'
 
-Given /^I open the timesheet app at "([^"]*)" on Chrome/ do |url|
-  @browser = Watir::Browser.new :chrome
+Given /^I open the timesheet app at "([^"]*)" on (firefox|chrome|ie)/ do |url, action|
+  @browser = Watir::Browser.new action.to_sym
   @browser.goto url
 end
 

@@ -3,7 +3,7 @@ require 'watir-webdriver'
 require 'watir'
 require_relative 'timeSheet_view.rb'
 
-web = Watir::Browser.new :chrome
+web = Watir::Browser.new :firefox
 web.goto 'http://184.106.168.82/timesheets/'
 
 puts "hey yo"
@@ -25,5 +25,5 @@ web.text_field(:id => "intern_name").set('mackle more')
 web.text_field(:id => "cc").set('oscar.bachtiar@blackbaud.com')
 web.text_field(:id => "datepicker").when_present.set('03/22/2013')
 web.link(:name => 'submitBut2').click
-Watir::Wait.until{web.link(:name => 'modalConfirm').exists?}
+Watir::Wait.until{web.link(:name => 'modalConfirm').exists? && web.link(:name => 'modalConfirm').visible?}
 web.link(:name => 'modalConfirm').click

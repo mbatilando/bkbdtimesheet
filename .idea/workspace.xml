@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9cf37acf-ea95-49a2-9c89-d8a51169de69" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/autoTests.rb" afterPath="$PROJECT_DIR$/autoTests.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cucumber/bkbdtimesheet.feature" afterPath="$PROJECT_DIR$/cucumber/bkbdtimesheet.feature" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cucumber/bkbdtimesheet_steps.rb" afterPath="$PROJECT_DIR$/cucumber/bkbdtimesheet_steps.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cucumber/chromedriver.log" afterPath="$PROJECT_DIR$/cucumber/chromedriver.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="bkbdtimesheet.iws" />
@@ -12,9 +15,9 @@
     <file path="/Ruby Console" changelist="9cf37acf-ea95-49a2-9c89-d8a51169de69" time="1363119165997" ignored="false" />
     <file path="/timeSheet_view.rb" changelist="9cf37acf-ea95-49a2-9c89-d8a51169de69" time="1363126552322" ignored="false" />
     <file path="/Gemfile" changelist="9cf37acf-ea95-49a2-9c89-d8a51169de69" time="1363125762237" ignored="false" />
-    <file path="/bkbdtimesheet_steps.rb" changelist="9cf37acf-ea95-49a2-9c89-d8a51169de69" time="1363379932354" ignored="false" />
-    <file path="/bkbdtimesheet.feature" changelist="9cf37acf-ea95-49a2-9c89-d8a51169de69" time="1363372869420" ignored="false" />
-    <file path="/autoTests.rb" changelist="9cf37acf-ea95-49a2-9c89-d8a51169de69" time="1363388901151" ignored="false" />
+    <file path="/bkbdtimesheet_steps.rb" changelist="9cf37acf-ea95-49a2-9c89-d8a51169de69" time="1363390916726" ignored="false" />
+    <file path="/bkbdtimesheet.feature" changelist="9cf37acf-ea95-49a2-9c89-d8a51169de69" time="1363391141727" ignored="false" />
+    <file path="/autoTests.rb" changelist="9cf37acf-ea95-49a2-9c89-d8a51169de69" time="1363391565522" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +56,7 @@
       <file leaf-file-name="autoTests.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/autoTests.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="39" selection-start="1130" selection-end="1130" vertical-scroll-proportion="0.55156434">
+            <state line="23" column="63" selection-start="861" selection-end="861" vertical-scroll-proportion="0.45307067">
               <folding />
             </state>
           </provider>
@@ -62,7 +65,7 @@
       <file leaf-file-name="bkbdtimesheet_steps.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cucumber/bkbdtimesheet_steps.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="168" selection-start="198" selection-end="198" vertical-scroll-proportion="0.0">
+            <state line="7" column="9" selection-start="229" selection-end="229" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -71,10 +74,8 @@
       <file leaf-file-name="bkbdtimesheet.feature" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cucumber/bkbdtimesheet.feature">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="8" selection-start="1181" selection-end="1181" vertical-scroll-proportion="0.0">
-              <folding>
-                <marker date="1363379994487" expanded="true" signature="198:328" placeholder="Scenario" />
-              </folding>
+            <state line="3" column="88" selection-start="134" selection-end="134" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -145,8 +146,8 @@
         <option value="$PROJECT_DIR$/config.yml" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/timeSheet_view.rb" />
-        <option value="$PROJECT_DIR$/cucumber/bkbdtimesheet.feature" />
         <option value="$PROJECT_DIR$/cucumber/bkbdtimesheet_steps.rb" />
+        <option value="$PROJECT_DIR$/cucumber/bkbdtimesheet.feature" />
         <option value="$PROJECT_DIR$/autoTests.rb" />
       </list>
     </option>
@@ -378,12 +379,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/autoTests.rb</url>
-          <line>28</line>
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="1" />
     </breakpoint-manager>
   </component>
@@ -465,22 +460,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cucumber/bkbdtimesheet.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="8" selection-start="1181" selection-end="1181" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1363379994487" expanded="true" signature="198:328" placeholder="Scenario" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cucumber/bkbdtimesheet_steps.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="168" selection-start="198" selection-end="198" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/timeSheet_view.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="15" selection-start="87" selection-end="117" vertical-scroll-proportion="-0.40856844">
@@ -495,9 +474,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cucumber/bkbdtimesheet_steps.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="9" selection-start="229" selection-end="229" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cucumber/bkbdtimesheet.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="88" selection-start="134" selection-end="134" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/autoTests.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="39" selection-start="1130" selection-end="1130" vertical-scroll-proportion="0.55156434">
+        <state line="23" column="63" selection-start="861" selection-end="861" vertical-scroll-proportion="0.45307067">
           <folding />
         </state>
       </provider>
