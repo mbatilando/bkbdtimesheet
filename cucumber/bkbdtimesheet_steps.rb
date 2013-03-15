@@ -14,8 +14,8 @@ Given /^I input username "([^"]*)" and password "([^"]*)"/ do |username, passwor
 end
 
 When /^I enter timeIn "([^"]*)", lunchIn "([^"]*)", lunchOut "([^"]*)", and timeOut "([^"]*)" for day "([^"]*)"/ do |timeIn, lunchIn, lunchOut, timeOut, day|
-  @browser.select_list(:id, day+"TimeIn").select(timeIn)
+  @browser.select_list(:id, day+"TimeIn").when_present.select(timeIn)
   @browser.select_list(:id, day+"LunchIn").select(lunchIn)
-  @browser.select_list(:id, day+"LunchOut").selectt(lunchOut)
-  @browser.select_list(:id, day+"TimeOut").selectt(timeOut)
+  @browser.select_list(:id, day+"LunchOut").select(lunchOut)
+  @browser.select_list(:id, day+"TimeOut").select(timeOut)
 end
