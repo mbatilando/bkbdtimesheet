@@ -22,4 +22,4 @@ web.select_list(:id => "TuesdayTimeOut").select('5:00 p.m.')
 # web.select_list(:id => "manager").select('Cyrus Fakour')  Doesn't seem to work
 # web.text_field(:id => "intern_name").set('mackle more')   Doesn't seem to work
 # web.text_field(:id => "cc").set('oscar.bachtiar@blackbaud.com')   Doesn't seem to work
-web.text_field(:id => "datepicker").when_present.set('03/21/2013')
+web.text_field(:id => "datepicker").when_present.set('03/22/2013')
