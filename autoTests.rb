@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'watir-webdriver'
 require 'watir'
 require_relative 'timeSheet_view.rb'
@@ -23,5 +24,6 @@ web.select_list(:id => "manager").select('Cyrus Fakour')
 web.text_field(:id => "intern_name").set('mackle more')
 web.text_field(:id => "cc").set('oscar.bachtiar@blackbaud.com')
 web.text_field(:id => "datepicker").when_present.set('03/22/2013')
-web.button(:name => 'submitBut2').click
-web.button(:name => 'modalConfirm').click
+web.link(:name => 'submitBut2').click
+Watir::Wait.until{web.link(:name => 'modalConfirm').exists?}
+web.link(:name => 'modalConfirm').click
