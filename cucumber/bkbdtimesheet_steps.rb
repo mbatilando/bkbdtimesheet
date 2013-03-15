@@ -19,3 +19,24 @@ When /^I enter timeIn "([^"]*)", lunchIn "([^"]*)", lunchOut "([^"]*)", and time
   @browser.select_list(:id, day+"LunchOut").select(lunchOut)
   @browser.select_list(:id, day+"TimeOut").select(timeOut)
 end
+
+When /^I enter manager "([^"]*)"/ do |manager|
+  @browser.select_list(:id, "manager").when_present.select(manager)
+end
+
+When /^I enter intern name "([^"]*)"/ do |internName|
+  @browser.text_field(:id, "intern_name").when_present.set(internName)
+end
+
+When /^I enter email "([^"]*)"/ do |email|
+  @browser.text_field(:id, "cc").when_present.set(email)
+end
+
+When /^I enter date "([^"]*)"/ do |date|
+  @browser.text_field(:id, "datepicker").when_present.set(date)
+end
+
+When /^I submit timesheet/ do
+  @browser.button(:name, 'submitBut2').click
+  @browser.button(:name, 'modalConfirm').click
+end
