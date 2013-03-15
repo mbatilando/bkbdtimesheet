@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9cf37acf-ea95-49a2-9c89-d8a51169de69" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cucumber/bkbdtimesheet_steps.rb" afterPath="$PROJECT_DIR$/cucumber/bkbdtimesheet_steps.rb" />
-    </list>
+    <list default="true" id="9cf37acf-ea95-49a2-9c89-d8a51169de69" name="Default" comment="" />
     <ignored path="bkbdtimesheet.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="9cf37acf-ea95-49a2-9c89-d8a51169de69" time="1363365820357" ignored="false" />
@@ -60,7 +58,7 @@
       <file leaf-file-name="bkbdtimesheet_steps.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cucumber/bkbdtimesheet_steps.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="35" selection-start="644" selection-end="644" vertical-scroll-proportion="0.31517962">
+            <state line="20" column="43" selection-start="850" selection-end="850" vertical-scroll-proportion="0.3939745">
               <folding />
             </state>
           </provider>
@@ -518,7 +516,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cucumber/bkbdtimesheet_steps.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="35" selection-start="644" selection-end="644" vertical-scroll-proportion="0.31517962">
+        <state line="20" column="43" selection-start="850" selection-end="850" vertical-scroll-proportion="0.3939745">
           <folding />
         </state>
       </provider>
