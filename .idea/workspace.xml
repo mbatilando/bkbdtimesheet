@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9cf37acf-ea95-49a2-9c89-d8a51169de69" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cucumber/bkbdtimesheet.feature" afterPath="$PROJECT_DIR$/cucumber/bkbdtimesheet.feature" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cucumber/bkbdtimesheet_steps.rb" afterPath="$PROJECT_DIR$/cucumber/bkbdtimesheet_steps.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="bkbdtimesheet.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -13,7 +11,7 @@
     <file path="/Ruby Console" changelist="9cf37acf-ea95-49a2-9c89-d8a51169de69" time="1363119165997" ignored="false" />
     <file path="/timeSheet_view.rb" changelist="9cf37acf-ea95-49a2-9c89-d8a51169de69" time="1363126552322" ignored="false" />
     <file path="/Gemfile" changelist="9cf37acf-ea95-49a2-9c89-d8a51169de69" time="1363125762237" ignored="false" />
-    <file path="/bkbdtimesheet_steps.rb" changelist="9cf37acf-ea95-49a2-9c89-d8a51169de69" time="1363373055797" ignored="false" />
+    <file path="/bkbdtimesheet_steps.rb" changelist="9cf37acf-ea95-49a2-9c89-d8a51169de69" time="1363373988473" ignored="false" />
     <file path="/bkbdtimesheet.feature" changelist="9cf37acf-ea95-49a2-9c89-d8a51169de69" time="1363372869420" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +60,7 @@
       <file leaf-file-name="bkbdtimesheet_steps.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cucumber/bkbdtimesheet_steps.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="32" selection-start="467" selection-end="467" vertical-scroll-proportion="0.31517962">
+            <state line="16" column="35" selection-start="644" selection-end="644" vertical-scroll-proportion="0.31517962">
               <folding />
             </state>
           </provider>
@@ -497,6 +495,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cucumber/bkbdtimesheet.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="8" selection-start="149" selection-end="149" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/timeSheet_view.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="15" selection-start="87" selection-end="117" vertical-scroll-proportion="0.053291537">
@@ -511,16 +516,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cucumber/bkbdtimesheet.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="8" selection-start="149" selection-end="149" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cucumber/bkbdtimesheet_steps.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="32" selection-start="467" selection-end="467" vertical-scroll-proportion="0.31517962">
+        <state line="16" column="35" selection-start="644" selection-end="644" vertical-scroll-proportion="0.31517962">
           <folding />
         </state>
       </provider>
