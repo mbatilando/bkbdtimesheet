@@ -18,13 +18,13 @@ end
 
 #################
 
-#Given /^I input username "([^"]*)" and password "([^"]*)"/ do |username, password|
-#  Login.new({:username => username, :password => password}).login
-#end
-#
-#Given /^I login to the timesheet app/ do
-#  Login.new.login
-#end
+Given /^I input username "([^"]*)" and password "([^"]*)"/ do |username, password|
+  Login.new({:username => username, :password => password}).login
+end
+
+Given /^I login to the timesheet app/ do
+  Login.new({:username => "#{config.username}", :password => "#{config.password}"}).login
+end
 
 Given /^I use a (\[new User Login: \S+\])$/ do |model|
   puts model.inspect

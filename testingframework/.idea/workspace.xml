@@ -13,7 +13,7 @@
     <file path="/scheduler_view.rb" changelist="0c6778bc-e1b7-4f4a-8cd1-76de8fde5e25" time="1363719975582" ignored="false" />
     <file path="/scheduler.rb" changelist="0c6778bc-e1b7-4f4a-8cd1-76de8fde5e25" time="1363719991764" ignored="false" />
     <file path="/config.yml" changelist="0c6778bc-e1b7-4f4a-8cd1-76de8fde5e25" time="1363727757107" ignored="false" />
-    <file path="/bkbdtimesheet_steps.rb" changelist="0c6778bc-e1b7-4f4a-8cd1-76de8fde5e25" time="1363734568248" ignored="false" />
+    <file path="/bkbdtimesheet_steps.rb" changelist="0c6778bc-e1b7-4f4a-8cd1-76de8fde5e25" time="1363736229282" ignored="false" />
     <file path="/login.feature" changelist="0c6778bc-e1b7-4f4a-8cd1-76de8fde5e25" time="1363733962851" ignored="false" />
     <file path="/timesheet.rb" changelist="0c6778bc-e1b7-4f4a-8cd1-76de8fde5e25" time="1363732166921" ignored="false" />
     <file path="/configuration.rb" changelist="0c6778bc-e1b7-4f4a-8cd1-76de8fde5e25" time="1363723140315" ignored="false" />
@@ -39,19 +39,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="bkbdtimesheet_steps.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="bkbdtimesheet_steps.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/features/step_definitions/bkbdtimesheet_steps.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="0" selection-start="779" selection-end="779" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rakefile.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rakefile.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="26" column="41" selection-start="842" selection-end="842" vertical-scroll-proportion="0.42432433">
               <folding />
             </state>
           </provider>
@@ -60,16 +51,7 @@
       <file leaf-file-name="login.feature" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/features/features_test/login.feature">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="30" selection-start="328" selection-end="328" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ts_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/timesheet/core/ts_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="50" selection-start="67" selection-end="67" vertical-scroll-proportion="0.0">
+            <state line="6" column="30" selection-start="186" selection-end="186" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -78,7 +60,25 @@
       <file leaf-file-name="login_view.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/timesheet/component/login/login_view.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="45" selection-start="666" selection-end="666" vertical-scroll-proportion="0.0">
+            <state line="9" column="44" selection-start="394" selection-end="414" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scheduler.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/timesheet/component/scheduler/scheduler.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scheduler_view.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/timesheet/component/scheduler/scheduler_view.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="20" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -87,7 +87,7 @@
       <file leaf-file-name="login_model.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/timesheet/component/login/login_model.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="10" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0">
+            <state line="2" column="17" selection-start="85" selection-end="85" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -96,16 +96,34 @@
       <file leaf-file-name="timesheet.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/timesheet.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="41" selection-start="289" selection-end="289" vertical-scroll-proportion="0.0">
+            <state line="8" column="25" selection-start="186" selection-end="186" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="login.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/timesheet/component/login/login.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="53" selection-start="150" selection-end="150" vertical-scroll-proportion="0.1775457">
+            <state line="6" column="52" selection-start="183" selection-end="183" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gemfile.lock" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Gemfile.lock">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Gemfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -133,10 +151,10 @@
         <option value="$PROJECT_DIR$/config.yml" />
         <option value="$PROJECT_DIR$/lib/timesheet.rb" />
         <option value="$PROJECT_DIR$/lib/timesheet/component/login/login_view.rb" />
-        <option value="$PROJECT_DIR$/features/step_definitions/bkbdtimesheet_steps.rb" />
         <option value="$PROJECT_DIR$/features/features_test/login.feature" />
         <option value="$PROJECT_DIR$/lib/timesheet/component/login/login_model.rb" />
         <option value="$PROJECT_DIR$/lib/timesheet/component/login/login.rb" />
+        <option value="$PROJECT_DIR$/features/step_definitions/bkbdtimesheet_steps.rb" />
       </list>
     </option>
   </component>
@@ -282,6 +300,10 @@
               <option name="myItemId" value="component" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scheduler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -382,7 +404,7 @@
       <recent name="C:\Users\oscar.bachtiar\Documents\Oscar\bkbdtimesheet\testingframework\features" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber.Using LoginModel to login">
+  <component name="RunManager" selected="Cucumber.Automatic login using configuration from config.yml">
     <configuration default="false" name="Valid login test" type="CucumberRunConfigurationType" factoryName="Cucumber" temporary="true">
       <predefined_log_file id="RUBY_CUCUMBER" enabled="true" />
       <module name="cucumber" />
@@ -419,7 +441,7 @@
       <ConfigurationWrapper RunnerId="RubyRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="Automatic login using configuration from config.yml" type="CucumberRunConfigurationType" factoryName="Cucumber" temporary="true">
+    <configuration default="false" name="Using LoginModel to login" type="CucumberRunConfigurationType" factoryName="Cucumber" temporary="true">
       <predefined_log_file id="RUBY_CUCUMBER" enabled="true" />
       <module name="cucumber" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -440,7 +462,7 @@
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$PROJECT_DIR$/features/features_test/login.feature" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TAGS_FILTER" VALUE="" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="^Automatic login using configuration from config\.yml$" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="^Using LoginModel to login$" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_ARGS" VALUE="--color -r features" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
@@ -487,7 +509,7 @@
       <ConfigurationWrapper RunnerId="RubyRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="Using LoginModel to login" type="CucumberRunConfigurationType" factoryName="Cucumber" temporary="true">
+    <configuration default="false" name="Automatic login using configuration from config.yml" type="CucumberRunConfigurationType" factoryName="Cucumber" temporary="true">
       <predefined_log_file id="RUBY_CUCUMBER" enabled="true" />
       <module name="cucumber" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -508,7 +530,7 @@
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$PROJECT_DIR$/features/features_test/login.feature" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TAGS_FILTER" VALUE="" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="^Using LoginModel to login$" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="^Automatic login using configuration from config\.yml$" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_ARGS" VALUE="--color -r features" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
@@ -618,17 +640,17 @@
     </configuration>
     <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Cucumber.Valid login test" />
-      <item index="1" class="java.lang.String" itemvalue="Cucumber.Automatic login using configuration from config.yml" />
+      <item index="1" class="java.lang.String" itemvalue="Cucumber.Using LoginModel to login" />
       <item index="2" class="java.lang.String" itemvalue="Cucumber.Login using valid username and password" />
-      <item index="3" class="java.lang.String" itemvalue="Cucumber.Using LoginModel to login" />
+      <item index="3" class="java.lang.String" itemvalue="Cucumber.Automatic login using configuration from config.yml" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Cucumber.Using LoginModel to login" />
-        <item index="1" class="java.lang.String" itemvalue="Cucumber.Using LoginModel to login" />
-        <item index="2" class="java.lang.String" itemvalue="Cucumber.Login using valid username and password" />
-        <item index="3" class="java.lang.String" itemvalue="Cucumber.Automatic login using configuration from config.yml" />
-        <item index="4" class="java.lang.String" itemvalue="Cucumber.Valid login test" />
+        <item index="0" class="java.lang.String" itemvalue="Cucumber.Automatic login using configuration from config.yml" />
+        <item index="1" class="java.lang.String" itemvalue="Cucumber.Login using valid username and password" />
+        <item index="2" class="java.lang.String" itemvalue="Cucumber.Using LoginModel to login" />
+        <item index="3" class="java.lang.String" itemvalue="Cucumber.Using LoginModel to login" />
+        <item index="4" class="java.lang.String" itemvalue="Cucumber.Login using valid username and password" />
       </list>
     </recent_temporary>
   </component>
@@ -661,7 +683,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -671,7 +693,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39930555" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298611" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5023148" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5023148" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -740,26 +762,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/features/support/env.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="18" selection-start="356" selection-end="365" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://C:/Ruby193/lib/ruby/gems/1.9.1/bundler/gems/watirmark-a98e1fe21e45/lib/watirmark/session.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="0" selection-start="2625" selection-end="2625" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/timesheet/configuration.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="16" selection-start="288" selection-end="288" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="18" selection-start="101" selection-end="101" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/timesheet/core/ts_view.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="19" selection-start="36" selection-end="36" vertical-scroll-proportion="0.0" />
@@ -798,44 +800,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/timesheet.rb">
+    <entry file="file://$PROJECT_DIR$/Gemfile.lock">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="41" selection-start="289" selection-end="289" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/features/features_test/login.feature">
+    <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="30" selection-start="328" selection-end="328" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/timesheet/component/login/login_model.rb">
+    <entry file="file://$PROJECT_DIR$/lib/timesheet/component/scheduler/scheduler_view.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="10" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0">
+        <state line="4" column="20" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/timesheet/component/login/login_view.rb">
+    <entry file="file://$PROJECT_DIR$/lib/timesheet/component/scheduler/scheduler.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="45" selection-start="666" selection-end="666" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/features/step_definitions/bkbdtimesheet_steps.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="779" selection-end="779" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/timesheet/component/login/login.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="53" selection-start="150" selection-end="150" vertical-scroll-proportion="0.1775457">
+        <state line="6" column="52" selection-start="183" selection-end="183" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/timesheet.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="25" selection-start="186" selection-end="186" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/timesheet/component/login/login_model.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="17" selection-start="85" selection-end="85" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/timesheet/component/login/login_view.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="44" selection-start="394" selection-end="414" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/features_test/login.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="30" selection-start="186" selection-end="186" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/step_definitions/bkbdtimesheet_steps.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="41" selection-start="842" selection-end="842" vertical-scroll-proportion="0.42432433">
           <folding />
         </state>
       </provider>
