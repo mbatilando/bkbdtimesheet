@@ -6,7 +6,8 @@ require_relative '../../lib/timeSheet_controller'
 Given /^I open the timesheet app at "([^"]*)" on (firefox|chrome|ie)/ do |url, action|
   #@browser = Watir::Browser.new action.to_sym
   #@browser.goto(url)
-  @timesheet = TimeSheetController.new
+#  @timesheet = TimeSheetController.new(url, browser)
+  @timesheet = TimeSheetController.new url, action
 end
 
 Given /^I input username "([^"]*)" and password "([^"]*)"/ do |username, password|

@@ -1,11 +1,17 @@
 
-module TIMESHEET
+#module TIMESHEET
 
   require 'watir-webdriver'
   require 'watir'
   require 'watirmark/page/page'
 
-  class TimeSheetController < Watirmark::WebPage::Controller
+#  class TimeSheetController < Watirmark::WebPage::Controller
+  class TimeSheetController #< Watir::Browser
+
+    def initialize(url, action)
+      @browser = Watir::Browser.new action
+      @browser.goto url
+    end
 
     def login(username, password)
       @browser.text_field(:id, 'login-username').set(username)
@@ -37,12 +43,12 @@ module TIMESHEET
     end
 
     def submitTimesheet()
-      @web.link(:name => 'submitBut2').click
+      @browser.link(:name => 'submitBut2').click
       @Watir::Wait.until{web.link(:name => 'modalConfirm').exists?}
       @Watir::Wait.until{web.link(:name => 'modalConfirm').visible?}
-      @web.link(:name => 'modalConfirm').click
+      @browser.link(:name => 'modalConfirm').click
     end
 
   end
 
-end
+#end
