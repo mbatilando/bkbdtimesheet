@@ -1,0 +1,5 @@
+webdriver: firefox
+
+url: http://184.106.168.82/timesheets/
+username: oscarbachtiar
+password: qwertqaz

@@ -1,3 +1,0 @@
-webdriver: firefox
-default_firefox_profile: webdriver_profile
-hostname: qa109.bvt1.corp.convio.com
