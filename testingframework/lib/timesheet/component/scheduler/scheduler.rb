@@ -1,5 +1,9 @@
 module Timesheet
   class Scheduler
-    # To change this template use File | Settings | File Templates.
+	@view = SchedulerView
+	
+    def submit
+      @view.submitButton.click
+    end
   end
 end
