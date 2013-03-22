@@ -2,6 +2,7 @@ require 'uuid'
 require 'watirmark'
 require 'watirmark/loader'
 require 'watirmark/page/page'
+require 'watirmark/cucumber/env'
 
 require 'timesheet/configuration'
 

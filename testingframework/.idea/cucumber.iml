@@ -7,7 +7,7 @@
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v3.1.12, ruby-1.9.3-p374) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="american_date (v1.0.0, ruby-1.9.3-p374) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.0, ruby-1.9.3-p374) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bundler (v1.3.1, ruby-1.9.3-p374) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bundler (v1.2.3, ruby-1.9.3-p374) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="childprocess (v0.3.9, ruby-1.9.3-p374) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cucumber (v1.2.3, ruby-1.9.3-p374) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="diff-lcs (v1.2.1, ruby-1.9.3-p374) [gem]" level="application" />
@@ -25,8 +25,8 @@
     <orderEntry type="library" scope="PROVIDED" name="selenium-webdriver (v2.30.0, ruby-1.9.3-p374) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="systemu (v2.5.2, ruby-1.9.3-p374) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="uuid (v2.3.7, ruby-1.9.3-p374) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="watir-webdriver (v0.6.2.1@c2b054, ruby-1.9.3-p374) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="watirmark (v5.14.36@a98e1f, ruby-1.9.3-p374) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="watir-webdriver (v@c2b054, ruby-1.9.3-p374) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="watirmark (v@a98e1f, ruby-1.9.3-p374) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="websocket (v1.0.7, ruby-1.9.3-p374) [gem]" level="application" />
   </component>
 </module>

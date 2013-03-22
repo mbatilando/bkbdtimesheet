@@ -7,5 +7,8 @@ Feature: Using the Blackbaud Login
   Scenario: Automatic login using configuration from config.yml
     Given I login to the timesheet app
 
-  Scenario: Using LoginModel to login
+  Scenario: Using LoginModel with default username and password to login
     Given I use a [new User Login: Oscar]
+
+  Scenario: Using LoginModel using valid username and password to login
+    Given I use a [new User Login: Oscar] with username "twodoorcinemaclub" and password "whatyouknow"
