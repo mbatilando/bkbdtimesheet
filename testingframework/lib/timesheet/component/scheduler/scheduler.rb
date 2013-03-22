@@ -12,10 +12,15 @@ module Timesheet
       timeOutSym = day + "TimeOut"
       timeOutSym = timeOutSym.to_sym
 
-      @view.MondayTimeIn.set(timeIn)
+      @view.MondayTimeIn.when_present.set(timeIn)
       @view.MondayLunchIn.set(lunchIn)
       @view.MondayLunchOut.set(lunchOut)
       @view.MondayTimeOut.set(timeOut)
+
+      @view.TuesdayTimeIn.set(timeIn)
+      @view.TuesdayLunchIn.set(lunchIn)
+      @view.TuesdayLunchOut.set(lunchOut)
+      @view.TuesdayTimeOut.set(timeOut)
     end
 
     def selectManager(manager)
