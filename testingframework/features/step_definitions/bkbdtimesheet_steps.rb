@@ -31,11 +31,8 @@ Given /^I use a (\[new User Login: \S+\])$/ do |model|
 end
 
 Given /^I use a (\[new User Login: \S+\]) with username "([^"]*)" and password "([^"]*)"/ do |model, username, password|
-  # one-liner: Login.new(model.update({:username => username, :password => password})).login
   user = model.update({:username => username, :password => password})
   Login.new(user).login
-  #user.update({:username => username, :password => password})
-  #Login.user.login
 end
 
 

@@ -1,17 +1,11 @@
 module Timesheet
   class SchedulerView
-    #Login page stuff ***not sure if we need it for this page?
-    keyword(:loginUsername)	{browser.text_field(:id, 'login-username')}
-    keyword(:loginPassword) {browser.text_field(:id, 'login-password')}
-    keyword(:loginCheckBox)	{browser.checkbox(:id, 'rememberMe')}
-    keyword(:loginBut)		{browser.button(:id, 'loginBut')}
 
     #manager, intern info, and date fields
     keyword(:managerName)	{browser.select_list(:name, 'manager')}
     keyword(:internName)	{browser.text_field(:name, 'intern_name')}
     keyword(:internEmail)	{browser.text_field(:name, 'cc')}
     keyword(:date)			{browser.text_field(:name, 'weekof')}
-
 
     #TimeIn, LunchIn, LunchOut, TimeOut for all days of the week
     days =["Monday", "Tuesday","Wednesday", "Thursday", "Friday", "Saturday" ,"Sunday"]

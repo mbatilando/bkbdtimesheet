@@ -3,7 +3,6 @@ Feature: Using the Blackbaud Login
   Scenario: Login using valid username and password
     Given I input username "macklemore" and password "thriftshop"
 
-
   Scenario: Automatic login using configuration from config.yml
     Given I login to the timesheet app
 
