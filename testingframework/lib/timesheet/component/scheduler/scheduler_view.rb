@@ -1,5 +1,5 @@
 module Timesheet
-  class SchedulerView
+  class SchedulerView < TSView
 
     #manager, intern info, and date fields
     keyword(:managerName)	{browser.select_list(:name, 'manager')}
@@ -14,7 +14,7 @@ module Timesheet
       timeIn = day + "TimeIn"
       keyword(timeIn.to_sym)		{browser.select_list(:name, timeIn)}
       lunchIn = day + "LunchIn"
-      keyword(lunchIn.to_sym)		{browser.select_list(:name. lunchIn)}
+      keyword(lunchIn.to_sym)		{browser.select_list(:name, lunchIn)}
       lunchOut = day + "LunchOut"
       keyword(lunchOut.to_sym)	{browser.select_list(:name, lunchOut)}
       timeOut = day + "TimeOut"

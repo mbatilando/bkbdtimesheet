@@ -12,3 +12,6 @@ require 'timesheet/core/ts_controller'
 require 'timesheet/component/login/login_view'
 require 'timesheet/component/login/login'
 require 'timesheet/component/login/login_model'
+
+require 'timesheet/component/scheduler/scheduler_view'
+require 'timesheet/component/scheduler/scheduler'
